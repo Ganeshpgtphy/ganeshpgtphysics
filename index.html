@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Science Teacher AI Studio 2026-27 | KVS Science & Physics Prompt Generator</title>
+    <meta name="description" content="AI Prompt Engineering Studio for Kendriya Vidyalaya and CBSE Science & Physics Teachers (Classes VI-XII) - Session 2026-27. Generate NEP 2020 aligned worksheets, question papers, Google Forms, and lesson plans.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background Decorative Glow Effects -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Application Top Navigation Bar -->
+    <header class="app-header">
+        <div class="header-left">
+            <div class="logo-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5M6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5v-15"/><path d="M6 6h10"/><path d="M6 10h10"/><path d="M6 14h6"/></svg>
+            </div>
+            <div class="logo-text">
+                <h1>CBSE AI Teacher Studio <span>2026-27</span></h1>
+                <p>Kendriya Vidyalaya Science & Physics AI Prompt Engineering Suite</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="session-badge">
+                <span class="badge-dot"></span> CBSE / KVS Session 2026-27
+            </div>
+            
+            <button id="themeToggleBtn" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+
+            <button id="savedTemplatesBtn" class="btn btn-secondary btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                Saved (<span id="savedCount">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Studio Layout -->
+    <div class="app-container">
+        
+        <!-- Sidebar Controls & Parameter Tuning -->
+        <aside class="sidebar">
+            
+            <!-- Category Filter Tabs -->
+            <div class="sidebar-section">
+                <h3 class="section-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                    Categories
+                </h3>
+                <nav class="category-nav">
+                    <button class="cat-btn active" data-category="all">
+                        <span>All Generators</span>
+                        <span class="cat-count" id="countAll">0</span>
+                    </button>
+                    <button class="cat-btn" data-category="assessment">
+                        <span>Worksheets & QPs</span>
+                        <span class="cat-count" id="countAssessment">0</span>
+                    </button>
+                    <button class="cat-btn" data-category="physics">
+                        <span>Physics XI-XII</span>
+                        <span class="cat-count" id="countPhysics">0</span>
+                    </button>
+                    <button class="cat-btn" data-category="quizzes">
+                        <span>Google Forms & Quizzes</span>
+                        <span class="cat-count" id="countQuizzes">0</span>
+                    </button>
+                    <button class="cat-btn" data-category="practicals">
+                        <span>Practicals & Labs</span>
+                        <span class="cat-count" id="countPracticals">0</span>
+                    </button>
+                    <button class="cat-btn" data-category="feedback">
+                        <span>Feedback & Diagnostic</span>
+                        <span class="cat-count" id="countFeedback">0</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Dynamic Parameter Tuning Panel -->
+            <div class="sidebar-section">
+                <div class="section-title-wrapper">
+                    <h3 class="section-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        Class & Subject Setup
+                    </h3>
+                    <button id="resetParamsBtn" class="text-link-btn" title="Reset to Defaults">Reset</button>
+                </div>
+
+                <div class="param-form">
+                    <!-- Class Selection -->
+                    <div class="form-group">
+                        <label for="paramClass">Target Class</label>
+                        <select id="paramClass" class="form-control">
+                            <option value="Class 6">Class VI (Science)</option>
+                            <option value="Class 7">Class VII (Science)</option>
+                            <option value="Class 8">Class VIII (Science)</option>
+                            <option value="Class 9">Class IX (Science)</option>
+                            <option value="Class 10" selected>Class X (Science)</option>
+                            <option value="Class 11">Class XI (Physics / Science)</option>
+                            <option value="Class 12">Class XII (Physics / Science)</option>
+                        </select>
+                    </div>
+
+                    <!-- Subject Selection -->
+                    <div class="form-group">
+                        <label for="paramSubject">Subject Focus</label>
+                        <select id="paramSubject" class="form-control">
+                            <option value="General Science" selected>General Science (VI-X)</option>
+                            <option value="Physics">Physics (XI-XII)</option>
+                            <option value="Chemistry">Chemistry (XI-XII)</option>
+                            <option value="Biology">Biology (XI-XII)</option>
+                        </select>
+                    </div>
+
+                    <!-- Chapter Database Selector -->
+                    <div class="form-group">
+                        <label for="paramChapterSelect">NCERT 2026-27 Chapter</label>
+                        <select id="paramChapterSelect" class="form-control">
+                            <!-- Populated dynamically based on Class & Subject -->
+                        </select>
+                    </div>
+
+                    <!-- Custom Chapter / Specific Topic Override -->
+                    <div class="form-group">
+                        <label for="paramChapterCustom">Specific Topic / Sub-topic (Optional)</label>
+                        <input type="text" id="paramChapterCustom" class="form-control" placeholder="e.g. Refraction at Spherical Surfaces, Ohm's Law">
+                    </div>
+
+                    <!-- Target Difficulty / Learner Tier -->
+                    <div class="form-group">
+                        <label for="paramTier">Target Learner Tier</label>
+                        <select id="paramTier" class="form-control">
+                            <option value="Balanced (Remedial + Standard + HOTS)" selected>Balanced (Standard CBSE Pattern)</option>
+                            <option value="Basic & Remedial Support">Basic & Remedial (Level 1)</option>
+                            <option value="Advanced HOTS & Exemplar">Advanced HOTS & Exemplar (Level 3)</option>
+                            <option value="Competitive Focus (JEE/NEET Foundation)">Competitive (JEE/NEET Foundation)</option>
+                        </select>
+                    </div>
+
+                    <!-- Total Marks & Exam Duration -->
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="paramMarks">Total Marks</label>
+                            <input type="number" id="paramMarks" class="form-control" value="80" min="10" max="100" step="5">
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="paramTime">Time (Minutes)</label>
+                            <input type="number" id="paramTime" class="form-control" value="180" min="15" max="240" step="15">
+                        </div>
+                    </div>
+
+                    <!-- Additional Toggles -->
+                    <div class="form-group">
+                        <label class="section-subtitle">Prompts Options & Directives</label>
+                        <div class="checkbox-group">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="toggleAnswerKey" checked>
+                                <span class="checkbox-mark"></span>
+                                Include Step-by-Step Solutions / Answer Key
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="toggleNEP" checked>
+                                <span class="checkbox-mark"></span>
+                                NEP 2020 & NCF-SE 2023 Competencies
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="toggleBloom" checked>
+                                <span class="checkbox-mark"></span>
+                                Include Bloom's Taxonomy Tagging
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="toggleNCERT" checked>
+                                <span class="checkbox-mark"></span>
+                                NCERT 2026-27 Textbook Page Mapping
+                            </label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="toggleRubrics">
+                                <span class="checkbox-mark"></span>
+                                Include Assessment Rubrics Grid
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main Workspace Pane -->
+        <main class="main-content">
+            
+            <!-- Search & Quick Filters Header -->
+            <div class="search-bar-wrapper">
+                <div class="search-input-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="searchInput" placeholder="Search templates (e.g., 'Worksheet', 'Physics HOTS', 'Google Forms', 'Viva', 'Rubric')...">
+                    <button id="clearSearchBtn" class="clear-search-btn" hidden>&times;</button>
+                </div>
+                <div class="quick-tags">
+                    <span class="tag-chip" data-tag="Competency">Competency</span>
+                    <span class="tag-chip" data-tag="Blueprint">Blueprint</span>
+                    <span class="tag-chip" data-tag="Case Study">Case Study</span>
+                    <span class="tag-chip" data-tag="Numerical">Numericals</span>
+                    <span class="tag-chip" data-tag="Lab">Practicals</span>
+                </div>
+            </div>
+
+            <!-- Cards Grid for Prompt Templates -->
+            <div class="section-header">
+                <h2>Prompt Generator Library <span id="libraryCount" class="count-badge">0 available</span></h2>
+                <p>Click any card to assemble and view the custom prompt based on your parameter setup.</p>
+            </div>
+
+            <div id="cardsGrid" class="cards-grid">
+                <!-- Dynamically rendered prompt cards -->
+            </div>
+
+            <!-- Interactive Workspace & Live Prompt Editor -->
+            <div class="prompt-workspace-card" id="workspaceCard">
+                <div class="workspace-header">
+                    <div class="workspace-title-info">
+                        <div class="active-badge" id="activePromptTag">Selected Generator</div>
+                        <h3 id="activePromptTitle">Worksheet Generator</h3>
+                        <p id="activePromptSubtitle">Configured for Class X Science - CBSE 2026-27</p>
+                    </div>
+                    
+                    <div class="workspace-actions">
+                        <span class="word-count" id="wordCountBadge">0 words</span>
+                        <button id="copyBtn" class="btn btn-primary" onclick="copyPrompt()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            Copy Prompt
+                        </button>
+                        <button id="saveFavBtn" class="btn btn-secondary" onclick="saveToFavorites()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                            Save Preset
+                        </button>
+                        <div class="dropdown-export">
+                            <button id="exportBtn" class="btn btn-outline">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Export ▼
+                            </button>
+                            <div class="dropdown-menu" id="exportMenu">
+                                <button onclick="exportPrompt('md')">📄 Markdown (.md)</button>
+                                <button onclick="exportPrompt('txt')">📝 Text File (.txt)</button>
+                                <button onclick="exportPrompt('print')">🖨️ Print / PDF Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textarea Editor / Preview -->
+                <div class="textarea-wrapper">
+                    <textarea id="promptBox" placeholder="Click any button or generator card above to assemble your customized CBSE Science AI Prompt..."></textarea>
+                </div>
+
+                <!-- Footer Bar with AI Launch Quick Tips -->
+                <div class="workspace-footer">
+                    <div class="ai-tip">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <span><strong>Tip:</strong> Paste this prompt directly into Antigravity AI, Gemini, ChatGPT, or Claude to get instantly publishable classroom content.</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Saved Templates Modal -->
+    <div class="modal-backdrop" id="savedModal" hidden>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Saved Teacher Templates</h3>
+                <button class="close-btn" onclick="closeSavedModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="savedTemplatesList">
+                <!-- Dynamically populated saved templates -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeSavedModal()">Close</button>
+                <button class="btn btn-outline" onclick="clearAllSaved()">Clear All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Box -->
+    <div id="toast" class="toast" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="toastMsg">Prompt copied successfully!</span>
+    </div>
+
+    <!-- Application Footer -->
+    <footer class="app-footer">
+        <p>Developed for Kendriya Vidyalaya & CBSE Science & Physics Teachers | Academic Session 2026-27</p>
+        <p class="footer-sub">Aligned with NCERT 2026-27, NEP 2020 Competencies & NCF-SE Guidelines</p>
+    </footer>
+
+    <!-- Application JS Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
