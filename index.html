@@ -66,6 +66,10 @@
                         <span>All Generators</span>
                         <span class="cat-count" id="countAll">0</span>
                     </button>
+                    <button class="cat-btn" data-category="curiosity">
+                        <span>NCERT Curiosity (VI-X)</span>
+                        <span class="cat-count" id="countCuriosity">0</span>
+                    </button>
                     <button class="cat-btn" data-category="assessment">
                         <span>Worksheets & QPs</span>
                         <span class="cat-count" id="countAssessment">0</span>
@@ -134,12 +138,50 @@
                         </select>
                     </div>
 
-                    <!-- Chapter Database Selector -->
+                    <!-- Multi-Chapter Database Selector & Weightage Control Panel -->
                     <div class="form-group">
-                        <label for="paramChapterSelect">NCERT 2026-27 Chapter</label>
-                        <select id="paramChapterSelect" class="form-control">
+                        <div class="chapter-header-row">
+                            <label class="section-subtitle" style="margin-bottom:0;">NCERT 2026-27 Chapters</label>
+                            <span id="selectedChaptersBadge" class="chapter-count-badge">0 Selected</span>
+                        </div>
+                        <div class="chapter-quick-actions">
+                            <button type="button" id="btnSelectAllChapters" class="mini-action-btn">Select All</button>
+                            <button type="button" id="btnDeselectAllChapters" class="mini-action-btn">Clear All</button>
+                            <button type="button" id="btnAutoBalanceWeight" class="mini-action-btn highlight">⚡ Auto-Balance Marks</button>
+                        </div>
+                        <div id="chapterChecklistContainer" class="chapter-checklist-box">
                             <!-- Populated dynamically based on Class & Subject -->
-                        </select>
+                        </div>
+                        <select id="paramChapterSelect" style="display:none;"></select>
+                    </div>
+
+                    <!-- Chapter-Wise Weightage Control Panel -->
+                    <div class="form-group weightage-section" id="weightageSection">
+                        <div class="weightage-header">
+                            <label class="section-subtitle" style="margin-bottom:0; font-weight: 700; color: var(--accent-cyan);">Chapter Weightage Allocation</label>
+                            <div class="weightage-unit-toggle">
+                                <label class="unit-radio">
+                                    <input type="radio" name="weightageUnit" value="marks" checked> Marks (m)
+                                </label>
+                                <label class="unit-radio">
+                                    <input type="radio" name="weightageUnit" value="percent"> %
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="allocation-status-bar" id="allocationStatusBar">
+                            <div class="allocation-info">
+                                <span id="allocatedMarksText">Allocated: 80 / 80 Marks</span>
+                                <span id="allocatedPercentText" style="color: var(--text-muted); font-size: 11px;">(100%)</span>
+                            </div>
+                            <div class="allocation-progress-track">
+                                <div id="allocationProgressFill" class="allocation-progress-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+
+                        <div id="chapterWeightageList" class="chapter-weightage-list">
+                            <!-- Dynamic Weightage Rows per Selected Chapter -->
+                        </div>
                     </div>
 
                     <!-- Custom Chapter / Specific Topic Override -->
@@ -218,6 +260,8 @@
                     <button id="clearSearchBtn" class="clear-search-btn" hidden>&times;</button>
                 </div>
                 <div class="quick-tags">
+                    <span class="tag-chip" data-tag="Curiosity">Curiosity</span>
+                    <span class="tag-chip" data-tag="Inquiry">Inquiry-Based</span>
                     <span class="tag-chip" data-tag="Competency">Competency</span>
                     <span class="tag-chip" data-tag="Blueprint">Blueprint</span>
                     <span class="tag-chip" data-tag="Case Study">Case Study</span>
@@ -249,24 +293,53 @@
                         <span class="word-count" id="wordCountBadge">0 words</span>
                         <button id="copyBtn" class="btn btn-primary" onclick="copyPrompt()">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            Copy Prompt
+                            <span id="copyBtnText">Copy Question Paper</span>
                         </button>
                         <button id="saveFavBtn" class="btn btn-secondary" onclick="saveToFavorites()">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
                             Save Preset
                         </button>
                         <div class="dropdown-export">
-                            <button id="exportBtn" class="btn btn-outline">
+                            <button id="exportBtn" class="btn btn-primary" style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo)); font-weight: 700;">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                Export ▼
+                                Export PDF / Word ▼
                             </button>
                             <div class="dropdown-menu" id="exportMenu">
-                                <button onclick="exportPrompt('md')">📄 Markdown (.md)</button>
-                                <button onclick="exportPrompt('txt')">📝 Text File (.txt)</button>
-                                <button onclick="exportPrompt('print')">🖨️ Print / PDF Preview</button>
+                                <div class="dropdown-section-title">📄 PDF Exports (Ready to Print)</div>
+                                <button onclick="exportPrompt('pdf', 'qp')">📕 Export Question Paper (PDF)</button>
+                                <button onclick="exportPrompt('pdf', 'ak')">🔑 Export Answer Key (PDF)</button>
+                                <button onclick="exportPrompt('pdf', 'combined')">📑 Export Full Set QP + Key (PDF)</button>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-section-title">📘 MS Word Exports (.doc / .docx)</div>
+                                <button onclick="exportPrompt('word', 'qp')">📘 Export Question Paper (MS Word)</button>
+                                <button onclick="exportPrompt('word', 'ak')">🔑 Export Answer Key (MS Word)</button>
+                                <button onclick="exportPrompt('word', 'combined')">📑 Export Full Set QP + Key (MS Word)</button>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-section-title">📝 Text & Markdown Exports</div>
+                                <button onclick="exportPrompt('md', 'active')">📄 Export Active View (.md)</button>
+                                <button onclick="exportPrompt('txt', 'active')">📝 Export Active View (.txt)</button>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Output View Selector Tabs -->
+                <div class="workspace-tab-container">
+                    <div class="workspace-tabs" role="tablist">
+                        <button id="tabQP" class="tab-btn active" onclick="switchOutputTab('qp')" role="tab" aria-selected="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 1-2 2v16a2 2 0 0 1 2 2h12a2 2 0 0 1 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>📄 Question Paper Only</span>
+                        </button>
+                        <button id="tabAK" class="tab-btn" onclick="switchOutputTab('ak')" role="tab" aria-selected="false">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                            <span>🔑 Answer Key & Marking Scheme</span>
+                        </button>
+                        <button id="tabCombined" class="tab-btn" onclick="switchOutputTab('combined')" role="tab" aria-selected="false">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+                            <span>📑 Combined View (QP + Key)</span>
+                        </button>
+                    </div>
+                    <div class="current-view-badge" id="currentViewBadge">Question Paper Mode</div>
                 </div>
 
                 <!-- Textarea Editor / Preview -->

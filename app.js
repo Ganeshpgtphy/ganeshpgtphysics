@@ -3,27 +3,29 @@
    Authoritative CBSE/KVS Prompt & Direct Question Paper Assembly Engine
    ========================================================================== */
 
-// 1. NCERT 2026-27 Chapter Database (Classes 6-12)
+// 1. NCERT 2026-27 Curiosity & CBSE Science Chapter Database (Classes 6-12)
 const cbseChapterDatabase = {
     "Class 6": {
         "General Science": [
-            "Chapter 1: Components of Food",
-            "Chapter 2: Sorting Materials into Groups",
-            "Chapter 3: Separation of Substances",
-            "Chapter 4: Getting to Know Plants",
-            "Chapter 5: Body Movements",
-            "Chapter 6: The Living Organisms and Their Surroundings",
-            "Chapter 7: Motion and Measurement of Distances",
-            "Chapter 8: Light, Shadows and Reflections",
-            "Chapter 9: Electricity and Circuits",
-            "Chapter 10: Fun with Magnets"
+            "Chapter 1: The Wonderful World of Science",
+            "Chapter 2: Diversity in the Living World",
+            "Chapter 3: Mindful Eating: A Path to a Healthy Body",
+            "Chapter 4: Exploring Magnets",
+            "Chapter 5: Measurement of Length and Motion",
+            "Chapter 6: Materials Around Us",
+            "Chapter 7: Temperature and Its Measurement",
+            "Chapter 8: Water in Our Life",
+            "Chapter 9: Methods of Separation in Everyday Life",
+            "Chapter 10: Living Creatures: Exploring Their Characteristics",
+            "Chapter 11: Nature's Treasures",
+            "Chapter 12: Beyond Earth"
         ]
     },
     "Class 7": {
         "General Science": [
             "Chapter 1: Nutrition in Plants",
             "Chapter 2: Nutrition in Animals",
-            "Chapter 3: Heat and Temperature",
+            "Chapter 3: Heat",
             "Chapter 4: Acids, Bases and Salts",
             "Chapter 5: Physical and Chemical Changes",
             "Chapter 6: Respiration in Organisms",
@@ -31,25 +33,26 @@ const cbseChapterDatabase = {
             "Chapter 8: Reproduction in Plants",
             "Chapter 9: Motion and Time",
             "Chapter 10: Electric Current and Its Effects",
-            "Chapter 11: Light and Optics",
-            "Chapter 12: Forests: Our Lifeline"
+            "Chapter 11: Light",
+            "Chapter 12: Forests: Our Lifeline",
+            "Chapter 13: Wastewater Story"
         ]
     },
     "Class 8": {
         "General Science": [
-            "Chapter 1: Crop Production and Management",
-            "Chapter 2: Microorganisms: Friend and Foe",
-            "Chapter 3: Coal and Petroleum",
-            "Chapter 4: Combustion and Flame",
-            "Chapter 5: Conservation of Plants and Animals",
-            "Chapter 6: Reproduction in Animals",
-            "Chapter 7: Reaching the Age of Adolescence",
-            "Chapter 8: Force and Pressure",
-            "Chapter 9: Friction",
-            "Chapter 10: Sound",
-            "Chapter 11: Chemical Effects of Electric Current",
-            "Chapter 12: Some Natural Phenomena",
-            "Chapter 13: Light"
+            "Chapter 1: Exploring the Investigative World of Science",
+            "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
+            "Chapter 3: Health: The Ultimate Treasure",
+            "Chapter 4: Electricity: Magnetic and Heating Effects",
+            "Chapter 5: Exploring Forces",
+            "Chapter 6: Pressure, Winds, Storms, and Cyclones",
+            "Chapter 7: Particulate Nature of Matter",
+            "Chapter 8: Nature of Matter: Elements, Compounds, and Mixtures",
+            "Chapter 9: The Amazing World of Solutes, Solvents, and Solutions",
+            "Chapter 10: Light: Mirrors and Lenses",
+            "Chapter 11: Keeping Time with the Skies (Astronomy & Solar System)",
+            "Chapter 12: How Nature Works in Harmony (Ecosystems & Balance)",
+            "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet"
         ]
     },
     "Class 9": {
@@ -58,13 +61,13 @@ const cbseChapterDatabase = {
             "Chapter 2: Is Matter Around Us Pure?",
             "Chapter 3: Atoms and Molecules",
             "Chapter 4: Structure of the Atom",
-            "Chapter 5: The Fundamental Unit of Life (Cell)",
-            "Chapter 6: Tissues (Plant & Animal)",
-            "Chapter 7: Motion and Kinematics",
+            "Chapter 5: The Fundamental Unit of Life",
+            "Chapter 6: Tissues",
+            "Chapter 7: Motion",
             "Chapter 8: Force and Laws of Motion",
-            "Chapter 9: Gravitation & Fluid Pressure",
-            "Chapter 10: Work, Energy and Power",
-            "Chapter 11: Sound and Waves",
+            "Chapter 9: Gravitation",
+            "Chapter 10: Work and Energy",
+            "Chapter 11: Sound",
             "Chapter 12: Improvement in Food Resources"
         ]
     },
@@ -73,10 +76,10 @@ const cbseChapterDatabase = {
             "Chapter 1: Chemical Reactions and Equations",
             "Chapter 2: Acids, Bases and Salts",
             "Chapter 3: Metals and Non-metals",
-            "Chapter 4: Carbon and its Compounds",
+            "Chapter 4: Carbon and Its Compounds",
             "Chapter 5: Life Processes",
             "Chapter 6: Control and Coordination",
-            "Chapter 7: How do Organisms Reproduce?",
+            "Chapter 7: How Do Organisms Reproduce?",
             "Chapter 8: Heredity and Evolution",
             "Chapter 9: Light – Reflection and Refraction",
             "Chapter 10: The Human Eye and Colourful World",
@@ -172,6 +175,159 @@ const cbseChapterDatabase = {
 // 2. Templates Library Engine
 const templatesLibrary = [
     {
+        id: "curiosity_lab",
+        category: "curiosity",
+        title: "🔬 NCERT Curiosity Hands-On Activity & Toy Lab",
+        subtitle: "Low-Cost Experiential Toys & Discovery Lab",
+        tags: ["Curiosity", "Activity", "Toy Making", "Experiential", "NCF-SE 2023"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+        description: "Design low-cost hands-on science activities, toy-making projects (e.g. magnetic floating top, pinhole camera, red cabbage indicator), observation sheets, and curiosity questions mandated by NCERT Curiosity series.",
+        
+        directContentBuilder: function(p) {
+            return `NCERT CURIOSITY SCIENCE SERIES | EXPERIENTIAL TOY & ACTIVITY MANUAL
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
+CHAPTER / CURIOSITY MODULE: ${p.chapter}
+Pedagogical Model: NCF-SE 2023 Experiential Learning & Joy of Learning (NEP 2020)
+
+================================================================================
+1. CURIOSITY ACTIVITY TITLE & OBJECTIVE
+Title: "Hands-On Science Toy & Activity: Exploring ${p.chapter}"
+Objective: To build a working low-cost model / toy using everyday materials to observe, test, and explain the core scientific principle of ${p.chapter}.
+
+================================================================================
+2. MATERIALS REQUIRED (ZERO / LOW-COST HOUSEHOLD ITEMS)
+• Cardboard strips, plastic cups, rubber bands, stainless steel spoons, sewing thread.
+• Recycled plastic bottles, bar magnet / iron nails, drops of turmeric / lemon juice or vinegar.
+• Ruler, measuring tape, water container, stop watch / smartphone timer.
+
+================================================================================
+3. STEP-BY-STEP TOY MAKING & ASSEMBLY PROCEDURE
+Step 1: Take the base container/cardboard and arrange the components in alignment with ${p.chapter}.
+Step 2: Construct the pivot/terminal point and attach the movable or reactive element using thread/tape.
+Step 3: Test the initial equilibrium state before applying external stimulus (temperature, magnetic field, force, or solution pH).
+Step 4: Gradually trigger the system and observe the mechanical motion, deflection, color transition, or state change.
+
+================================================================================
+4. STUDENT CURIOSITY OBSERVATION SHEET
+| Trial / Test Case | Input Condition / Variable | Observed Response / Deflection | Scientific Inference (${p.chapter}) |
+|---|---|---|---|
+| Trial 1 (Control) | Standard room condition | Baseline state recorded | Reference benchmark |
+| Trial 2 (Modified) | Parameter doubled / changed | Noticeable shift / reaction | ${p.chapter} effect confirmed |
+| Trial 3 (Extreme) | Maximum load / limit | Saturation / rapid transition | Boundary condition verified |
+
+================================================================================
+5. CURIOSITY INQUIRY QUESTIONS ("JOY OF LEARNING")
+Q1. [Wondering Question] What surprised you most when you operated your handmade science toy?
+Q2. [Cause & Effect] If you double the length or concentration in your activity, how does the response time change?
+Q3. [Real-World Link] How is this simple toy mechanism utilized in large-scale modern technology or nature?
+
+---ANSWER_KEY_START---
+NCERT CURIOSITY ACTIVITY TEACHER FACILITATION GUIDE & ANSWERS:
+================================================================================
+• Core Principle: Explains the primary mechanism of ${p.chapter} through hands-on tactile manipulation.
+• Teacher Tip: Prompt students to formulate their own hypotheses BEFORE assembling the toy.
+• Q1 Guidance: Encourage qualitative descriptions of energy transformation, force deflection, or chemical color shifts.
+• Q2 Guidance: Emphasize linear or square-law mathematical relations (e.g. double input yields direct/proportional response).
+• Q3 Guidance: Link to real-life applications like sensors, motors, water filtration, or ecological balance.`;
+        },
+
+        builder: function(p) {
+            return `Act as an NCERT Curiosity Textbook Author and National Science Activity Specialist.
+
+Design a COMPLETE LOW-COST HANDS-ON SCIENCE ACTIVITY & TOY-MAKING MANUAL strictly adhering to NCERT Curiosity (Grade 6-8) and CBSE Guidelines (Grade 9-10).
+
+PARAMETERS:
+• Class Level: ${p.classLevel}
+• Subject: ${p.subject}
+• Curiosity Chapter: ${p.chapter}
+• Targeted Learner Tier: ${p.tier}
+
+PART 1: EXPERIENTIAL TOY & ACTIVITY MANUAL
+1. Activity & Toy Title mapped to NCERT Curiosity chapter.
+2. Low-cost / Household materials list.
+3. Step-by-step assembly and experimentation guide.
+4. Student Observation Worksheet & Data Matrix.
+5. "Joy of Learning" Inquiry Questions (Why, How, What If?).
+
+---ANSWER_KEY_START---
+PART 2: TEACHER PEDAGOGICAL FACILITATION GUIDE
+1. Expected observational outcomes and scientific rationale.
+2. Troubleshooting common student errors during toy assembly.
+3. Model answers for Inquiry Questions.`;
+        }
+    },
+
+    {
+        id: "curiosity_inquiry",
+        category: "curiosity",
+        title: "❓ NCERT Curiosity Inquiry & Real-World Explorer",
+        subtitle: "5E Inquiry Framework & Everyday Phenomena",
+        tags: ["Curiosity", "Inquiry", "NCF-SE 2023", "Everyday Science"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+        description: "Generate curiosity-driven inquiry sheets with real-world phenomenon analysis, 'What If?' speculative science challenges, cross-curricular STEM links, and self-reflection prompts.",
+        
+        directContentBuilder: function(p) {
+            return `NCERT CURIOSITY SCIENCE SERIES | INQUIRY & EVERYDAY PHENOMENA EXPLORER
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
+THEMATIC UNIT: ${p.chapter}
+NCF-SE 2023 Competency Framework: Inquiry-Driven Thinking & Critical Reasoning
+
+================================================================================
+1. REAL-WORLD PHENOMENON TO EXPLORE ("I WONDER WHY...")
+Scenario: "Observe a daily situation related to ${p.chapter}. Have you ever wondered why certain objects behave differently under changing environmental conditions?"
+
+Key Observation Challenge:
+- Notice what happens when you alter one parameter while observing ${p.chapter} in your home or surrounding environment.
+
+================================================================================
+2. 5E CURIOSITY INQUIRY TASKS
+
+[TASK 1: ENGAGE - SPARKING CURIOSITY]
+Look at the given situation in ${p.chapter}. Formulate 2 "Why" questions and 2 "How" questions about what causes this phenomenon.
+
+[TASK 2: EXPLORE - INVESTIGATIVE EXPERIMENT]
+Design a simple 5-minute home investigation using easily available items to test one of your questions about ${p.chapter}.
+• Hypothesis: "I predict that if I change __________, then __________ will happen."
+• Method: Detail your setup in 3 simple bullet points.
+
+[TASK 3: EXPLAIN - SCIENTIFIC REASONING]
+Explain the scientific reason behind your observation using the concept of ${p.chapter}. Use correct scientific terms (e.g. force, energy, particles, reaction, adaptation).
+
+[TASK 4: ELABORATE - "WHAT IF?" CHALLENGE]
+• What if the fundamental constant or environmental factor in ${p.chapter} were doubled?
+• What if this process stopped occurring on Earth for 24 hours? Describe the impact on living organisms or technology.
+
+[TASK 5: EVALUATE - REFLECTION CHIP]
+Rate your understanding of ${p.chapter}:
+[ ] I can explain this to a classmate.  [ ] I can connect it to daily life.  [ ] I need to explore more.
+
+---ANSWER_KEY_START---
+NCERT CURIOSITY INQUIRY TEACHER REFERENCE & MODEL RESPONSES:
+================================================================================
+• Phenomenon Breakdown: Connects ${p.chapter} to observable physical, chemical, or biological processes in nature.
+• Model Hypothesis: Clear testable statement identifying independent and dependent variables.
+• Model "What If" Rationale: Evaluates higher-order consequences and systems thinking.
+• Cross-Curricular Link: Combines Science, Mathematics (graphing/ratios), and Environmental Education.`;
+        },
+
+        builder: function(p) {
+            return `You are a Master Educator specializing in NCERT Curiosity Inquiry-Based Learning and NEP 2020 NCF-SE Pedagogy.
+
+Create a CURIOSITY INQUIRY & REAL-WORLD EXPLORER WORKSHEET for Class ${p.classLevel} Science on "${p.chapter}".
+
+PART 1: STUDENT INQUIRY EXPLORER
+1. Real-World Phenomenon hook ("I Wonder Why...").
+2. 5E Curiosity Tasks (Engage, Explore, Explain, Elaborate "What-If", Evaluate).
+3. Cross-Curricular STEM Connection (Science + Math/Art/Environment).
+
+---ANSWER_KEY_START---
+PART 2: TEACHER INQUIRY FACILITATION & MODEL ANSWERS
+1. Model scientific explanations for student inquiry prompts.
+2. Guidance for leading classroom discussions.`;
+        }
+    },
+
+    {
         id: "qp",
         category: "assessment",
         title: "📝 Blueprint Question Paper Setter",
@@ -199,7 +355,7 @@ GENERAL INSTRUCTIONS:
 6. Section E contains 3 Case-Based / Data-Integrated units of assessment of 4 marks each with sub-parts.
 7. Use of calculators is NOT permitted. Logarithmic tables may be provided on request.
 ${p.includeBloom ? '8. Bloom\'s Taxonomy Levels are tagged for each question [R: Remember, U: Understand, Ap: Apply, An: Analyze, Ev: Evaluate, C: Create].\n' : ''}${p.includeNEP ? '9. Questions strictly test Competency-Based Education (CBE) as per NEP-2020 & NCF-SE 2023.\n' : ''}
-================================================================================
+${p.chapterWeightageTable ? p.chapterWeightageTable + '\n' : ''}================================================================================
 EXAM BLUEPRINT MATRIX (CBSE SESSION 2026-27)
 
 | Section | Question Type | No. of Qs | Marks per Q | Total Marks | Targeted Bloom's Taxonomy |
@@ -445,7 +601,8 @@ Sub-questions:
 (c) [2 Marks] If another resistor wire 'Y' of twice the length and half the cross-sectional area of 'X' is connected in parallel with 'X', calculate the new equivalent resistance of the parallel combination.
 
 ================================================================================
-${p.includeAnswerKey ? `OFFICIAL MARKING SCHEME & STEP-BY-STEP ANSWER KEY
+${p.includeAnswerKey ? `---ANSWER_KEY_START---
+OFFICIAL MARKING SCHEME & STEP-BY-STEP ANSWER KEY
 ================================================================================
 SECTION A - ANSWER KEY:
 Q1: (C) | Q2: (B) | Q3: (B) | Q4: (A) | Q5: (A) | Q6: (B) | Q7: (A) | Q8: (B)
@@ -503,10 +660,10 @@ EXAM PARAMETERS:
 • Duration: ${p.time} Minutes
 • Target Difficulty: ${p.tier}
 
-PART 1: BLUEPRINT MATRIX TABLE
+${p.chapterWeightageTable ? p.chapterWeightageTable + '\n\n' : ''}PART 1: BLUEPRINT MATRIX TABLE
 Generate a markdown table mapping:
 | Chapter / Unit | VSA / MCQ (1M) | SA-I (2M) | SA-II (3M) | LA (5M) | Case Study (4M) | Total Marks |
-Ensure the blueprint total sums exactly to ${p.marks} Marks.
+Ensure questions are distributed strictly according to the configured chapter weightages above so that the blueprint total sums exactly to ${p.marks} Marks.
 
 PART 2: QUESTION PAPER CONTENT (SECTIONS A - E)
 Follow standard CBSE question paper layout:
@@ -526,7 +683,7 @@ Follow standard CBSE question paper layout:
 • SECTION E (4 Marks Case-Based / Integrated Questions):
   - 2 Passage/Diagram/Graph based scenarios with sub-questions (1M + 1M + 2M).
 
-${p.includeAnswerKey ? 'PART 3: OFFICIAL MARKING SCHEME & ANSWER KEY\nProvide value points, key step markings (0.5M distribution), and final answers for every single question.\n' : ''}
+${p.includeAnswerKey ? '---ANSWER_KEY_START---\nPART 3: OFFICIAL MARKING SCHEME & ANSWER KEY\nProvide value points, key step markings (0.5M distribution), and final answers for every single question.\n' : ''}
 
 RULES:
 - NO DIRECT REPETITION of basic textbook definitions; prioritize application and reasoning.
@@ -604,7 +761,7 @@ Q9. Read the scenario: "During an industrial audit of a solar power station base
 (c) State two safety precautions when working with concentrated thermal radiation. (5M)
 
 ${p.includeAnswerKey ? `
-================================================================================
+---ANSWER_KEY_START---
 SOLUTIONS & ANSWER KEY:
 Part A: 1. Relevant SI unit | 2. True | 3. Increases | 4. False | 5. Ammeter/Voltmeter
 Part B: Q1: (B) | Q2: (B) | Q3: (A) | Q4: (C)
@@ -635,7 +792,7 @@ STRUCTURE & CONTENT SECTIONS TO GENERATE:
 8. EXPERIMENTAL / ACTIVITY SKILLS: 2 Questions based on NCERT activity setup, observations, or laboratory safety.
 ${p.subject.includes('Physics') || p.classLevel.includes('11') || p.classLevel.includes('12') ? '9. NUMERICAL & DERIVATION SECTION: 3 Step-by-step numerical problems (Basic, Standard, Challenge level) with proper SI units.\n' : ''}
 10. VALUES & LIFE SKILLS INTEGRATION: 1 Application question connecting science to daily life/environmental sustainability.
-${p.includeAnswerKey ? '11. DETAILED ANSWER KEY & MARKING SCHEME: Provide full step-by-step solutions, key points, and marking distribution for every question.\n' : ''}
+${p.includeAnswerKey ? '---ANSWER_KEY_START---\n11. DETAILED ANSWER KEY & MARKING SCHEME: Provide full step-by-step solutions, key points, and marking distribution for every question.\n' : ''}
 ${p.includeRubrics ? '12. ASSESSMENT RUBRIC: Analytic 4-level rubric grid (Needs Improvement, Developing, Proficient, Advanced).\n' : ''}
 
 PEDAGOGICAL DIRECTIVES:
@@ -662,57 +819,60 @@ DESCRIPTION: Competency-based self-assessment quiz for Session 2026-27. Attempt 
 
 --------------------------------------------------
 Q1. What is the primary SI unit used to measure key quantities in ${p.chapter}?
-Question Type: Multiple Choice
-Points: 1
+Question Type: Multiple Choice | Points: 1
 Option A: Joule (J) / Volt (V) / Newton (N)
 Option B: Watt per hour (W/h)
 Option C: Meter per second squared (m/s²)
 Option D: Calorie (cal)
-✔ Correct Answer: Option A
-💡 Feedback: Option A is the standard SI metric unit recognized under CBSE/NCERT guidelines.
 
 --------------------------------------------------
 Q2. In ${p.chapter}, if current/input is doubled in a constant resistance system, heat produced (H = I²Rt) increases by:
-Question Type: Multiple Choice
-Points: 1
+Question Type: Multiple Choice | Points: 1
 Option A: 2 times
 Option B: 4 times
 Option C: 8 times
 Option D: Remains identical
-✔ Correct Answer: Option B
-💡 Feedback: According to Joule's law of heating, heat is directly proportional to the square of current (H ∝ I²).
 
 --------------------------------------------------
 Q3. Which safety component automatically opens the circuit during a severe current overload?
-Question Type: Multiple Choice
-Points: 1
+Question Type: Multiple Choice | Points: 1
 Option A: Ammeter
 Option B: Electric Fuse / MCB
 Option C: Rheostat
 Option D: Voltmeter
-✔ Correct Answer: Option B
-💡 Feedback: Fuses and MCBs melt or trip to break the live circuit when current exceeds maximum safety ratings.
 
 --------------------------------------------------
 Q4. Statement 1: Pure distilled water conducts electricity. Statement 2: Free mobile ions are required for conduction.
-Question Type: Multiple Choice
-Points: 1
+Question Type: Multiple Choice | Points: 1
 Option A: Both statements are true
 Option B: Statement 1 is false, Statement 2 is true
 Option C: Statement 1 is true, Statement 2 is false
 Option D: Both statements are false
-✔ Correct Answer: Option B
-💡 Feedback: Pure water lacks free ions and is an insulator; adding acid creates mobile ions for conduction.
 
 --------------------------------------------------
 Q5. Calculate equivalent resistance when two 12 Ω resistors are connected in parallel:
-Question Type: Multiple Choice
-Points: 1
+Question Type: Multiple Choice | Points: 1
 Option A: 24 Ω
 Option B: 12 Ω
 Option C: 6 Ω
 Option D: 3 Ω
-✔ Correct Answer: Option C
+
+---ANSWER_KEY_START---
+AUTO-GRADED ANSWER KEY & PEDAGOGICAL FEEDBACK GUIDE:
+--------------------------------------------------
+Q1. ✔ Correct Answer: Option A
+💡 Feedback: Option A is the standard SI metric unit recognized under CBSE/NCERT guidelines.
+
+Q2. ✔ Correct Answer: Option B
+💡 Feedback: According to Joule's law of heating, heat is directly proportional to the square of current (H ∝ I²).
+
+Q3. ✔ Correct Answer: Option B
+💡 Feedback: Fuses and MCBs melt or trip to break the live circuit when current exceeds maximum safety ratings.
+
+Q4. ✔ Correct Answer: Option B
+💡 Feedback: Pure water lacks free ions and is an insulator; adding acid creates mobile ions for conduction.
+
+Q5. ✔ Correct Answer: Option C
 💡 Feedback: 1/Rp = 1/12 + 1/12 = 2/12 = 1/6 => Rp = 6 Ω.`;
         },
 
@@ -727,32 +887,14 @@ TARGET INFORMATION:
 • Chapter / Topic: ${p.chapter}
 • Number of Questions: 15-20 Questions
 
-QUIZ STRUCTURE:
-1. QUIZ TITLE & DESCRIPTION:
-   - Engaging Title (e.g. "CBSE ${p.classLevel} ${p.subject} - Mastery Quiz: ${p.chapter}")
-   - Student Instructions (Time limit, point values, attempt rules).
+PART 1: QUESTION PAPER / STUDENT QUIZ ITEMS
+• Create 15-20 Multiple Choice Questions (Options A, B, C, D) with Points distribution.
+• Group into Recall, Application, Diagram reasoning, and HOTS.
 
-2. QUESTION ITEM FORMAT (Repeat for all questions):
-   --------------------------------------------------
-   Q[No]. [Question Text clearly worded]
-   Question Type: Multiple Choice
-   Required: Yes
-   Points: 1 Point
-   Option A: [Choice]
-   Option B: [Choice]
-   Option C: [Choice]
-   Option D: [Choice]
-   ✔ Correct Answer: Option [A/B/C/D]
-   💡 Answer Feedback / Explanation: [Explain WHY the correct option is right and WHY common distractors are incorrect].
-   --------------------------------------------------
-
-QUESTION TYPES TO INCLUDE:
-- 5 Recall & Conceptual understanding MCQs
-- 5 Application & Numerical MCQs
-- 3 Diagram/Image-based reasoning MCQs (Provide description of image to attach in Google Forms)
-- 2 HOTS & Real-world scenario MCQs
-
-EXPORT FORMAT: Plain text and markdown structured so a teacher can copy-paste into Google Forms without retyping.`;
+---ANSWER_KEY_START---
+PART 2: ANSWER KEY & PEDAGOGICAL FEEDBACK
+• Provide correct answer choice (Option A/B/C/D) for each question.
+• Include detailed feedback explanation for each question explaining why distractor options are incorrect.`;
         }
     },
 
@@ -771,47 +913,51 @@ CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
 CHAPTER / TOPIC: ${p.chapter}
 
 ================================================================================
-1. CORE DERIVATION & MATHEMATICAL PROOF (NCERT STANDARD)
+1. CORE DERIVATION & MATHEMATICAL PROOF TASK
 Topic: Derivation of fundamental relation in ${p.chapter}
 
-Assumptions:
+Assumptions to state:
 - System is isolated from external non-conservative dissipative forces.
 - Media involved are homogeneous, isotropic, and linear.
 
-Step-by-step Mathematical Proof:
-1. Consider a differential element dx subjected to field E / potential V.
-2. The work done in moving charge q by distance dx is given by:
-   dW = F · dx = (q E) dx
-3. Integrating both sides from initial state r1 to final state r2:
-   W = ∫ q E dx = q (V2 - V1) = q ΔV
-4. Substituting system constants yields the final expression:
-   Result: Output parameter = K (A / d) or V = I R as applicable.
+Mathematical proof steps to demonstrate:
+1. Consider differential element dx subjected to field E / potential V.
+2. Formulate work done expression dW = F · dx = (q E) dx.
+3. Integrate from initial state r1 to final state r2.
 
 ================================================================================
 2. TIERED NUMERICAL PROBLEM BANK
 
 [TIER 1 - CBSE BOARD STANDARD (3 Marks)]
-Q1. A potential difference of 100 V is applied across a conductor of length 0.5 m. If the drift velocity of free electrons is 2.5 × 10⁻⁴ m/s, calculate the mobility of electrons.
-Solution: Mobility μ = v_d / E = v_d / (V/L) = (2.5 × 10⁻⁴) / (100 / 0.5) = 1.25 × 10⁻⁶ m²/(V·s).
+Q1. A potential difference of 100 V is applied across a conductor of length 0.5 m. If drift velocity of free electrons is 2.5 × 10⁻⁴ m/s, calculate electron mobility.
 
 [TIER 2 - EXEMPLAR & CONCEPTUAL (4 Marks)]
 Q2. Two point charges q1 = +3 μC and q2 = -3 μC are located 20 cm apart in vacuum.
-(a) Find the electric field at the midpoint O of the line joining the two charges.
-(b) If a negative test charge of magnitude 1.5 × 10⁻⁹ C is placed at O, find force experienced.
-Solution: Field E_net = 2 × (k q / r²) = 2 × (9×10⁹ × 3×10⁻⁶ / (0.1)²) = 5.4 × 10⁶ N/C towards q2.
-Force F = q_test × E_net = (1.5×10⁻⁹) × (5.4×10⁶) = 8.1 × 10⁻³ N.
+(a) Find electric field at midpoint O.
+(b) If a test charge q_test = -1.5 × 10⁻⁹ C is placed at O, find net force experienced.
 
 [TIER 3 - JEE MAIN / NEET CHALLENGE (5 Marks)]
-Q3. In a Wheatstone bridge circuit, three arms have resistances 10 Ω, 20 Ω, and 30 Ω. What resistance must be connected in parallel with the 30 Ω resistor so that the bridge becomes balanced?
-Solution: For balanced bridge, R1/R2 = R3/R_eq => 10/20 = R3_effective / 30 ... Solve R_parallel = 15 Ω.
+Q3. In a Wheatstone bridge, three arms have resistances 10 Ω, 20 Ω, and 30 Ω. Calculate resistance to connect in parallel with 30 Ω resistor to balance bridge.
 
 ================================================================================
-3. VIVA-VOCE QUESTION BANK WITH MODEL ANSWERS
+3. VIVA-VOCE QUESTION BANK FOR PRACTICALS
 Q1. What is the physical significance of drift velocity?
-Answer: Drift velocity is the average velocity attained by free electrons in a conductor due to an applied electric field.
-
 Q2. Why is a potentiometer preferred over a voltmeter for measuring EMF?
-Answer: A potentiometer draws no current from the cell at balance point (null deflection method), measuring true EMF, whereas a voltmeter draws current.`;
+
+---ANSWER_KEY_START---
+PHYSICS XI-XII STEP-BY-STEP SOLUTIONS & VIVA MODEL ANSWERS:
+================================================================================
+1. DERIVATION SOLUTION:
+Result: Output parameter = K (A / d) or V = I R as applicable. W = ∫ q E dx = q (V2 - V1) = q ΔV.
+
+2. NUMERICAL SOLUTIONS:
+Q1 Solution: Mobility μ = v_d / E = v_d / (V/L) = (2.5 × 10⁻⁴) / (100 / 0.5) = 1.25 × 10⁻⁶ m²/(V·s) [3M].
+Q2 Solution: (a) E_net = 2 × (k q / r²) = 2 × (9×10⁹ × 3×10⁻⁶ / (0.1)²) = 5.4 × 10⁶ N/C towards q2 [2M]. (b) Force F = q_test × E_net = (1.5×10⁻⁹) × (5.4×10⁶) = 8.1 × 10⁻³ N [2M].
+Q3 Solution: For balance, R1/R2 = R3_eff/30 => 10/20 = R3_eff / 30 => R3_eff = 15 Ω. 1/15 = 1/30 + 1/R_parallel => R_parallel = 30 Ω [5M].
+
+3. VIVA VOCE MODEL ANSWERS:
+Q1 Ans: Average velocity attained by free electrons in a conductor due to applied electric field.
+Q2 Ans: Potentiometer draws zero current at null deflection point, measuring true EMF without terminal voltage drop.`;
         },
 
         builder: function(p) {
@@ -825,30 +971,17 @@ TOPIC SPECIFICATION:
 • Chapter / Module: ${p.chapter}
 • Level: ${p.tier}
 
-PACKAGE COMPONENTS TO GENERATE:
-1. LESSON PLAN & CONCEPT MAP:
-   - 5-Period teaching schedule outline.
-   - Core concepts flow diagram (ASCII text / tree structure).
-   - Key formulas with SI units and dimensional formulas.
+PART 1: LESSON PLAN, DERIVATIONS & QUESTION BANK
+1. Lesson Plan & Concept Map outline.
+2. NCERT Step-by-step Derivation tasks.
+3. Tiered Numerical Problem Bank (Tier 1 Board, Tier 2 Exemplar, Tier 3 JEE/NEET).
+4. Viva-Voce Questions for laboratory practice.
 
-2. CORE DERIVATIONS & MATHEMATICAL PROOFS:
-   - Step-by-step NCERT textbook derivation(s) with clear diagram instructions and assumptions.
-
-3. NUMERICAL PROBLEM BANK (TIERED):
-   - Tier 1 (CBSE Board Standard): 3 Numerical problems with full solutions.
-   - Tier 2 (Exemplar & Conceptual): 2 Multi-concept problems.
-   - Tier 3 (JEE Main / NEET Challenge): 2 High-level competitive questions with short tricks/hints.
-
-4. REAL-WORLD APPLICATIONS & MISCONCEPTIONS:
-   - 3 Real-life engineering/natural applications of the concept.
-   - 3 Common student misconceptions and how to correct them in class.
-
-5. LAB & VIVA-VOCE ASSISTANT:
-   - Relevant NCERT practical connection.
-   - 5 Conceptual Viva-Voce questions with ideal answers.
-
-6. EXIT TICKET / QUICK ASSESSMENT:
-   - 3-minute wrap-up question for classroom evaluation.`;
+---ANSWER_KEY_START---
+PART 2: DETAILED SOLUTIONS & VIVA MODEL ANSWERS
+1. Step-by-step mathematical proofs and derivations.
+2. Complete numerical solutions with SI units and step marks.
+3. Viva-Voce model answers.`;
         }
     },
 
@@ -870,16 +1003,23 @@ CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | TOPIC: ${p.chapter}
 Q1. A student plots V versus I graph for two metallic wires A and B made of same material and same length, but different thicknesses. Wire A has steeper slope than Wire B.
 (a) Which wire has higher resistance? Explain using slope definition.
 (b) Which wire is thicker? Justify using R = ρ L / A.
-Solution: (a) Slope = V/I = Resistance. Wire A has steeper slope, so Wire A has higher resistance.
-(b) Resistance is inversely proportional to cross-sectional area A. Wire B has lower resistance, so Wire B is thicker.
 
 ================================================================================
 2. REAL-WORLD CASE-BASED SCENARIO
 Q2. Scenario: "An electric kettle rated 2.2 kW operates on 220 V mains supply. The user connects it using a thin two-core flex wire without earth connection."
 (a) Calculate current drawn by the kettle.
 (b) Explain two electrical hazards present in this setup and propose safety corrections.
-Solution: (a) I = P/V = 2200 W / 220 V = 10 A.
-(b) Hazards: 10 A current in thin wire causes overheating (I²Rt). Lack of earth pin creates shock hazard if metallic body gets energized. Correction: Use 15 A 3-pin heavy gauge cable with earthing.`;
+
+---ANSWER_KEY_START---
+COMPETENCY QUESTION BANK - STEP-BY-STEP SOLUTIONS & MARKING SCHEME:
+================================================================================
+Q1 Solution:
+(a) Slope = V/I = Resistance R. Wire A has steeper slope, so Wire A has higher resistance [1.5M].
+(b) Resistance is inversely proportional to cross-sectional area (R ∝ 1/A). Wire B has lower resistance, so Wire B is thicker [1.5M].
+
+Q2 Solution:
+(a) Current I = P / V = 2200 W / 220 V = 10 A [1.5M].
+(b) Hazards: 10 A current in thin flex causes severe overheating (I²Rt hazard). Absence of earth wire poses electrical shock risk if metal casing gets energized. Correction: Use 15 A 3-pin cable with proper earthing [2.5M].`;
         },
 
         builder: function(p) {
@@ -890,20 +1030,15 @@ TARGET SPECS:
 • Subject: ${p.subject}
 • Chapter: ${p.chapter}
 
-QUESTION VARIETIES REQUIRED:
-1. GRAPHICAL & DATA ANALYSIS QUESTIONS (3 Questions):
-   - Questions featuring data tables, V-I graphs, ray diagrams, or reaction rate curves requiring quantitative interpretation.
+PART 1: COMPETENCY QUESTION BANK ITEMS
+1. Graphical & Data Analysis Questions.
+2. Case-Study & Real-world Scenarios.
+3. Assertion-Reasoning Questions.
+4. NCERT Activity-based Inquiry Questions.
 
-2. CASE-STUDY & SCENARIO-BASED QUESTIONS (2 Passages):
-   - Real-world context (e.g. renewable energy, biomedical applications, household circuits) followed by 4 sub-questions.
-
-3. ASSERTION-REASONING BANK (5 Questions):
-   - Covering subtle conceptual nuances with strict 4-option board formatting.
-
-4. EXPERIMENTAL & INQUIRY-BASED QUESTIONS (3 Questions):
-   - "What happens if..." hypothesis testing questions based on NCERT laboratory experiments.
-
-${p.includeAnswerKey ? 'DETAILED SOLUTIONS:\nProvide complete step-by-step marking schemes with explicit references to NCERT concepts.\n' : ''}`;
+---ANSWER_KEY_START---
+PART 2: OFFICIAL MARKING SCHEME & ANSWER KEY
+Provide complete step-by-step marking schemes with explicit references to NCERT concepts and value points.`;
         }
     },
 
@@ -935,18 +1070,30 @@ EXPERIMENT / ACTIVITY: ${p.chapter}
                                                                  |            |
                                                                  +--[Voltmeter]--+
 
-5. TABULAR OBSERVATION RECORD:
+5. TABULAR OBSERVATION RECORD TEMPLATE:
    | Trial No. | Voltmeter Reading V (Volts) | Ammeter Reading I (Amps) | Resistance R = V/I (Ω) |
    |---|---|---|---|
-   | 1 | 1.0 | 0.2 | 5.0 |
-   | 2 | 2.0 | 0.4 | 5.0 |
-   | 3 | 3.0 | 0.6 | 5.0 |
+   | 1 | _____ | _____ | _____ |
+   | 2 | _____ | _____ | _____ |
+   | 3 | _____ | _____ | _____ |
 
-6. VIVA VOCE QUESTIONS WITH MODEL ANSWERS:
+6. VIVA VOCE QUESTIONS:
    Q1. Why should the key be plugged only while taking observations?
-   Ans: Continuous current heats the wire, increasing resistance and violating constant temperature condition.
    Q2. What is an ideal voltmeter resistance?
-   Ans: Infinite resistance so it draws zero current from circuit.`;
+
+---ANSWER_KEY_START---
+EXPECTED PRACTICAL RESULTS, SAMPLE OBSERVATIONS & VIVA MODEL ANSWERS:
+================================================================================
+SAMPLE OBSERVATION DATA:
+| Trial No. | Voltmeter V (V) | Ammeter I (A) | Resistance R = V/I (Ω) |
+| 1 | 1.0 | 0.2 | 5.0 |
+| 2 | 2.0 | 0.4 | 5.0 |
+| 3 | 3.0 | 0.6 | 5.0 |
+Mean Resistance = 5.0 Ω.
+
+VIVA VOCE MODEL ANSWERS:
+Q1 Ans: Continuous current heats the resistance wire, causing resistance to increase and violating constant temperature condition.
+Q2 Ans: An ideal voltmeter has infinite resistance so that it draws zero current from the main circuit branch.`;
         },
 
         builder: function(p) {
@@ -959,19 +1106,14 @@ DETAILS:
 • Subject: ${p.subject}
 • Experiment / Activity: ${p.chapter}
 
-LAB MANUAL STRUCTURE:
-1. EXPERIMENT TITLE & OBJECTIVE (AIM): Clear statement of purpose.
-2. APPARATUS & MATERIALS REQUIRED: Itemized list with specifications.
-3. UNDERLYING PRINCIPLE & FORMULA USED: Core equations, variable definitions, and unit declarations.
-4. CIRCUIT / RAY / EXPERIMENTAL DIAGRAM: Clear textual description and ASCII box layout.
-5. STEP-BY-STEP PROCEDURE: Sequential instructions for laboratory execution.
-6. TABULAR OBSERVATION RECORD: Markdown table template with columns for Trial No., Measured Values, Calculations, and Calculated Output.
-7. SOURCES OF ERROR & PRECAUTIONS: 4 essential safety and measurement precautions.
-8. VIVA-VOCE QUESTION BANK (10 Questions):
-   - 5 Basic principle questions.
-   - 3 Apparatus-handling questions.
-   - 2 Error analysis / "What if" questions.
-   Include clear model answers for all 10 Viva questions.`;
+PART 1: LAB MANUAL & VIVA QUESTIONS
+1. Aim, Apparatus, Principle, Circuit Diagram, Procedure, Observation Table schema.
+2. Precautions & Viva-Voce Questions (10 Questions).
+
+---ANSWER_KEY_START---
+PART 2: SAMPLE DATA, CALCULATIONS & VIVA MODEL ANSWERS
+1. Completed sample observation data and mean calculation.
+2. Complete model answers for all 10 Viva-Voce questions.`;
         }
     },
 
@@ -998,7 +1140,14 @@ Rating Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = S
 
 2. OPEN FEEDBACK:
    - What topic in ${p.chapter} requires additional revision? ____________________
-   - Suggestions for improvement: ____________________`;
+   - Suggestions for improvement: ____________________
+
+---ANSWER_KEY_START---
+TEACHER DIAGNOSTIC EVALUATION & ACTIONABLE FEEDBACK GUIDE:
+1. Scoring Interpretation:
+   - Score < 3 in Concept Clarity indicates need for remedial teaching modules.
+   - Score < 3 in Numericals indicates need for step-by-step formula practice sheets.
+2. Follow-up Action Plan Template for Departmental Record.`;
         },
 
         builder: function(p) {
@@ -1009,23 +1158,15 @@ TARGET DETAILS:
 • Subject: ${p.subject}
 • Module / Term: ${p.chapter}
 
-FORM SECTIONS:
-1. FORM HEADER & PURPOSE STATEMENT: Brief welcoming text explaining confidentiality and feedback goals.
-2. STUDENT SELF-ASSESSMENT GRID (5-point Likert Scale: 1-Strongly Disagree to 5-Strongly Agree):
-   - Concept Clarity in ${p.chapter}
-   - Numerical / Problem-Solving Confidence
-   - Laboratory & Practical Work Understanding
-   - ICT & Smart Classroom Engagement
-   - Home Assignment & Homework Support
-3. TEACHING METHODOLOGY EVALUATION (Likert Scale):
-   - Pace of Teaching & Explanation Clarity
-   - Doubts Resolution & Individual Attention
-   - Use of Visual Models / Experiments
-4. OPEN-ENDED REFLECTION QUESTIONS:
-   - "Which topic in ${p.chapter} was easiest to understand and why?"
-   - "Where did you face the maximum difficulty?"
-   - "What additional support (remedial class, extra notes, worksheet) would help you?"
-5. PARENT SIGN-OFF & SUGGESTION BOX.`;
+PART 1: STUDENT & PARENT FEEDBACK FORM
+1. Student Self-Assessment Grid (5-point Likert Scale).
+2. Teaching Methodology Evaluation.
+3. Open-ended Reflection Questions.
+
+---ANSWER_KEY_START---
+PART 2: DIAGNOSTIC ANALYSIS & ACTION PLAN FOR TEACHERS
+1. Evaluation benchmarks & rubric thresholds.
+2. Action plan recommendations for student remediation.`;
         }
     },
 
@@ -1046,7 +1187,16 @@ CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | TASK: ${p.chapter}
 |---|---|---|---|---|
 | Conceptual Accuracy | Shows major misconceptions in ${p.chapter}. | Explains basic definitions; struggles with application. | Accurately explains principles with minor gaps. | Mastered concepts; applies flawlessly to novel contexts. |
 | Problem Solving & Numericals | Cannot identify formulas or SI units. | Identifies formula but makes calculation errors. | Solves standard numericals with correct SI units. | Solves multi-step HOTS problems with full steps. |
-| Diagrammatic Skill | Omits diagrams or draws inaccurate shapes. | Diagram lacks proper labels or arrow directions. | Neat labeled diagram with minor alignment flaws. | Perfect technical drawing with clear labels & scale. |`;
+| Diagrammatic Skill | Omits diagrams or draws inaccurate shapes. | Diagram lacks proper labels or arrow directions. | Neat labeled diagram with minor alignment flaws. | Perfect technical drawing with clear labels & scale. |
+
+---ANSWER_KEY_START---
+TEACHER SCORING GUIDELINES & GRADE WEIGHTAGE DISTRIBUTION:
+1. Total Points Calculation: Max Score = 32 Points.
+2. Grade Translation:
+   - 28-32 Points: Grade A+ (Exemplary)
+   - 20-27 Points: Grade A (Proficient)
+   - 12-19 Points: Grade B (Developing - Needs Practice)
+   - Below 12 Points: Grade C (Remedial Support Required)`;
         },
 
         builder: function(p) {
@@ -1057,17 +1207,13 @@ SPECS:
 • Subject: ${p.subject}
 • Task / Project Type: ${p.chapter}
 
-RUBRIC TABLE MATRIX:
-Generate a markdown table evaluating 4 Criteria across 4 Performance Levels:
+PART 1: ANALYTIC RUBRIC MATRIX
 | Criteria | Level 1: Beginning (1-2 pts) | Level 2: Developing (3-4 pts) | Level 3: Proficient (5-6 pts) | Level 4: Exemplary (7-8 pts) |
 
-EVALUATION CRITERIA TO COVER:
-1. Conceptual Understanding & Scientific Accuracy
-2. Problem Solving & Mathematical / Derivation Rigor
-3. Experimental / Diagrammatic Presentation & Formatting
-4. Critical Thinking & Real-World Application
-
-Include scoring guidelines, total weightage calculation, and qualitative feedback comment prompts for teachers.`;
+---ANSWER_KEY_START---
+PART 2: TEACHER GRADING INSTRUCTIONS & SCORE WEIGHTAGE
+1. Scoring guidelines & grade conversion matrix.
+2. Qualitative feedback comment templates for report cards.`;
         }
     },
 
@@ -1094,7 +1240,13 @@ Duration: 40 Mins (1 Period) | Pedagogical Framework: NCF-SE 2023
    • EXPLORE (10 Mins): Students work in groups of 4 with lab equipment to record observation data.
    • EXPLAIN (10 Mins): Teacher facilitates discussion, writes core formula V = IR on board.
    • ELABORATE (10 Mins): Students solve 1 HOTS application problem connecting concept to daily life.
-   • EVALUATE (5 Mins): 3-minute Exit Ticket test with 2 MCQs.`;
+   • EVALUATE (5 Mins): 3-minute Exit Ticket test with 2 MCQs.
+
+---ANSWER_KEY_START---
+ASSESSMENT EXIT TICKET ANSWER KEY & EVALUATION RUBRIC:
+1. Exit Ticket Question 1 Key: Option B (Direct linear relation).
+2. Exit Ticket Question 2 Key: Option A (Energy conservation).
+3. Differentiated extension task solution key.`;
         },
 
         builder: function(p) {
@@ -1102,23 +1254,15 @@ Duration: 40 Mins (1 Period) | Pedagogical Framework: NCF-SE 2023
 
 Create a FULL NEP-2020 COMPLIANT 5E MODEL LESSON PLAN.
 
-PARAMETERS:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Topic / Unit: ${p.chapter}
-• Duration: 40 Minutes (1 Period)
+PART 1: 5E MODEL LESSON PLAN DOCUMENT
+1. General Information & Learning Objectives (GLO & SLO).
+2. 5E Phases: Engage, Explore, Explain, Elaborate, Evaluate.
+3. Differentiated Instruction Strategy & Home Assignment.
 
-LESSON PLAN SECTIONS:
-1. GENERAL INFORMATION: Class, Subject, Topic, Duration, Teaching Aids / ICT Tools.
-2. GLO & SLO (General & Specific Learning Objectives): 3 SMART measurable objectives.
-3. 5E PEDAGOGICAL PHASES:
-   - ENGAGE (5 mins): Hook activity, real-life question, or demonstration to activate prior knowledge.
-   - EXPLORE (10 mins): Hands-on inquiry activity or student investigation task.
-   - EXPLAIN (10 mins): Teacher explanation of key concepts, formulas, or diagrams.
-   - ELABORATE (10 mins): Higher-order application task or real-world problem solving.
-   - EVALUATE (5 mins): Exit ticket assessment or quick quiz.
-4. DIFFERENTIATED INSTRUCTION STRATEGY: Support for slow learners and extension tasks for gifted students.
-5. HOME ASSIGNMENT: Competency-based homework question.`;
+---ANSWER_KEY_START---
+PART 2: EXIT TICKET ANSWER KEY & EVALUATION GUIDELINES
+1. Answer key for evaluation phase wrap-up test.
+2. Homework evaluation criteria and model solution keys.`;
         }
     }
 ];
@@ -1127,7 +1271,13 @@ LESSON PLAN SECTIONS:
 let activeCategory = "all";
 let selectedTemplateId = "qp";
 let activeTagFilter = null;
+let activeOutputTab = "qp"; // "qp" | "ak" | "combined"
 let savedTemplates = [];
+
+// Multi-Chapter Selection & Chapter-Wise Weightage State
+let selectedChaptersState = {}; // Key: chapter string, Value: allocated marks (number)
+let weightageUnitState = "marks"; // "marks" | "percent"
+
 try {
     savedTemplates = JSON.parse(localStorage.getItem("cbse_saved_prompts") || "[]");
 } catch (e) {
@@ -1178,9 +1328,9 @@ function bindEvents() {
         updatePromptPreview();
     });
 
-    // Form parameter inputs
+    // Parameter input listeners including Total Marks
     const paramInputs = [
-        "paramChapterSelect", "paramChapterCustom", "paramTier", "paramMarks", "paramTime",
+        "paramChapterSelect", "paramChapterCustom", "paramTier", "paramTime",
         "toggleAnswerKey", "toggleNEP", "toggleBloom", "toggleNCERT", "toggleRubrics"
     ];
 
@@ -1190,6 +1340,74 @@ function bindEvents() {
             el.addEventListener("input", updatePromptPreview);
             el.addEventListener("change", updatePromptPreview);
         }
+    });
+
+    const marksInput = document.getElementById("paramMarks");
+    if (marksInput) {
+        marksInput.addEventListener("input", () => {
+            autoBalanceWeightages(true);
+            updatePromptPreview();
+        });
+        marksInput.addEventListener("change", () => {
+            autoBalanceWeightages(true);
+            updatePromptPreview();
+        });
+    }
+
+    // Multi-Chapter Selection Quick Actions
+    const btnSelectAll = document.getElementById("btnSelectAllChapters");
+    if (btnSelectAll) {
+        btnSelectAll.addEventListener("click", () => {
+            const checkboxes = document.querySelectorAll("#chapterChecklistContainer input[type='checkbox']");
+            checkboxes.forEach(cb => {
+                cb.checked = true;
+                cb.closest(".chapter-item-row")?.classList.add("selected");
+                const chName = cb.getAttribute("data-chapter");
+                if (chName) selectedChaptersState[chName] = 1;
+            });
+            autoBalanceWeightages(true);
+            updatePromptPreview();
+            showToast("Selected All Chapters!");
+        });
+    }
+
+    const btnDeselectAll = document.getElementById("btnDeselectAllChapters");
+    if (btnDeselectAll) {
+        btnDeselectAll.addEventListener("click", () => {
+            const checkboxes = document.querySelectorAll("#chapterChecklistContainer input[type='checkbox']");
+            selectedChaptersState = {};
+            checkboxes.forEach((cb, i) => {
+                if (i === 0) {
+                    cb.checked = true;
+                    cb.closest(".chapter-item-row")?.classList.add("selected");
+                    const chName = cb.getAttribute("data-chapter");
+                    if (chName) selectedChaptersState[chName] = parseFloat(marksInput ? marksInput.value : 80) || 80;
+                } else {
+                    cb.checked = false;
+                    cb.closest(".chapter-item-row")?.classList.remove("selected");
+                }
+            });
+            autoBalanceWeightages(true);
+            updatePromptPreview();
+            showToast("Cleared selections (1 Chapter retained)");
+        });
+    }
+
+    const btnAutoBalance = document.getElementById("btnAutoBalanceWeight");
+    if (btnAutoBalance) {
+        btnAutoBalance.addEventListener("click", () => {
+            autoBalanceWeightages(true);
+            updatePromptPreview();
+            showToast("⚡ Auto-balanced marks equally across selected chapters!");
+        });
+    }
+
+    // Weightage Unit Radio Toggle (Marks vs Percent)
+    document.querySelectorAll('input[name="weightageUnit"]').forEach(radio => {
+        radio.addEventListener("change", (e) => {
+            weightageUnitState = e.target.value;
+            renderWeightageControls();
+        });
     });
 
     // Textarea direct typing word count listener
@@ -1206,10 +1424,10 @@ function bindEvents() {
     document.getElementById("resetParamsBtn").addEventListener("click", () => {
         document.getElementById("paramClass").value = "Class 10";
         document.getElementById("paramSubject").value = "General Science";
+        document.getElementById("paramMarks").value = "80";
         populateChapters();
         document.getElementById("paramChapterCustom").value = "";
         document.getElementById("paramTier").value = "Balanced (Remedial + Standard + HOTS)";
-        document.getElementById("paramMarks").value = "80";
         document.getElementById("paramTime").value = "180";
         document.getElementById("toggleAnswerKey").checked = true;
         document.getElementById("toggleNEP").checked = true;
@@ -1217,7 +1435,7 @@ function bindEvents() {
         document.getElementById("toggleNCERT").checked = true;
         document.getElementById("toggleRubrics").checked = false;
         if (outputModeEl) outputModeEl.value = "direct";
-        updatePromptPreview();
+        switchOutputTab("qp");
     });
 
     // Category navigation
@@ -1276,7 +1494,7 @@ function bindEvents() {
     document.getElementById("savedTemplatesBtn").addEventListener("click", openSavedModal);
 }
 
-// Populate NCERT Chapter Selector dynamically & sync subject
+// Populate NCERT Chapter Selector dynamically & build multi-chapter checklist
 function populateChapters() {
     const classVal = document.getElementById("paramClass").value;
     const subjectSelect = document.getElementById("paramSubject");
@@ -1292,7 +1510,9 @@ function populateChapters() {
     }
 
     const chapterSelect = document.getElementById("paramChapterSelect");
-    chapterSelect.innerHTML = "";
+    const container = document.getElementById("chapterChecklistContainer");
+    if (chapterSelect) chapterSelect.innerHTML = "";
+    if (container) container.innerHTML = "";
 
     let chapters = [];
     if (cbseChapterDatabase[classVal] && cbseChapterDatabase[classVal][subjectVal]) {
@@ -1303,102 +1523,215 @@ function populateChapters() {
         chapters = ["Chapter 1: Core Concepts & Principles"];
     }
 
-    chapters.forEach(ch => {
-        const opt = document.createElement("option");
-        opt.value = ch;
-        opt.textContent = ch;
-        chapterSelect.appendChild(opt);
+    selectedChaptersState = {};
+    const totalMarks = parseFloat(document.getElementById("paramMarks") ? document.getElementById("paramMarks").value : 80) || 80;
+    const defaultMarks = Math.max(1, Math.round((totalMarks / chapters.length) * 10) / 10);
+
+    chapters.forEach((ch, idx) => {
+        if (chapterSelect) {
+            const opt = document.createElement("option");
+            opt.value = ch;
+            opt.textContent = ch;
+            chapterSelect.appendChild(opt);
+        }
+
+        selectedChaptersState[ch] = defaultMarks;
+
+        if (container) {
+            const row = document.createElement("div");
+            row.className = "chapter-item-row selected";
+            row.innerHTML = `
+                <input type="checkbox" class="chapter-item-checkbox" id="chk_ch_${idx}" data-chapter="${ch.replace(/"/g, '&quot;')}" checked>
+                <label for="chk_ch_${idx}" class="chapter-item-label">${ch}</label>
+            `;
+
+            const checkbox = row.querySelector("input");
+            checkbox.addEventListener("change", (e) => {
+                if (e.target.checked) {
+                    selectedChaptersState[ch] = defaultMarks;
+                    row.classList.add("selected");
+                } else {
+                    delete selectedChaptersState[ch];
+                    row.classList.remove("selected");
+                }
+                autoBalanceWeightages(true);
+                updatePromptPreview();
+            });
+
+            container.appendChild(row);
+        }
     });
+
+    autoBalanceWeightages(true);
 }
 
-// Render Categories Count Badges
-function renderCategoriesCount() {
-    document.getElementById("countAll").textContent = templatesLibrary.length;
-    document.getElementById("countAssessment").textContent = templatesLibrary.filter(t => t.category === "assessment").length;
-    document.getElementById("countPhysics").textContent = templatesLibrary.filter(t => t.category === "physics").length;
-    document.getElementById("countQuizzes").textContent = templatesLibrary.filter(t => t.category === "quizzes").length;
-    document.getElementById("countPracticals").textContent = templatesLibrary.filter(t => t.category === "practicals").length;
-    document.getElementById("countFeedback").textContent = templatesLibrary.filter(t => t.category === "feedback").length;
-}
+// Auto-Balance Weightages evenly across selected chapters
+function autoBalanceWeightages(isEqualSplit = true) {
+    const selectedKeys = Object.keys(selectedChaptersState);
+    const totalTargetMarks = parseFloat(document.getElementById("paramMarks") ? document.getElementById("paramMarks").value : 80) || 80;
 
-// Render Cards Grid
-function renderCards() {
-    const cardsGrid = document.getElementById("cardsGrid");
-    const query = document.getElementById("searchInput").value.toLowerCase().trim();
-
-    cardsGrid.innerHTML = "";
-
-    const filtered = templatesLibrary.filter(tpl => {
-        const matchesCat = (activeCategory === "all") || (tpl.category === activeCategory);
-        const matchesTag = !activeTagFilter || tpl.tags.includes(activeTagFilter);
-        const matchesSearch = !query || 
-            tpl.title.toLowerCase().includes(query) || 
-            tpl.subtitle.toLowerCase().includes(query) || 
-            tpl.description.toLowerCase().includes(query) ||
-            tpl.tags.some(t => t.toLowerCase().includes(query));
-
-        return matchesCat && matchesTag && matchesSearch;
-    });
-
-    document.getElementById("libraryCount").textContent = `${filtered.length} available`;
-
-    if (filtered.length === 0) {
-        cardsGrid.innerHTML = `
-            <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-secondary);">
-                <p style="font-size: 16px; font-weight: 600;">No prompt generators found matching your filters.</p>
-                <p style="font-size: 13px; margin-top: 6px;">Try clearing your search term or selecting 'All Generators'.</p>
-            </div>
-        `;
+    if (selectedKeys.length === 0) {
+        renderWeightageControls();
         return;
     }
 
-    filtered.forEach(tpl => {
-        const card = document.createElement("div");
-        card.className = `card ${tpl.id === selectedTemplateId ? 'active-card' : ''}`;
-        card.onclick = () => selectTemplate(tpl.id);
+    if (isEqualSplit) {
+        const perChapter = Math.floor(totalTargetMarks / selectedKeys.length);
+        let remainder = totalTargetMarks - (perChapter * selectedKeys.length);
 
-        card.innerHTML = `
-            <div class="card-icon-title">
-                <div class="card-icon">${tpl.icon}</div>
-                <div>
-                    <h3>${tpl.title}</h3>
-                    <div style="font-size:12px; color:var(--accent-cyan); font-weight:600; margin-top:2px;">${tpl.subtitle}</div>
-                </div>
+        selectedKeys.forEach((key, idx) => {
+            selectedChaptersState[key] = perChapter + (idx < remainder ? 1 : 0);
+        });
+    }
+
+    renderWeightageControls();
+}
+
+// Render Chapter Weightage Control Rows
+function renderWeightageControls() {
+    const listContainer = document.getElementById("chapterWeightageList");
+    const badge = document.getElementById("selectedChaptersBadge");
+    const totalTargetMarks = parseFloat(document.getElementById("paramMarks") ? document.getElementById("paramMarks").value : 80) || 80;
+
+    const selectedKeys = Object.keys(selectedChaptersState);
+
+    if (badge) {
+        badge.textContent = `${selectedKeys.length} Selected`;
+    }
+
+    if (!listContainer) return;
+    listContainer.innerHTML = "";
+
+    if (selectedKeys.length === 0) {
+        listContainer.innerHTML = `
+            <div style="font-size:12px; color:var(--accent-rose); text-align:center; padding:10px;">
+                ⚠️ No chapters selected. Please select at least one chapter above.
             </div>
-            <p>${tpl.description}</p>
-            <div class="card-tags">
-                ${tpl.tags.map(t => `<span class="mini-tag">${t}</span>`).join('')}
+        `;
+        updateAllocationStatus();
+        return;
+    }
+
+    const isMarksUnit = weightageUnitState === "marks";
+
+    selectedKeys.forEach((key) => {
+        const val = selectedChaptersState[key] || 0;
+        const displayVal = isMarksUnit ? val : (totalTargetMarks > 0 ? ((val / totalTargetMarks) * 100).toFixed(1) : 0);
+
+        const row = document.createElement("div");
+        row.className = "weightage-row";
+        row.innerHTML = `
+            <span class="weightage-ch-name" title="${key.replace(/"/g, '&quot;')}">${key}</span>
+            <div class="weightage-input-group">
+                <input type="number" class="weightage-input" min="0" max="${isMarksUnit ? totalTargetMarks : 100}" step="${isMarksUnit ? 1 : 0.5}" value="${displayVal}">
+                <span class="weightage-unit-label">${isMarksUnit ? 'm' : '%'}</span>
             </div>
-            <button class="btn btn-outline btn-sm card-footer-btn">
-                ${tpl.id === selectedTemplateId ? '✓ Currently Active' : 'Generate Content →'}
-            </button>
         `;
 
-        cardsGrid.appendChild(card);
+        const input = row.querySelector("input");
+        input.addEventListener("input", (e) => {
+            const raw = parseFloat(e.target.value) || 0;
+            if (isMarksUnit) {
+                selectedChaptersState[key] = Math.max(0, raw);
+            } else {
+                const calculatedMarks = Math.max(0, Math.round((raw / 100) * totalTargetMarks * 10) / 10);
+                selectedChaptersState[key] = calculatedMarks;
+            }
+            updateAllocationStatus();
+            updatePromptPreview();
+        });
+
+        listContainer.appendChild(row);
     });
+
+    updateAllocationStatus();
 }
 
-// Select Template & Scroll to Workspace
-function selectTemplate(templateId) {
-    selectedTemplateId = templateId;
-    renderCards();
-    updatePromptPreview();
+// Update Weightage Allocation Status Bar & Progress Fill
+function updateAllocationStatus() {
+    const statusText = document.getElementById("allocatedMarksText");
+    const statusPercent = document.getElementById("allocatedPercentText");
+    const progressFill = document.getElementById("allocationProgressFill");
+    const statusInfo = document.querySelector(".allocation-info");
 
-    // Smooth scroll to editor workspace
-    document.getElementById("workspaceCard").scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const selectedKeys = Object.keys(selectedChaptersState);
+    const totalTargetMarks = parseFloat(document.getElementById("paramMarks") ? document.getElementById("paramMarks").value : 80) || 80;
+
+    let allocatedTotal = 0;
+    selectedKeys.forEach(key => {
+        allocatedTotal += (parseFloat(selectedChaptersState[key]) || 0);
+    });
+
+    const pct = totalTargetMarks > 0 ? Math.round((allocatedTotal / totalTargetMarks) * 100) : 0;
+
+    if (statusText) statusText.textContent = `Allocated: ${allocatedTotal} / ${totalTargetMarks} Marks`;
+    if (statusPercent) statusPercent.textContent = `(${pct}%)`;
+
+    if (progressFill) {
+        progressFill.style.width = `${Math.min(pct, 100)}%`;
+        if (allocatedTotal === totalTargetMarks) {
+            progressFill.className = "allocation-progress-fill valid";
+            if (statusInfo) statusInfo.className = "allocation-info valid";
+        } else if (allocatedTotal > totalTargetMarks) {
+            progressFill.className = "allocation-progress-fill over";
+            if (statusInfo) statusInfo.className = "allocation-info invalid";
+        } else {
+            progressFill.className = "allocation-progress-fill";
+            if (statusInfo) statusInfo.className = "allocation-info";
+        }
+    }
 }
 
-// Gather Current Parameters
+// Gather Current Parameters with Multi-Chapter Weightage Breakdown
 function getParams() {
     const customChapter = document.getElementById("paramChapterCustom").value.trim();
-    const selectedChapter = document.getElementById("paramChapterSelect").value;
     const outputModeEl = document.getElementById("paramOutputMode");
+    const totalMarks = parseFloat(document.getElementById("paramMarks") ? document.getElementById("paramMarks").value : 80) || 80;
+
+    const selectedKeys = Object.keys(selectedChaptersState);
+
+    let chapterSummary = "";
+    if (customChapter) {
+        chapterSummary = customChapter;
+    } else if (selectedKeys.length === 0) {
+        chapterSummary = "General Science (All Chapters)";
+    } else if (selectedKeys.length === 1) {
+        chapterSummary = `${selectedKeys[0]} (${selectedChaptersState[selectedKeys[0]]} Marks)`;
+    } else {
+        chapterSummary = `Multi-Chapter: ${selectedKeys.length} Chapters (${selectedKeys.map(k => `${k.split(':')[0]} [${selectedChaptersState[k]}m]`).join(', ')})`;
+    }
+
+    // Build structured Chapter-Wise Weightage Table
+    let chapterWeightageTable = "";
+    if (selectedKeys.length > 0) {
+        let allocatedSum = 0;
+        const rows = selectedKeys.map((key, i) => {
+            const m = parseFloat(selectedChaptersState[key]) || 0;
+            allocatedSum += m;
+            const p = totalMarks > 0 ? ((m / totalMarks) * 100).toFixed(1) : "0.0";
+            return `| ${i + 1} | ${key} | ${m} Marks | ${p}% |`;
+        }).join('\n');
+
+        chapterWeightageTable = `================================================================================
+CHAPTER-WISE WEIGHTAGE & BLUEPRINT ALLOCATION:
+================================================================================
+| S.No | NCERT Chapter Name | Weightage (Marks) | Contribution (%) |
+|---|---|---|---|
+${rows}
+| **TOTAL** | **${selectedKeys.length} Selected Chapters** | **${allocatedSum} / ${totalMarks} Marks** | **100%** |`;
+    }
 
     return {
         outputMode: outputModeEl ? outputModeEl.value : "direct",
         classLevel: document.getElementById("paramClass").value,
         subject: document.getElementById("paramSubject").value,
-        chapter: customChapter ? `${selectedChapter} (${customChapter})` : selectedChapter,
+        chapter: chapterSummary,
+        selectedChapters: selectedKeys.map(k => ({
+            name: k,
+            marks: selectedChaptersState[k] || 0,
+            percent: totalMarks > 0 ? (((selectedChaptersState[k] || 0) / totalMarks) * 100).toFixed(1) : "0"
+        })),
+        chapterWeightageTable: chapterWeightageTable,
         tier: document.getElementById("paramTier").value,
         marks: document.getElementById("paramMarks").value,
         time: document.getElementById("paramTime").value,
@@ -1410,24 +1743,104 @@ function getParams() {
     };
 }
 
+// Separate Content Engine: Splits raw generator content into Question Paper & Answer Key
+function getSeparatedContent(tpl, params) {
+    let rawText = "";
+    if (params.outputMode === "direct" && typeof tpl.directContentBuilder === "function") {
+        rawText = tpl.directContentBuilder(params);
+    } else {
+        rawText = tpl.builder(params);
+    }
+
+    let qpText = rawText;
+    let akText = "";
+
+    if (rawText.includes("---ANSWER_KEY_START---")) {
+        const parts = rawText.split("---ANSWER_KEY_START---");
+        qpText = parts[0].trim();
+        akText = parts[1].trim();
+    }
+
+    if (!params.includeAnswerKey && akText) {
+        akText = `[ANSWER KEY IS DISABLED]\nEnable "Include Step-by-Step Solutions / Answer Key" in the sidebar parameter options to view the detailed marking scheme.`;
+    } else if (!akText) {
+        akText = `[NO SEPARATE ANSWER KEY DEFINED FOR THIS TEMPLATE]`;
+    }
+
+    const combinedHeader = "\n================================================================================\nOFFICIAL MARKING SCHEME & STEP-BY-STEP ANSWER KEY\n================================================================================\n";
+    const combinedText = qpText + "\n\n" + (params.includeAnswerKey ? (combinedHeader + akText) : `[ANSWER KEY DISABLED IN SIDEBAR OPTIONS]`);
+
+    return {
+        qp: qpText,
+        ak: akText,
+        combined: combinedText
+    };
+}
+
+// Switch Output Tab (QP vs AK vs Combined)
+function switchOutputTab(tabMode) {
+    activeOutputTab = tabMode;
+
+    const tabQP = document.getElementById("tabQP");
+    const tabAK = document.getElementById("tabAK");
+    const tabCombined = document.getElementById("tabCombined");
+
+    if (tabQP) {
+        tabQP.classList.toggle("active", tabMode === "qp");
+        tabQP.setAttribute("aria-selected", tabMode === "qp");
+    }
+    if (tabAK) {
+        tabAK.classList.toggle("active", tabMode === "ak");
+        tabAK.setAttribute("aria-selected", tabMode === "ak");
+    }
+    if (tabCombined) {
+        tabCombined.classList.toggle("active", tabMode === "combined");
+        tabCombined.setAttribute("aria-selected", tabMode === "combined");
+    }
+
+    const badge = document.getElementById("currentViewBadge");
+    const copyBtnText = document.getElementById("copyBtnText");
+
+    if (tabMode === "qp") {
+        if (badge) badge.textContent = "📄 Question Paper Mode";
+        if (copyBtnText) copyBtnText.textContent = "Copy Question Paper";
+    } else if (tabMode === "ak") {
+        if (badge) badge.textContent = "🔑 Answer Key Mode";
+        if (copyBtnText) copyBtnText.textContent = "Copy Answer Key";
+    } else {
+        if (badge) badge.textContent = "📑 Combined View Mode";
+        if (copyBtnText) copyBtnText.textContent = "Copy Combined Set";
+    }
+
+    updatePromptPreview();
+}
+
 // Update Live Prompt / Direct Content Textarea
 function updatePromptPreview() {
     const tpl = templatesLibrary.find(t => t.id === selectedTemplateId) || templatesLibrary[0];
     const params = getParams();
+    const separated = getSeparatedContent(tpl, params);
 
     let outputText = "";
-    if (params.outputMode === "direct" && typeof tpl.directContentBuilder === "function") {
-        outputText = tpl.directContentBuilder(params);
+    if (activeOutputTab === "qp") {
+        outputText = separated.qp;
+    } else if (activeOutputTab === "ak") {
+        outputText = separated.ak;
     } else {
-        outputText = tpl.builder(params);
+        outputText = separated.combined;
     }
 
     document.getElementById("activePromptTitle").textContent = tpl.title;
     document.getElementById("activePromptSubtitle").textContent = `Configured for ${params.classLevel} ${params.subject} • ${params.chapter}`;
-    document.getElementById("activePromptTag").textContent = params.outputMode === "direct" ? "📄 Direct Competency Paper Mode" : "🤖 AI Meta-Prompt Mode";
     
+    const tagPrefix = params.outputMode === "direct" ? "📄 Direct Paper" : "🤖 AI Meta-Prompt";
+    const tagView = activeOutputTab === "qp" ? "Question Paper" : activeOutputTab === "ak" ? "Answer Key" : "Combined Set";
+    document.getElementById("activePromptTag").textContent = `${tagPrefix} (${tagView})`;
+
     const promptBox = document.getElementById("promptBox");
-    promptBox.value = outputText;
+    if (promptBox) {
+        promptBox.value = outputText;
+    }
 
     // Update word count
     const words = outputText.trim().split(/\s+/).filter(w => w.length > 0).length;
@@ -1437,23 +1850,27 @@ function updatePromptPreview() {
 // Copy Prompt to Clipboard
 function copyPrompt() {
     const promptBox = document.getElementById("promptBox");
-    const copyBtn = document.getElementById("copyBtn");
+    const copyBtnText = document.getElementById("copyBtnText");
     promptBox.select();
 
-    const originalHTML = copyBtn.innerHTML;
-    copyBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!`;
-    setTimeout(() => { copyBtn.innerHTML = originalHTML; }, 2000);
+    const viewName = activeOutputTab === "qp" ? "Question Paper" : activeOutputTab === "ak" ? "Answer Key" : "Combined Set";
+
+    if (copyBtnText) {
+        const originalText = copyBtnText.textContent;
+        copyBtnText.textContent = `Copied ${viewName}!`;
+        setTimeout(() => { copyBtnText.textContent = originalText; }, 2000);
+    }
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(promptBox.value).then(() => {
-            showToast("Content Copied to Clipboard!");
+            showToast(`${viewName} Copied to Clipboard!`);
         }).catch(() => {
             document.execCommand("copy");
-            showToast("Content Copied Successfully!");
+            showToast(`${viewName} Copied Successfully!`);
         });
     } else {
         document.execCommand("copy");
-        showToast("Content Copied Successfully!");
+        showToast(`${viewName} Copied Successfully!`);
     }
 }
 
@@ -1567,41 +1984,141 @@ function clearAllSaved() {
     }
 }
 
-// Export Content to Markdown, Text, or Printable View
-function exportPrompt(format) {
+// Export Content to PDF, MS Word (.doc), Markdown, Text, or Printable View
+function exportPrompt(format, source = 'active') {
     const exportMenu = document.getElementById("exportMenu");
     if (exportMenu) exportMenu.classList.remove("show");
 
-    const text = document.getElementById("promptBox").value;
+    const tpl = templatesLibrary.find(t => t.id === selectedTemplateId) || templatesLibrary[0];
     const params = getParams();
-    const filename = `CBSE_${params.classLevel}_${params.subject}_QuestionPaper.${format === 'md' ? 'md' : 'txt'}`;
+    const separated = getSeparatedContent(tpl, params);
 
-    if (format === 'print') {
+    let targetMode = source;
+    if (source === 'active') {
+        targetMode = activeOutputTab;
+    }
+
+    let exportContent = "";
+    let docTitle = "";
+
+    if (targetMode === 'qp') {
+        exportContent = separated.qp;
+        docTitle = `CBSE_${params.classLevel}_${params.subject}_QuestionPaper`;
+    } else if (targetMode === 'ak') {
+        exportContent = separated.ak;
+        docTitle = `CBSE_${params.classLevel}_${params.subject}_AnswerKey`;
+    } else {
+        exportContent = separated.combined;
+        docTitle = `CBSE_${params.classLevel}_${params.subject}_FullExamSet`;
+    }
+
+    // 1. MS WORD EXPORT (.doc / .docx compatible)
+    if (format === 'word') {
+        const headerTitle = targetMode === 'qp' ? 'KENDRIYA VIDYALAYA SANGATHAN / CBSE BOARD EXAMINATION 2026-27' :
+                            targetMode === 'ak' ? 'CONFIDENTIAL - OFFICIAL MARKING SCHEME & ANSWER KEY' :
+                            'CBSE BOARD EXAMINATION 2026-27 (QUESTION PAPER & ANSWER KEY)';
+        
+        const bannerColor = targetMode === 'ak' ? '#dc2626' : '#2563eb';
+        const badgeLabel = targetMode === 'qp' ? 'QUESTION PAPER ONLY (FOR STUDENTS)' :
+                           targetMode === 'ak' ? 'CONFIDENTIAL ANSWER KEY & MARKING SCHEME' :
+                           'FULL EXAM SET (QP + KEY)';
+
+        const wordHtml = `
+            <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+            <head>
+                <meta charset='utf-8'>
+                <title>${docTitle}</title>
+                <style>
+                    @page { size: A4; margin: 20mm; }
+                    body { font-family: 'Calibri', 'Segoe UI', Arial, sans-serif; font-size: 11pt; line-height: 1.5; color: #0f172a; margin: 20px; }
+                    .header-box { border-bottom: 3pt solid ${bannerColor}; padding-bottom: 8pt; margin-bottom: 15pt; }
+                    h1 { font-size: 16pt; color: ${bannerColor}; text-transform: uppercase; margin: 0 0 4pt 0; font-weight: bold; }
+                    p.meta { font-size: 10pt; color: #475569; margin: 0; }
+                    .badge { display: inline-block; background: ${bannerColor}; color: #ffffff; padding: 3pt 8pt; font-weight: bold; font-size: 9pt; border-radius: 3pt; margin-top: 6pt; }
+                    pre { font-family: 'Consolas', 'Courier New', monospace; font-size: 10pt; white-space: pre-wrap; word-wrap: break-word; background: #f8fafc; padding: 12pt; border: 1pt solid #cbd5e1; border-radius: 4pt; line-height: 1.4; color: #0f172a; }
+                </style>
+            </head>
+            <body>
+                <div class="header-box">
+                    <h1>${headerTitle}</h1>
+                    <p class="meta"><strong>Class:</strong> ${params.classLevel} | <strong>Subject:</strong> ${params.subject} | <strong>Syllabus Focus:</strong> ${params.chapter}</p>
+                    <div class="badge">${badgeLabel}</div>
+                </div>
+                <pre>${exportContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+            </body>
+            </html>
+        `;
+
+        const blob = new Blob(['\ufeff' + wordHtml], { type: 'application/msword' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${docTitle}.doc`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        showToast(`Exported ${docTitle}.doc (MS Word Format)`);
+        return;
+    }
+
+    // 2. PDF EXPORT (High-Resolution Print-to-PDF Window)
+    if (format === 'pdf' || format === 'print') {
         const printWin = window.open('', '_blank');
+        const headerTitle = targetMode === 'qp' ? 'KENDRIYA VIDYALAYA / CBSE BOARD EXAMINATION 2026-27' :
+                            targetMode === 'ak' ? 'CONFIDENTIAL - OFFICIAL MARKING SCHEME & ANSWER KEY' :
+                            'CBSE BOARD EXAMINATION 2026-27 (QUESTION PAPER & ANSWER KEY)';
+        
+        const bannerColor = targetMode === 'ak' ? '#dc2626' : '#2563eb';
+        const badgeLabel = targetMode === 'qp' ? '📄 QUESTION PAPER ONLY (FOR STUDENTS)' :
+                           targetMode === 'ak' ? '🔑 CONFIDENTIAL ANSWER KEY & MARKING SCHEME' :
+                           '📑 FULL EXAM SET (QP + KEY)';
+
         printWin.document.write(`
             <!DOCTYPE html>
             <html>
             <head>
-                <title>${params.classLevel} ${params.subject} Competency Paper - CBSE 2026-27</title>
+                <title>${docTitle} - CBSE 2026-27</title>
                 <style>
-                    body { font-family: 'Segoe UI', Arial, sans-serif; padding: 40px; line-height: 1.6; color: #111; }
-                    h1 { font-size: 20px; border-bottom: 2px solid #2563eb; padding-bottom: 8px; color: #2563eb; }
-                    pre { background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 8px; white-space: pre-wrap; font-family: monospace; font-size: 13px; }
+                    @page { size: A4; margin: 15mm; }
+                    body { font-family: 'Segoe UI', Arial, sans-serif; padding: 20px; line-height: 1.6; color: #111; background: #fff; }
+                    .header-banner { border-bottom: 3px solid ${bannerColor}; padding-bottom: 12px; margin-bottom: 20px; }
+                    .header-banner h1 { font-size: 18px; color: ${bannerColor}; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 800; }
+                    .header-banner p { font-size: 13px; color: #475569; margin: 0; }
+                    .badge { display: inline-block; background: ${bannerColor}; color: white; padding: 4px 12px; border-radius: 4px; font-weight: 700; font-size: 11px; margin-top: 8px; text-transform: uppercase; }
+                    pre { background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 8px; white-space: pre-wrap; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.5; color: #0f172a; }
+                    @media print {
+                        body { padding: 0; }
+                        pre { border: none; background: transparent; padding: 0; }
+                    }
                 </style>
             </head>
             <body>
-                <h1>CBSE AI Teacher Studio 2026-27 - Generated Content</h1>
-                <p><strong>Configured for:</strong> ${params.classLevel} | ${params.subject} | ${params.chapter}</p>
-                <pre>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
-                <script>window.onload = function() { window.print(); }</script>
+                <div class="header-banner">
+                    <h1>${headerTitle}</h1>
+                    <p><strong>Class:</strong> ${params.classLevel} | <strong>Subject:</strong> ${params.subject} | <strong>Syllabus:</strong> ${params.chapter}</p>
+                    <span class="badge">${badgeLabel}</span>
+                </div>
+                <pre>${exportContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+                <script>
+                    window.onload = function() {
+                        setTimeout(function() {
+                            window.print();
+                        }, 300);
+                    }
+                </script>
             </body>
             </html>
         `);
         printWin.document.close();
+        showToast(`Opening PDF / Print Dialog for ${docTitle}`);
         return;
     }
 
-    const blob = new Blob([text], { type: format === 'md' ? 'text/markdown' : 'text/plain' });
+    // 3. TEXT / MARKDOWN EXPORTS (.txt / .md)
+    const filename = `${docTitle}.${format === 'md' ? 'md' : 'txt'}`;
+    const blob = new Blob([exportContent], { type: format === 'md' ? 'text/markdown' : 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -1611,5 +2128,5 @@ function exportPrompt(format) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    showToast(`Exported content as ${filename}`);
+    showToast(`Exported ${filename}`);
 }
