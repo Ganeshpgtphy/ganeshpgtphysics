@@ -1,11 +1,23 @@
 /* ==========================================================================
-   CBSE Science Teacher AI Studio 2026-27 - Application Logic
-   Authoritative CBSE/KVS Prompt & Direct Question Paper Assembly Engine
+   CBSE Question Paper Setter & Worksheets Generator 2026-27 - Application Logic
+   Authoritative CBSE/KVS Prompt & Direct Question Paper Assembly Engine (All Subjects)
    ========================================================================== */
 
-// 1. NCERT 2026-27 Curiosity & CBSE Science Chapter Database (Classes 6-12)
+// 1. NCERT 2026-27 & CBSE Chapter Database for ALL Subjects (Classes 6-12)
 const cbseChapterDatabase = {
     "Class 6": {
+        "Mathematics": [
+            "Chapter 1: Patterns in Mathematics",
+            "Chapter 2: Lines and Angles",
+            "Chapter 3: Number Play",
+            "Chapter 4: Data Handling and Presentation",
+            "Chapter 5: Prime Time",
+            "Chapter 6: Perimeter and Area",
+            "Chapter 7: Fractions",
+            "Chapter 8: Playing with Constructions",
+            "Chapter 9: Symmetry",
+            "Chapter 10: The Other Side of Zero (Integers)"
+        ],
         "General Science": [
             "Chapter 1: The Wonderful World of Science",
             "Chapter 2: Diversity in the Living World",
@@ -19,9 +31,54 @@ const cbseChapterDatabase = {
             "Chapter 10: Living Creatures: Exploring Their Characteristics",
             "Chapter 11: Nature's Treasures",
             "Chapter 12: Beyond Earth"
+        ],
+        "Social Science": [
+            "Chapter 1: Locating Places on the Earth",
+            "Chapter 2: Oceans and Continents",
+            "Chapter 3: Landforms and Life",
+            "Chapter 4: Timeline and Sources of History",
+            "Chapter 5: India, That Is Bharat",
+            "Chapter 6: The Beginnings of Indian Civilisation",
+            "Chapter 7: India's Cultural Roots",
+            "Chapter 8: Governance and Democracy",
+            "Chapter 9: Economic Activities Around Us"
+        ],
+        "English": [
+            "Unit 1: Fables and Folk Tales",
+            "Unit 2: Friendship and Empathy",
+            "Unit 3: Nature and Environment",
+            "Unit 4: Sports and Courage",
+            "Unit 5: Grammar, Reading & Writing Skills"
+        ],
+        "Hindi": [
+            "पाठ 1: वह चिड़िया जो (वसंत)",
+            "पाठ 2: बचपन",
+            "पाठ 3: नादान दोस्त",
+            "पाठ 4: चाँद से थोड़ी सी गप्पें",
+            "पाठ 5: व्यावहारिक व्याकरण एवं रचनात्मक लेखन"
+        ],
+        "Computer Science / IT / AI": [
+            "Unit 1: Computer Fundamentals & Digital Devices",
+            "Unit 2: Algorithmic Thinking & Block Coding",
+            "Unit 3: Cyber Safety & Digital Literacy",
+            "Unit 4: Introduction to Artificial Intelligence (AI)"
         ]
     },
     "Class 7": {
+        "Mathematics": [
+            "Chapter 1: Integers",
+            "Chapter 2: Fractions and Decimals",
+            "Chapter 3: Data Handling",
+            "Chapter 4: Simple Equations",
+            "Chapter 5: Lines and Angles",
+            "Chapter 6: The Triangle and Its Properties",
+            "Chapter 7: Comparing Quantities",
+            "Chapter 8: Rational Numbers",
+            "Chapter 9: Perimeter and Area",
+            "Chapter 10: Algebraic Expressions",
+            "Chapter 11: Exponents and Powers",
+            "Chapter 12: Symmetry & Visualising Solid Shapes"
+        ],
         "General Science": [
             "Chapter 1: Nutrition in Plants",
             "Chapter 2: Nutrition in Animals",
@@ -36,26 +93,119 @@ const cbseChapterDatabase = {
             "Chapter 11: Light",
             "Chapter 12: Forests: Our Lifeline",
             "Chapter 13: Wastewater Story"
+        ],
+        "Social Science": [
+            "Chapter 1: Tracing Changes Through a Thousand Years",
+            "Chapter 2: New Kings and Kingdoms",
+            "Chapter 3: Delhi: 12th to 15th Century",
+            "Chapter 4: The Mughals (16th to 17th Century)",
+            "Chapter 5: Environment & Inside Our Earth",
+            "Chapter 6: Our Changing Earth & Atmosphere",
+            "Chapter 7: Water & Human Environment",
+            "Chapter 8: On Equality & Role of Government in Health",
+            "Chapter 9: How the State Government Works",
+            "Chapter 10: Markets Around Us & A Shirt in the Market"
+        ],
+        "English": [
+            "Unit 1: Three Questions & The Squirrel",
+            "Unit 2: A Gift of Chappals & Rebel",
+            "Unit 3: Gopal and the Hilsa Fish",
+            "Unit 4: The Ashes That Made Trees Bloom",
+            "Unit 5: Grammar, Reading & Writing Skills"
+        ],
+        "Hindi": [
+            "पाठ 1: हम पंछी उन्मुक्त गगन के",
+            "पाठ 2: दादी माँ",
+            "पाठ 3: हिमालय की बेटियाँ",
+            "पाठ 4: कठपुतली",
+            "पाठ 5: भाषा, व्याकरण एवं रचनात्मक लेखन"
+        ],
+        "Computer Science / IT / AI": [
+            "Unit 1: Hardware Architecture & Operating Systems",
+            "Unit 2: Advanced Block Coding & Python Intro",
+            "Unit 3: Cyber Ethics & Privacy",
+            "Unit 4: AI Applications & Smart Assistant Systems"
         ]
     },
     "Class 8": {
+        "Mathematics": [
+            "Chapter 1: Rational Numbers",
+            "Chapter 2: Linear Equations in One Variable",
+            "Chapter 3: Understanding Quadrilaterals",
+            "Chapter 4: Data Handling",
+            "Chapter 5: Square and Square Roots",
+            "Chapter 6: Cube and Cube Roots",
+            "Chapter 7: Comparing Quantities",
+            "Chapter 8: Algebraic Expressions and Identities",
+            "Chapter 9: Mensuration",
+            "Chapter 10: Exponents and Powers",
+            "Chapter 11: Direct and Inverse Proportions",
+            "Chapter 12: Factorisation",
+            "Chapter 13: Introduction to Graphs"
+        ],
         "General Science": [
-            "Chapter 1: Exploring the Investigative World of Science",
-            "Chapter 2: The Invisible Living World: Beyond Our Naked Eye",
-            "Chapter 3: Health: The Ultimate Treasure",
-            "Chapter 4: Electricity: Magnetic and Heating Effects",
-            "Chapter 5: Exploring Forces",
-            "Chapter 6: Pressure, Winds, Storms, and Cyclones",
-            "Chapter 7: Particulate Nature of Matter",
-            "Chapter 8: Nature of Matter: Elements, Compounds, and Mixtures",
-            "Chapter 9: The Amazing World of Solutes, Solvents, and Solutions",
-            "Chapter 10: Light: Mirrors and Lenses",
-            "Chapter 11: Keeping Time with the Skies (Astronomy & Solar System)",
-            "Chapter 12: How Nature Works in Harmony (Ecosystems & Balance)",
-            "Chapter 13: Our Home: Earth, a Unique Life Sustaining Planet"
+            "Chapter 1: Crop Production and Management",
+            "Chapter 2: Microorganisms: Friend and Foe",
+            "Chapter 3: Coal and Petroleum",
+            "Chapter 4: Combustion and Flame",
+            "Chapter 5: Conservation of Plants and Animals",
+            "Chapter 6: Reproduction in Animals",
+            "Chapter 7: Reaching the Age of Adolescence",
+            "Chapter 8: Force and Pressure",
+            "Chapter 9: Friction",
+            "Chapter 10: Sound",
+            "Chapter 11: Chemical Effects of Electric Current",
+            "Chapter 12: Some Natural Phenomena",
+            "Chapter 13: Light"
+        ],
+        "Social Science": [
+            "Chapter 1: How, When and Where",
+            "Chapter 2: From Trade to Territory",
+            "Chapter 3: Ruling the Countryside",
+            "Chapter 4: Tribals, Dikus and the Vision of a Golden Age",
+            "Chapter 5: When People Rebel 1857 and After",
+            "Chapter 6: Resources & Land, Soil, Water",
+            "Chapter 7: Agriculture & Industries",
+            "Chapter 8: Human Resources",
+            "Chapter 9: The Indian Constitution & Secularism",
+            "Chapter 10: Judiciary & Public Facilities"
+        ],
+        "English": [
+            "Unit 1: The Best Christmas Present in the World",
+            "Unit 2: The Tsunami & Geography Lesson",
+            "Unit 3: Glimpses of the Past & Macavity",
+            "Unit 4: Bepin Choudhury’s Lapse of Memory",
+            "Unit 5: Grammar, Reading & Writing Skills"
+        ],
+        "Hindi": [
+            "पाठ 1: ध्वनि",
+            "पाठ 2: लाख की चूड़ियाँ",
+            "पाठ 3: बस की यात्रा",
+            "पाठ 4: दीवानों की हस्ती",
+            "पाठ 5: संधि, समास, अलंकार एवं पत्र/निबंध लेखन"
+        ],
+        "Computer Science / IT / AI": [
+            "Unit 1: Computer Networks & Internet Protocol",
+            "Unit 2: Web Design with HTML & CSS Basics",
+            "Unit 3: Python Fundamentals (Loops & Conditions)",
+            "Unit 4: Data Science & AI Ethics"
         ]
     },
     "Class 9": {
+        "Mathematics": [
+            "Chapter 1: Number Systems",
+            "Chapter 2: Polynomials",
+            "Chapter 3: Coordinate Geometry",
+            "Chapter 4: Linear Equations in Two Variables",
+            "Chapter 5: Introduction to Euclid's Geometry",
+            "Chapter 6: Lines and Angles",
+            "Chapter 7: Triangles",
+            "Chapter 8: Quadrilaterals",
+            "Chapter 9: Circles",
+            "Chapter 10: Heron's Formula",
+            "Chapter 11: Surface Areas and Volumes",
+            "Chapter 12: Statistics"
+        ],
         "General Science": [
             "Chapter 1: Matter in Our Surroundings",
             "Chapter 2: Is Matter Around Us Pure?",
@@ -69,9 +219,60 @@ const cbseChapterDatabase = {
             "Chapter 10: Work and Energy",
             "Chapter 11: Sound",
             "Chapter 12: Improvement in Food Resources"
+        ],
+        "Social Science": [
+            "Chapter 1: The French Revolution (History)",
+            "Chapter 2: Socialism in Europe & Russian Revolution (History)",
+            "Chapter 3: Nazism and the Rise of Hitler (History)",
+            "Chapter 4: India - Size and Location (Geography)",
+            "Chapter 5: Physical Features of India (Geography)",
+            "Chapter 6: Drainage & Climate (Geography)",
+            "Chapter 7: Natural Vegetation & Wildlife (Geography)",
+            "Chapter 8: What is Democracy? Why Democracy? (Pol. Sci.)",
+            "Chapter 9: Constitutional Design (Pol. Sci.)",
+            "Chapter 10: Electoral Politics & Working of Institutions (Pol. Sci.)",
+            "Chapter 11: Democratic Rights (Pol. Sci.)",
+            "Chapter 12: People as Resource & Poverty as a Challenge (Economics)",
+            "Chapter 13: Food Security in India (Economics)"
+        ],
+        "English": [
+            "Unit 1: The Fun They Had & The Road Not Taken",
+            "Unit 2: The Sound of Music & Wind",
+            "Unit 3: The Little Girl & Rain on the Roof",
+            "Unit 4: A Truly Beautiful Mind & Lake Isle of Innisfree",
+            "Unit 5: Reading Comprehension, Grammar & Analytical Paragraph"
+        ],
+        "Hindi": [
+            "पाठ 1: दो बैलों की कथा (क्षितिज)",
+            "पाठ 2: ल्हासा की ओर",
+            "पाठ 3: उपभोक्तावाद की संस्कृति",
+            "पाठ 4: साँवले सपनों की याद",
+            "पाठ 5: उपसर्ग, प्रत्यय, समास, वाक्य भेद एवं पत्र/संवाद लेखन"
+        ],
+        "Computer Science / IT / AI": [
+            "Unit 1: Employability Skills (Communication, ICT)",
+            "Unit 2: IT-ITeS Industry & Word Processing (Advanced)",
+            "Unit 3: Electronic Spreadsheet & Digital Presentation",
+            "Unit 4: Python Programming & Computer Vision (AI 417)"
         ]
     },
     "Class 10": {
+        "Mathematics": [
+            "Chapter 1: Real Numbers",
+            "Chapter 2: Polynomials",
+            "Chapter 3: Pair of Linear Equations in Two Variables",
+            "Chapter 4: Quadratic Equations",
+            "Chapter 5: Arithmetic Progressions",
+            "Chapter 6: Triangles",
+            "Chapter 7: Coordinate Geometry",
+            "Chapter 8: Introduction to Trigonometry",
+            "Chapter 9: Some Applications of Trigonometry",
+            "Chapter 10: Circles",
+            "Chapter 11: Areas Related to Circles",
+            "Chapter 12: Surface Areas and Volumes",
+            "Chapter 13: Statistics",
+            "Chapter 14: Probability"
+        ],
         "General Science": [
             "Chapter 1: Chemical Reactions and Equations",
             "Chapter 2: Acids, Bases and Salts",
@@ -86,9 +287,58 @@ const cbseChapterDatabase = {
             "Chapter 11: Electricity",
             "Chapter 12: Magnetic Effects of Electric Current",
             "Chapter 13: Our Environment"
+        ],
+        "Social Science": [
+            "Chapter 1: The Rise of Nationalism in Europe (History)",
+            "Chapter 2: Nationalism in India (History)",
+            "Chapter 3: The Making of a Global World & Print Culture (History)",
+            "Chapter 4: Resources and Development & Forest/Water Resources (Geography)",
+            "Chapter 5: Agriculture, Minerals & Energy Resources (Geography)",
+            "Chapter 6: Manufacturing Industries & Lifelines of National Economy (Geography)",
+            "Chapter 7: Power Sharing & Federalism (Pol. Sci.)",
+            "Chapter 8: Gender, Religion and Caste & Political Parties (Pol. Sci.)",
+            "Chapter 9: Outcomes of Democracy (Pol. Sci.)",
+            "Chapter 10: Development & Sectors of the Indian Economy (Economics)",
+            "Chapter 11: Money and Credit & Globalisation (Economics)"
+        ],
+        "English": [
+            "Unit 1: A Letter to God & Dust of Snow",
+            "Unit 2: Nelson Mandela: Long Walk to Freedom & A Tiger in the Zoo",
+            "Unit 3: Two Stories about Flying & How to Tell Wild Animals",
+            "Unit 4: From the Diary of Anne Frank & Amanda",
+            "Unit 5: Reading Skills, Formal Letter Writing & Analytical Paragraph"
+        ],
+        "Hindi": [
+            "पाठ 1: पद (सूरदास) / क्षितिज",
+            "पाठ 2: राम-लक्ष्मण-परशुराम संवाद",
+            "पाठ 3: नेताजी का चश्मा",
+            "पाठ 4: बालगोबिन भगत",
+            "पाठ 5: रचना के आधार पर वाक्य रूपांतरण, पद परिचय, अलंकार एवं विज्ञापन/ईमेल"
+        ],
+        "Computer Science / IT / AI": [
+            "Unit 1: Advanced Communication & ICT Skills",
+            "Unit 2: Digital Documentation & Electronic Spreadsheet",
+            "Unit 3: Database Management System (DBMS & SQL)",
+            "Unit 4: Artificial Intelligence Project Cycle & Data Science (AI 417)"
         ]
     },
     "Class 11": {
+        "Mathematics": [
+            "Chapter 1: Sets",
+            "Chapter 2: Relations and Functions",
+            "Chapter 3: Trigonometric Functions",
+            "Chapter 4: Complex Numbers and Quadratic Equations",
+            "Chapter 5: Linear Inequalities",
+            "Chapter 6: Permutations and Combinations",
+            "Chapter 7: Binomial Theorem",
+            "Chapter 8: Sequences and Series",
+            "Chapter 9: Straight Lines",
+            "Chapter 10: Conic Sections",
+            "Chapter 11: Introduction to Three Dimensional Geometry",
+            "Chapter 12: Limits and Derivatives",
+            "Chapter 13: Statistics",
+            "Chapter 14: Probability"
+        ],
         "Physics": [
             "Chapter 1: Units and Measurements",
             "Chapter 2: Motion in a Straight Line",
@@ -110,10 +360,10 @@ const cbseChapterDatabase = {
             "Chapter 2: Structure of Atom",
             "Chapter 3: Classification of Elements & Periodicity",
             "Chapter 4: Chemical Bonding and Molecular Structure",
-            "Chapter 5: Thermodynamics",
+            "Chapter 5: Chemical Thermodynamics",
             "Chapter 6: Equilibrium",
             "Chapter 7: Redox Reactions",
-            "Chapter 8: Organic Chemistry: Basic Principles",
+            "Chapter 8: Organic Chemistry: Basic Principles & Techniques",
             "Chapter 9: Hydrocarbons"
         ],
         "Biology": [
@@ -121,13 +371,82 @@ const cbseChapterDatabase = {
             "Chapter 2: Biological Classification",
             "Chapter 3: Plant Kingdom",
             "Chapter 4: Animal Kingdom",
-            "Chapter 5: Cell: Unit of Life",
-            "Chapter 6: Biomolecules",
-            "Chapter 7: Plant Physiology",
-            "Chapter 8: Human Physiology"
+            "Chapter 5: Morphology of Flowering Plants",
+            "Chapter 6: Anatomy of Flowering Plants",
+            "Chapter 7: Structural Organisation in Animals",
+            "Chapter 8: Cell: The Unit of Life",
+            "Chapter 9: Biomolecules",
+            "Chapter 10: Cell Cycle and Cell Division",
+            "Chapter 11: Photosynthesis in Higher Plants",
+            "Chapter 12: Respiration in Plants",
+            "Chapter 13: Plant Growth and Development",
+            "Chapter 14: Breathing and Exchange of Gases",
+            "Chapter 15: Body Fluids and Circulation",
+            "Chapter 16: Excretory Products and Their Elimination",
+            "Chapter 17: Locomotion and Movement",
+            "Chapter 18: Neural Control and Coordination",
+            "Chapter 19: Chemical Coordination and Integration"
+        ],
+        "Computer Science / IP": [
+            "Unit 1: Computer Systems and Organisation",
+            "Unit 2: Computational Thinking and Python Programming",
+            "Unit 3: Data Handling using Python Libraries (Pandas / NumPy)",
+            "Unit 4: Database Concepts & Structured Query Language (SQL)",
+            "Unit 5: Cyber Safety, Society, Law and Ethics"
+        ],
+        "English Core": [
+            "Unit 1: The Portrait of a Lady & A Photograph",
+            "Unit 2: We're Not Afraid to Die & Discovering Tut",
+            "Unit 3: The Laburnum Top & The Voice of the Rain",
+            "Unit 4: Childhood & Father to Son",
+            "Unit 5: Note Making, Summarising, Poster Design & Speech Writing"
+        ],
+        "Accountancy": [
+            "Chapter 1: Introduction to Accounting & Basic Terms",
+            "Chapter 2: Theory Base of Accounting & Accounting Standards",
+            "Chapter 3: Recording of Transactions (Journal, Ledger, Cash Book)",
+            "Chapter 4: Bank Reconciliation Statement (BRS)",
+            "Chapter 5: Trial Balance and Rectification of Errors",
+            "Chapter 6: Depreciation, Provisions and Reserves",
+            "Chapter 7: Financial Statements of Sole Proprietorship"
+        ],
+        "Business Studies": [
+            "Chapter 1: Business, Trade and Commerce",
+            "Chapter 2: Forms of Business Organisations",
+            "Chapter 3: Private, Public and Global Enterprises",
+            "Chapter 4: Business Services",
+            "Chapter 5: Emerging Modes of Business",
+            "Chapter 6: Social Responsibilities of Business & Ethics",
+            "Chapter 7: Sources of Business Finance",
+            "Chapter 8: Small Business and Enterprises",
+            "Chapter 9: Internal Trade",
+            "Chapter 10: International Business"
+        ],
+        "Economics": [
+            "Unit 1: Introduction to Microeconomics & Consumer Equilibrium",
+            "Unit 2: Producer Behaviour, Cost & Supply",
+            "Unit 3: Forms of Market and Price Determination",
+            "Unit 4: Statistics for Economics (Collection & Presentation)",
+            "Unit 5: Measures of Central Tendency & Dispersion",
+            "Unit 6: Correlation & Index Numbers"
         ]
     },
     "Class 12": {
+        "Mathematics": [
+            "Chapter 1: Relations and Functions",
+            "Chapter 2: Inverse Trigonometric Functions",
+            "Chapter 3: Matrices",
+            "Chapter 4: Determinants",
+            "Chapter 5: Continuity and Differentiability",
+            "Chapter 6: Application of Derivatives",
+            "Chapter 7: Integrals",
+            "Chapter 8: Application of Integrals",
+            "Chapter 9: Differential Equations",
+            "Chapter 10: Vector Algebra",
+            "Chapter 11: Three Dimensional Geometry",
+            "Chapter 12: Linear Programming",
+            "Chapter 13: Probability"
+        ],
         "Physics": [
             "Chapter 1: Electric Charges and Fields",
             "Chapter 2: Electrostatic Potential and Capacitance",
@@ -166,528 +485,462 @@ const cbseChapterDatabase = {
             "Chapter 7: Human Health and Disease",
             "Chapter 8: Microbes in Human Welfare",
             "Chapter 9: Biotechnology: Principles & Processes",
-            "Chapter 10: Organisms and Populations",
-            "Chapter 11: Ecosystem & Biodiversity"
+            "Chapter 10: Biotechnology and Its Applications",
+            "Chapter 11: Organisms and Populations",
+            "Chapter 12: Ecosystem & Biodiversity Conservation"
+        ],
+        "Computer Science / IP": [
+            "Unit 1: Computational Thinking and Python Programming-2",
+            "Unit 2: Computer Networks & Internet Protocols",
+            "Unit 3: Database Management & SQL Queries (Joins, Functions, Group By)",
+            "Unit 4: Python-MySQL Database Connectivity",
+            "Unit 5: Data Visualization with Matplotlib (IP 065)"
+        ],
+        "English Core": [
+            "Unit 1: The Last Lesson & My Mother at Sixty-Six",
+            "Unit 2: Lost Spring & Keeping Quiet",
+            "Unit 3: Deep Water & A Thing of Beauty",
+            "Unit 4: The Rattrap & A Roadside Stand",
+            "Unit 5: Indigo & Poets and Pancakes",
+            "Unit 6: Formal Notice, Invitation, Letter to Editor & Job Application"
+        ],
+        "Accountancy": [
+            "Chapter 1: Accounting for Partnership Firms - Fundamentals",
+            "Chapter 2: Goodwill: Nature and Valuation",
+            "Chapter 3: Reconstitution of Partnership (Admission, Retirement, Death)",
+            "Chapter 4: Dissolution of Partnership Firm",
+            "Chapter 5: Accounting for Share Capital",
+            "Chapter 6: Issue and Redemption of Debentures",
+            "Chapter 7: Financial Statements of a Company & Analysis",
+            "Chapter 8: Accounting Ratios & Cash Flow Statement"
+        ],
+        "Business Studies": [
+            "Chapter 1: Nature and Significance of Management",
+            "Chapter 2: Principles of Management",
+            "Chapter 3: Business Environment",
+            "Chapter 4: Planning",
+            "Chapter 5: Organising",
+            "Chapter 6: Staffing",
+            "Chapter 7: Directing",
+            "Chapter 8: Controlling",
+            "Chapter 9: Financial Management",
+            "Chapter 10: Financial Markets",
+            "Chapter 11: Marketing Management",
+            "Chapter 12: Consumer Protection"
+        ],
+        "Economics": [
+            "Unit 1: National Income Accounting and Related Aggregates",
+            "Unit 2: Money and Banking",
+            "Unit 3: Determination of Income and Employment",
+            "Unit 4: Government Budget and the Economy",
+            "Unit 5: Balance of Payments & Foreign Exchange Rate",
+            "Unit 6: Development Experience of India (1947-90) & Economic Reforms (1991)",
+            "Unit 7: Current Challenges Facing Indian Economy",
+            "Unit 8: Development Experience of India - Comparison with Neighbours"
         ]
     }
 };
 
-// 2. Templates Library Engine
-const templatesLibrary = [
-    {
-        id: "curiosity_lab",
-        category: "curiosity",
-        title: "🔬 NCERT Curiosity Hands-On Activity & Toy Lab",
-        subtitle: "Low-Cost Experiential Toys & Discovery Lab",
-        tags: ["Curiosity", "Activity", "Toy Making", "Experiential", "NCF-SE 2023"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-        description: "Design low-cost hands-on science activities, toy-making projects (e.g. magnetic floating top, pinhole camera, red cabbage indicator), observation sheets, and curiosity questions mandated by NCERT Curiosity series.",
-        
-        directContentBuilder: function(p) {
-            return `NCERT CURIOSITY SCIENCE SERIES | EXPERIENTIAL TOY & ACTIVITY MANUAL
-CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
-CHAPTER / CURIOSITY MODULE: ${p.chapter}
-Pedagogical Model: NCF-SE 2023 Experiential Learning & Joy of Learning (NEP 2020)
+// Subject mapping by Class tier
+const subjectOptionsByClass = {
+    "junior": ["General Science", "Mathematics", "Social Science", "English", "Hindi", "Computer Science / IT / AI"],
+    "senior": ["Mathematics", "Physics", "Chemistry", "Biology", "Computer Science / IP", "English Core", "Accountancy", "Business Studies", "Economics"]
+};
 
-================================================================================
-1. CURIOSITY ACTIVITY TITLE & OBJECTIVE
-Title: "Hands-On Science Toy & Activity: Exploring ${p.chapter}"
-Objective: To build a working low-cost model / toy using everyday materials to observe, test, and explain the core scientific principle of ${p.chapter}.
+// Helper: Universal Subject-Adaptive Question Paper Generator
+function buildSubjectQuestionPaper(p) {
+    const totalM = parseFloat(p.marks) || 80;
+    const subj = p.subject;
 
-================================================================================
-2. MATERIALS REQUIRED (ZERO / LOW-COST HOUSEHOLD ITEMS)
-• Cardboard strips, plastic cups, rubber bands, stainless steel spoons, sewing thread.
-• Recycled plastic bottles, bar magnet / iron nails, drops of turmeric / lemon juice or vinegar.
-• Ruler, measuring tape, water container, stop watch / smartphone timer.
-
-================================================================================
-3. STEP-BY-STEP TOY MAKING & ASSEMBLY PROCEDURE
-Step 1: Take the base container/cardboard and arrange the components in alignment with ${p.chapter}.
-Step 2: Construct the pivot/terminal point and attach the movable or reactive element using thread/tape.
-Step 3: Test the initial equilibrium state before applying external stimulus (temperature, magnetic field, force, or solution pH).
-Step 4: Gradually trigger the system and observe the mechanical motion, deflection, color transition, or state change.
-
-================================================================================
-4. STUDENT CURIOSITY OBSERVATION SHEET
-| Trial / Test Case | Input Condition / Variable | Observed Response / Deflection | Scientific Inference (${p.chapter}) |
-|---|---|---|---|
-| Trial 1 (Control) | Standard room condition | Baseline state recorded | Reference benchmark |
-| Trial 2 (Modified) | Parameter doubled / changed | Noticeable shift / reaction | ${p.chapter} effect confirmed |
-| Trial 3 (Extreme) | Maximum load / limit | Saturation / rapid transition | Boundary condition verified |
-
-================================================================================
-5. CURIOSITY INQUIRY QUESTIONS ("JOY OF LEARNING")
-Q1. [Wondering Question] What surprised you most when you operated your handmade science toy?
-Q2. [Cause & Effect] If you double the length or concentration in your activity, how does the response time change?
-Q3. [Real-World Link] How is this simple toy mechanism utilized in large-scale modern technology or nature?
-
----ANSWER_KEY_START---
-NCERT CURIOSITY ACTIVITY TEACHER FACILITATION GUIDE & ANSWERS:
-================================================================================
-• Core Principle: Explains the primary mechanism of ${p.chapter} through hands-on tactile manipulation.
-• Teacher Tip: Prompt students to formulate their own hypotheses BEFORE assembling the toy.
-• Q1 Guidance: Encourage qualitative descriptions of energy transformation, force deflection, or chemical color shifts.
-• Q2 Guidance: Emphasize linear or square-law mathematical relations (e.g. double input yields direct/proportional response).
-• Q3 Guidance: Link to real-life applications like sensors, motors, water filtration, or ecological balance.`;
-        },
-
-        builder: function(p) {
-            return `Act as an NCERT Curiosity Textbook Author and National Science Activity Specialist.
-
-Design a COMPLETE LOW-COST HANDS-ON SCIENCE ACTIVITY & TOY-MAKING MANUAL strictly adhering to NCERT Curiosity (Grade 6-8) and CBSE Guidelines (Grade 9-10).
-
-PARAMETERS:
-• Class Level: ${p.classLevel}
-• Subject: ${p.subject}
-• Curiosity Chapter: ${p.chapter}
-• Targeted Learner Tier: ${p.tier}
-
-PART 1: EXPERIENTIAL TOY & ACTIVITY MANUAL
-1. Activity & Toy Title mapped to NCERT Curiosity chapter.
-2. Low-cost / Household materials list.
-3. Step-by-step assembly and experimentation guide.
-4. Student Observation Worksheet & Data Matrix.
-5. "Joy of Learning" Inquiry Questions (Why, How, What If?).
-
----ANSWER_KEY_START---
-PART 2: TEACHER PEDAGOGICAL FACILITATION GUIDE
-1. Expected observational outcomes and scientific rationale.
-2. Troubleshooting common student errors during toy assembly.
-3. Model answers for Inquiry Questions.`;
-        }
-    },
-
-    {
-        id: "curiosity_inquiry",
-        category: "curiosity",
-        title: "❓ NCERT Curiosity Inquiry & Real-World Explorer",
-        subtitle: "5E Inquiry Framework & Everyday Phenomena",
-        tags: ["Curiosity", "Inquiry", "NCF-SE 2023", "Everyday Science"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
-        description: "Generate curiosity-driven inquiry sheets with real-world phenomenon analysis, 'What If?' speculative science challenges, cross-curricular STEM links, and self-reflection prompts.",
-        
-        directContentBuilder: function(p) {
-            return `NCERT CURIOSITY SCIENCE SERIES | INQUIRY & EVERYDAY PHENOMENA EXPLORER
-CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
-THEMATIC UNIT: ${p.chapter}
-NCF-SE 2023 Competency Framework: Inquiry-Driven Thinking & Critical Reasoning
-
-================================================================================
-1. REAL-WORLD PHENOMENON TO EXPLORE ("I WONDER WHY...")
-Scenario: "Observe a daily situation related to ${p.chapter}. Have you ever wondered why certain objects behave differently under changing environmental conditions?"
-
-Key Observation Challenge:
-- Notice what happens when you alter one parameter while observing ${p.chapter} in your home or surrounding environment.
-
-================================================================================
-2. 5E CURIOSITY INQUIRY TASKS
-
-[TASK 1: ENGAGE - SPARKING CURIOSITY]
-Look at the given situation in ${p.chapter}. Formulate 2 "Why" questions and 2 "How" questions about what causes this phenomenon.
-
-[TASK 2: EXPLORE - INVESTIGATIVE EXPERIMENT]
-Design a simple 5-minute home investigation using easily available items to test one of your questions about ${p.chapter}.
-• Hypothesis: "I predict that if I change __________, then __________ will happen."
-• Method: Detail your setup in 3 simple bullet points.
-
-[TASK 3: EXPLAIN - SCIENTIFIC REASONING]
-Explain the scientific reason behind your observation using the concept of ${p.chapter}. Use correct scientific terms (e.g. force, energy, particles, reaction, adaptation).
-
-[TASK 4: ELABORATE - "WHAT IF?" CHALLENGE]
-• What if the fundamental constant or environmental factor in ${p.chapter} were doubled?
-• What if this process stopped occurring on Earth for 24 hours? Describe the impact on living organisms or technology.
-
-[TASK 5: EVALUATE - REFLECTION CHIP]
-Rate your understanding of ${p.chapter}:
-[ ] I can explain this to a classmate.  [ ] I can connect it to daily life.  [ ] I need to explore more.
-
----ANSWER_KEY_START---
-NCERT CURIOSITY INQUIRY TEACHER REFERENCE & MODEL RESPONSES:
-================================================================================
-• Phenomenon Breakdown: Connects ${p.chapter} to observable physical, chemical, or biological processes in nature.
-• Model Hypothesis: Clear testable statement identifying independent and dependent variables.
-• Model "What If" Rationale: Evaluates higher-order consequences and systems thinking.
-• Cross-Curricular Link: Combines Science, Mathematics (graphing/ratios), and Environmental Education.`;
-        },
-
-        builder: function(p) {
-            return `You are a Master Educator specializing in NCERT Curiosity Inquiry-Based Learning and NEP 2020 NCF-SE Pedagogy.
-
-Create a CURIOSITY INQUIRY & REAL-WORLD EXPLORER WORKSHEET for Class ${p.classLevel} Science on "${p.chapter}".
-
-PART 1: STUDENT INQUIRY EXPLORER
-1. Real-World Phenomenon hook ("I Wonder Why...").
-2. 5E Curiosity Tasks (Engage, Explore, Explain, Elaborate "What-If", Evaluate).
-3. Cross-Curricular STEM Connection (Science + Math/Art/Environment).
-
----ANSWER_KEY_START---
-PART 2: TEACHER INQUIRY FACILITATION & MODEL ANSWERS
-1. Model scientific explanations for student inquiry prompts.
-2. Guidance for leading classroom discussions.`;
-        }
-    },
-
-    {
-        id: "qp",
-        category: "assessment",
-        title: "📝 Blueprint Question Paper Setter",
-        subtitle: "Official CBSE Exam Pattern (Sections A to E)",
-        tags: ["Blueprint", "Question Paper", "PYQ Pattern", "Internal Choice"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>`,
-        description: "Generate a proper, complete, ready-to-print CBSE Competency-Based Question Paper with Blueprint matrix, Section A to E breakdown, internal choices, and Answer Key.",
-        
-        directContentBuilder: function(p) {
-            return `KENDRIYA VIDYALAYA SANGATHAN / CBSE BOARD EXAMINATION 2026-27
+    // Header & Blueprint
+    let paper = `KENDRIYA VIDYALAYA SANGATHAN / CBSE BOARD EXAMINATION 2026-27
 OFFICIAL COMPETENCY-BASED QUESTION PAPER
 
 Subject: ${p.subject} | Class: ${p.classLevel}
 Syllabus / Chapter Focus: ${p.chapter}
-Maximum Marks: ${p.marks} Marks | Time Allowed: ${p.time} Minutes
+Maximum Marks: ${totalM} Marks | Time Allowed: ${p.time} Minutes
 Target Learner Tier: ${p.tier}
 
 ================================================================================
 GENERAL INSTRUCTIONS:
-1. This question paper consists of 39 compulsory questions divided into 5 Sections: A, B, C, D, and E.
-2. Section A contains 20 objective type questions (16 MCQs and 4 Assertion-Reason questions) of 1 mark each.
-3. Section B contains 6 Short Answer (SA-I) questions of 2 marks each (Answers in 30-50 words).
-4. Section C contains 7 Short Answer (SA-II) questions of 3 marks each (Answers in 50-80 words).
-5. Section D contains 3 Long Answer (LA) questions of 5 marks each. Internal choice is provided in all 3 questions.
-6. Section E contains 3 Case-Based / Data-Integrated units of assessment of 4 marks each with sub-parts.
-7. Use of calculators is NOT permitted. Logarithmic tables may be provided on request.
-${p.includeBloom ? '8. Bloom\'s Taxonomy Levels are tagged for each question [R: Remember, U: Understand, Ap: Apply, An: Analyze, Ev: Evaluate, C: Create].\n' : ''}${p.includeNEP ? '9. Questions strictly test Competency-Based Education (CBE) as per NEP-2020 & NCF-SE 2023.\n' : ''}
+1. This question paper consists of compulsory questions divided into 5 Sections: A, B, C, D, and E.
+2. Section A contains Objective Type Questions (MCQs and Assertion-Reason questions) of 1 mark each.
+3. Section B contains Short Answer (SA-I) questions of 2 marks each (30-50 words).
+4. Section C contains Short Answer (SA-II) questions of 3 marks each (50-80 words).
+5. Section D contains Long Answer (LA) questions of 5 marks each with compulsory internal choices.
+6. Section E contains Case-Based / Data-Integrated units of assessment of 4 marks each with sub-parts.
+${subj.includes('Math') ? '7. Use of calculators is strictly prohibited. Geometric figures must be drawn neatly where required.\n' : '7. Use of calculators is NOT permitted. Logarithmic tables may be provided on request.\n'}${p.includeBloom ? '8. Bloom\'s Taxonomy Levels are tagged for each question [R: Remember, U: Understand, Ap: Apply, An: Analyze, Ev: Evaluate, C: Create].\n' : ''}${p.includeNEP ? '9. Questions strictly test Competency-Based Education (CBE) as per NEP-2020 & NCF-SE 2023.\n' : ''}
 ${p.chapterWeightageTable ? p.chapterWeightageTable + '\n' : ''}================================================================================
 EXAM BLUEPRINT MATRIX (CBSE SESSION 2026-27)
 
-| Section | Question Type | No. of Qs | Marks per Q | Total Marks | Targeted Bloom's Taxonomy |
+| Section | Question Type | No. of Qs | Marks per Q | Total Marks | Targeted Competency Level |
 |---|---|---|---|---|---|
-| Section A | MCQs & Assertion-Reason | 20 | 1 | 20 Marks | Remember / Understand / Apply |
-| Section B | Short Answer - I (SA-I) | 6 | 2 | 12 Marks | Apply / Conceptual Analysis |
-| Section C | Short Answer - II (SA-II) | 7 | 3 | 21 Marks | Apply / Numerical / Derivation |
-| Section D | Long Answer (LA) | 3 | 5 | 15 Marks | Evaluate / Design / Synthesis |
-| Section E | Case-Study Integrated | 3 | 4 | 12 Marks | Analyze / Real-World HOTS |
-| **TOTAL** | **Full Question Paper** | **39** | | **80 Marks** | **100% Competency Aligned** |
+| Section A | MCQs & Assertion-Reason | 10 | 1 | 10 Marks | Conceptual Recall & Reasoning |
+| Section B | Short Answer - I (SA-I) | 3 | 2 | 6 Marks | Application & Problem Solving |
+| Section C | Short Answer - II (SA-II) | 3 | 3 | 9 Marks | Analytical Proof / Derivation / Case |
+| Section D | Long Answer (LA) | 1 | 5 | 5 Marks | Evaluation / Synthesis / Theorem |
+| Section E | Case-Study / Source Integrated | 1 | 4 | 4 Marks | Integrated Real-World HOTS |
+| **TOTAL** | **Full Question Paper** | **18** | | **35 Marks** | **100% CBSE Aligned** |
 
 ================================================================================
-SECTION A (20 Marks) - MULTIPLE CHOICE & ASSERTION-REASON QUESTIONS
+SECTION A (10 Marks) - MULTIPLE CHOICE & ASSERTION-REASON QUESTIONS
+`;
 
-Q1. [Competency - Application [Ap]] 
-A student sets up an experiment based on ${p.chapter}. If the primary operating parameter is doubled while keeping other variables constant, what happens to the net output?
-(A) It remains unchanged because the parameter is independent.
-(B) It increases by a factor of 2 (linear relation).
-(C) It increases by a factor of 4 (quadratic/inverse-square relation).
-(D) It decreases to half of its initial value.
+    if (subj.includes("Math")) {
+        paper += `
+Q1. [Competency - Application [Ap]]
+If alpha and beta are the zeroes of the quadratic polynomial f(x) = x^2 - 5x + k such that alpha - beta = 1, then the value of k is:
+(A) 6    (B) 4    (C) 12    (D) 5
 
-Q2. [Competency - Conceptual Analysis [U]]
-Which of the following physical/chemical statements accurately describes the primary mechanism in ${p.chapter}?
-(A) Energy is conserved by converting potential energy directly into non-recoverable heat.
-(B) The net charge/mass remains conserved across all closed system transformations.
-(C) The process occurs spontaneously only at absolute zero.
-(D) The rate of reaction/change is independent of temperature and pressure gradient.
+Q2. [Competency - Conceptual Analysis [An]]
+If tan(theta) + cot(theta) = 2, then the value of tan^10(theta) + cot^10(theta) is equal to:
+(A) 1    (B) 2    (C) 10    (D) 2^10
 
-Q3. [Competency - Graphical Interpretation [An]]
-In a standard graph plotting response versus input for ${p.chapter}, a straight line passing through the origin indicates:
-(A) Inverse proportionality between the variables.
-(B) Direct linear proportionality with constant slope equal to the system property.
-(C) Non-linear exponential growth.
-(D) Zero correlation between independent and dependent parameters.
+Q3. [Competency - Problem Solving [Ap]]
+The 11th term of an Arithmetic Progression -3, -1/2, 2, ... is:
+(A) 28   (B) 22   (C) -38   (D) 46/2
 
-Q4. [NCERT Activity Based [Ap]]
-During a laboratory demonstration of ${p.chapter}, a teacher adds a indicator/meter across the system. What key observation confirms the successful completion of the phenomenon?
-(A) Color change / needle deflection due to potential difference/chemical shift.
-(B) Evolution of a pungent gas with a pop sound.
-(C) Rapid decrease in system temperature to 0°C.
-(D) Formation of a soluble colored complex that dissolves completely.
+Q4. [NCERT Concept Check [R]]
+The distance of point P(-6, 8) from the origin (0, 0) is:
+(A) 8 units   (B) 2 sqrt(7) units   (C) 10 units   (D) 6 units
 
-Q5. [Competency - Problem Solving [Ap]]
-Calculate the magnitude of the core quantity in ${p.chapter} when a system operates with 10 units of input over a duration of 2 seconds:
-(A) 5 units (SI metric)
-(B) 20 units (SI metric)
-(C) 12 units (SI metric)
-(D) 0.2 units (SI metric)
+Q5. [Competency - Analytical Reasoning [An]]
+If a line is drawn parallel to one side of a triangle to intersect the other two sides in distinct points, the other two sides are divided in:
+(A) Equal ratio   (B) Inverse ratio   (C) Square ratio   (D) Perpendicular ratio
 
-Q6. [NCERT Exemplar Pattern [U]]
-Identify the incorrect statement regarding the fundamental laws governing ${p.chapter}:
-(A) They obey the principle of conservation of energy.
-(B) They apply strictly to microscopic quantum systems only and fail macroscopically.
-(C) Dimensional homogeneity must be maintained across all terms in equations.
-(D) Vector quantities must be added using the parallelogram law of addition.
+Q6. [Competency - Probability [Ap]]
+A card is drawn at random from a well-shuffled deck of 52 playing cards. The probability of getting a face card of red color is:
+(A) 3/13   (B) 3/26   (C) 1/26   (D) 6/13
 
-Q7. [Real-World Life Application [Ap]]
-In modern household/industrial devices operating on principles of ${p.chapter}, safety devices (like fuses, earthing, or insulation) are connected in:
-(A) Series with the live line to interrupt current during overload.
-(B) Parallel across neutral and ground to bypass voltage spikes.
-(C) Series with neutral wire only.
-(D) Parallel across all secondary loads regardless of current rating.
-
-Q8. [Competency - Data Interpretation [An]]
-A research data table for ${p.chapter} shows values of [X: 2, 4, 6] corresponding to [Y: 8, 16, 24]. The value of the proportionality constant K (Y/X) is:
-(A) 0.25
-(B) 4.0
-(C) 12.0
-(D) 48.0
-
-Q9. [NCERT Concept Check [R]]
-The SI unit for the primary physical quantity measured in ${p.chapter} is:
-(A) Joule (J) / Newton (N) / Volt (V) / Ampere (A) as applicable.
-(B) Watt per second (W/s).
-(C) Erg per centimeter (erg/cm).
-(D) Dimensionless ratio without units.
-
-Q10. [HOTS Analysis [An]]
-If the distance between two interacting components in ${p.chapter} is reduced to one-third (1/3), the magnitude of the force/field becomes:
-(A) 3 times greater
-(B) 9 times greater
-(C) 1/3 of the initial value
-(D) 1/9 of the initial value
-
-Q11 - Q16. [MCQs covering NCERT Exemplar & CBSE Board PYQ Trends]
-(Standard 1-mark objective questions on formulas, definitions, and applications in ${p.chapter}).
+Q7. [NCERT Exemplar Pattern [U]]
+If the perimeter and area of a circle are numerically equal, then the radius of the circle is:
+(A) 2 units   (B) pi units   (C) 4 units   (D) 7 units
 
 ---
-DIRECTION FOR Q17 - Q20:
-In the following questions, a statement of Assertion (A) is followed by a statement of Reason (R). Choose the correct option:
-(A) Both Assertion (A) and Reason (R) are true, and Reason (R) is the correct explanation of Assertion (A).
-(B) Both Assertion (A) and Reason (R) are true, but Reason (R) is NOT the correct explanation of Assertion (A).
-(C) Assertion (A) is true, but Reason (R) is false.
-(D) Assertion (A) is false, but Reason (R) is true.
+DIRECTION FOR Q8 - Q10:
+In the following questions, a statement of Assertion (A) is followed by Reason (R):
+(A) Both A and R are true, and R is correct explanation of A.
+(B) Both A and R are true, but R is NOT correct explanation of A.
+(C) A is true, R is false.
+(D) A is false, R is true.
 
-Q17. [Assertion-Reason - Conceptual]
-Assertion (A): In ${p.chapter}, high voltage transmission is preferred over long distances.
-Reason (R): Power loss in transmission cables is inversely proportional to the square of voltage (P_loss ∝ 1/V²).
+Q8. Assertion (A): The HCF of two numbers is 5 and their product is 150, then their LCM is 30.
+Reason (R): For any two positive integers a and b, HCF(a, b) x LCM(a, b) = a x b.
 
-Q18. [Assertion-Reason - NCERT Activity]
-Assertion (A): Pure water does not conduct electricity, but acidic water conducts electricity readily.
-Reason (R): Acid provides free mobile ions (H+ / OH-) which act as charge carriers in solution.
+Q9. Assertion (A): The line 3x + 2y - 12 = 0 cuts the x-axis at (4, 0).
+Reason (R): At any point on the x-axis, the y-coordinate is always zero.
 
-Q19. [Assertion-Reason - Physical Laws]
-Assertion (A): The magnetic field lines inside a current-carrying solenoid are parallel straight lines.
-Reason (R): The magnetic field is uniform at all points inside a long solenoid.
-
-Q20. [Assertion-Reason - Advanced]
-Assertion (A): Convex mirrors are universally used as rear-view mirrors in automobiles.
-Reason (R): Convex mirrors always produce an erect, diminished image and provide a wider field of view.
+Q10. Assertion (A): Sin(A+B) = Sin A + Sin B for all angles A and B.
+Reason (R): Trigonometric ratios follow linear algebraic distributive laws.
 
 ================================================================================
-SECTION B (12 Marks) - SHORT ANSWER QUESTIONS - I (2 Marks Each)
+SECTION B (6 Marks) - SHORT ANSWER QUESTIONS - I (2 Marks Each)
 
-Q21. [Competency - Reasoning [U]]
-State the fundamental law governing ${p.chapter}. Write its mathematical expression and specify the SI units for each term involved.
-
-Q22. [NCERT Activity Based [Ap]]
-During a laboratory activity on ${p.chapter}, a student observes a change when temperature rises by 20°C.
-(a) Why does temperature affect the physical/chemical state of the system?
-(b) Predict what happens if the system is cooled back to 0°C.
-
-Q23. [Diagram / Conceptual [Ap]]
-Draw a neat labeled schematic diagram representing the primary phenomenon in ${p.chapter}. Indicate the direction of flow/forces with arrows.
-
-Q24. [Numerical Problem [Ap]]
-A device operating on principles of ${p.chapter} draws a current of 2.5 A from a 220 V supply.
-(a) Calculate the resistance / power rating of the device.
-(b) Find the electrical energy consumed in 4 hours of continuous operation (in kWh).
-
-Q25. [OR / Internal Choice Question]
-Q25(A). Explain why fuse wire must have high resistivity and low melting point in electrical circuits.
-OR
-Q25(B). Differentiate between series and parallel combinations of components based on voltage drop, current distribution, and total effective value.
-
-Q26. [HOTS Short Answer [An]]
-Two thin lenses / components of powers +5 D and -2 D are placed in contact.
-(a) Calculate the net power of the combination.
-(b) Determine the focal length of the combined system in centimeters.
+Q11. Prove that 3 + 2 sqrt(5) is an irrational number, given that sqrt(5) is irrational. (2 Marks)
+Q12. Find the coordinates of the point which divides the line segment joining (4, -3) and (8, 5) internally in the ratio 3:1. (2 Marks)
+Q13. Solve the pair of linear equations for x and y:
+     2x + 3y = 11  and  2x - 4y = -24. (2 Marks)
 
 ================================================================================
-SECTION C (21 Marks) - SHORT ANSWER QUESTIONS - II (3 Marks Each)
+SECTION C (9 Marks) - SHORT ANSWER QUESTIONS - II (3 Marks Each)
 
-Q27. [Competency - Derivation / Mathematical Rigor [Ap]]
-Derive the complete mathematical expression for the net equivalent value in ${p.chapter} when three components (R1, R2, R3 or C1, C2, C3) are connected in parallel. Draw the circuit diagram.
-
-Q28. [Step-by-Step Numerical [Ap]]
-An object of height 4.0 cm is placed at a distance of 25.0 cm in front of a concave mirror of focal length 15.0 cm.
-(a) Find the position (v) of the image formed.
-(b) Calculate the height (h') and nature (real/virtual, inverted/erect) of the image.
-(c) Draw a ray diagram showing the image formation.
-
-Q29. [NCERT Exemplar Case [An]]
-Explain the underlying scientific reasons for the following observations in ${p.chapter}:
-(a) Why do stars twinkle while planets do not twinkle?
-(b) Why does the sky appear dark to an astronaut in outer space?
-(c) Why is danger signal light red in color?
-
-Q30. [Experimental Setup [Ap]]
-Describe an activity to demonstrate the magnetic field pattern produced around a straight current-carrying conductor using iron filings and a compass needle.
-(a) State Right-Hand Thumb Rule used to find field direction.
-(b) How does field strength change if current is doubled?
-
-Q31. [OR / Internal Choice Question]
-Q31(A). (i) Define 1 Ohm and 1 Volt in terms of SI base units.
-(ii) Calculate the total resistance between points A and B for a network of four 10-Ohm resistors arranged in a bridge.
-OR
-Q31(B). (i) Define Joule's Law of Heating and derive H = I² R t.
-(ii) Why are alloy heating elements (Nichrome) preferred over pure metals in electric irons?
-
-Q32. [Multi-Concept Application [An]]
-A copper wire has a diameter of 0.5 mm and resistivity ρ = 1.6 × 10⁻⁸ Ω·m.
-(a) What will be the length of this wire to make its resistance 10 Ω?
-(b) How much does the resistance change if the diameter is doubled without changing length?
-
-Q33. [Competency - Chemical / Physical Mechanism [U]]
-Write balanced chemical/physical equations and observations for 3 key reactions/transformations in ${p.chapter}.
+Q14. The sum of the 4th and 8th terms of an AP is 24 and the sum of the 6th and 10th terms is 44. Find the first three terms of the AP. (3 Marks)
+Q15. Prove the trigonometric identity: (sin theta - 2 sin^3 theta) / (2 cos^3 theta - cos theta) = tan theta. (3 Marks)
+Q16. Find the area of the unshaded region enclosed between a square of side 14 cm and four congruent circles touching each other internally. (3 Marks)
 
 ================================================================================
-SECTION D (15 Marks) - LONG ANSWER QUESTIONS (5 Marks Each)
+SECTION D (5 Marks) - LONG ANSWER QUESTIONS (5 Marks Each)
 
-Q34. [Compulsory Internal Choice - 5 Marks]
-Q34(A). [Comprehensive Derivation & Ray Diagram]
-(i) State Snell's Law of Refraction and define refractive index of a medium. (1M)
-(ii) Derive the lens formula 1/f = 1/v - 1/u for a thin convex lens forming a real image. (3M)
-(iii) A convex lens forms a real image 4 times larger than the object. If object distance is -10 cm, find the focal length. (1M)
+Q17. [Compulsory Internal Choice]
+Q17(A). State and prove Basic Proportionality Theorem (Thales Theorem) for a triangle. (5 Marks)
 OR
-Q34(B). [Human Eye & Vision Correction]
-(i) Name the defect of vision in which a person cannot see nearby objects clearly. State two causes of this defect. (2M)
-(ii) Draw ray diagrams showing: (a) Myopic Eye, (b) Hypermetropic Eye, (c) Correction using a suitable lens. (2M)
-(iii) A hypermetropic person has a near point of 75 cm. Calculate power of lens required to read at 25 cm. (1M)
-
-Q35. [Compulsory Internal Choice - 5 Marks]
-Q35(A). [Electromagnetism & Motor/Generator Principle]
-(i) State Fleming's Left-Hand Rule and Fleming's Right-Hand Rule. (2M)
-(ii) Explain the working principle and construction of an Electric Motor / Electromagnetic Induction setup with a labeled diagram. (2M)
-(iii) State two methods to increase the strength of induced current. (1M)
-OR
-Q35(B). [Electric Power Distribution & Household Wiring]
-(i) Explain why household domestic circuits are connected in parallel and not in series. Give 3 advantages. (3M)
-(ii) An electric oven rated 2 kW, 220 V is operated in a 5 A domestic circuit. What will happen? Explain with calculation. (2M)
-
-Q36. [Compulsory Internal Choice - 5 Marks]
-Q36(A). [Advanced Topic - ${p.chapter}]
-(i) Explain the phenomenon of Total Internal Reflection (TIR). State two necessary conditions for TIR to occur. (2M)
-(ii) Derive the relation between critical angle (i_c) and refractive index (μ). (1.5M)
-(iii) Explain how optical fibers transmit light signals over long distances with zero loss. (1.5M)
-OR
-Q36(B). [Exemplar Analytical Comprehensive Question]
-(i) State Ohm's law. Draw V-I graph for ohmic and non-ohmic conductors. (2M)
-(ii) A battery of 9V is connected in series with resistors of 0.2 Ω, 0.3 Ω, 0.4 Ω, 0.5 Ω and 12 Ω. How much current flows through the 12 Ω resistor? (2M)
-(iii) Why does a conductor get heated when an electric current flows through it? (1M)
+Q17(B). A straight highway leads to the foot of a tower. A man standing at the top of the tower observes two cars at angles of depression 30 deg and 60 deg, which are approaching the foot of the tower with uniform speed. If one car is 50 m behind the other, calculate the height of the tower. (5 Marks)
 
 ================================================================================
-SECTION E (12 Marks) - CASE-STUDY & INTEGRATED DATA UNITS (4 Marks Each)
+SECTION E (4 Marks) - CASE STUDY & INTEGRATED REAL-WORLD TASK (4 Marks)
 
-Q37. [CASE STUDY 1 - Household Electricity & Energy Conservation]
-Read the passage below and answer the sub-questions that follow:
-"In a modern Kendriya Vidyalaya smart classroom, electrical safety and power monitoring are regulated using smart meters. The room uses 4 LED tube lights (20 W each running for 8 hours/day), 2 ceiling fans (80 W each running for 10 hours/day), and 1 smart interactive board (300 W running for 5 hours/day). Electrical energy is billed at a rate of ₹ 6.50 per commercial unit (kWh)."
+Q18. [CASE STUDY - ARCHITECTURAL PARABOLIC ARCH]
+An architect designs an entrance gate for a Kendriya Vidyalaya campus in the shape of a parabola given by equation f(x) = -x^2 + 4x + 12.
+(a) Find the zeroes of the polynomial representing the gate height. [1 Mark]
+(b) Find the maximum height achieved by the parabolic arch above ground level. [1 Mark]
+(c) If the polynomial is shifted vertically upwards by 4 units, write the new polynomial expression and state its vertex coordinates. [2 Marks]`;
+    } else if (subj.includes("Social") || subj.includes("History") || subj.includes("Geography") || subj.includes("Pol")) {
+        paper += `
+Q1. [Competency - History [R]]
+Who among the following hosted the Congress of Vienna in 1815?
+(A) Duke Metternich  (B) Otto von Bismarck  (C) Giuseppe Mazzini  (D) Napoleon Bonaparte
 
-Sub-questions:
-(a) [1 Mark] Calculate the total daily energy consumption of the classroom in kWh (units).
-(b) [1 Mark] Find the total electricity bill for the month of April (30 days).
-(c) [2 Marks] If the main line voltage is 220 V, calculate the peak current drawn when all appliances operate simultaneously. Select an appropriate fuse rating (5A, 10A, or 15A) with justification.
+Q2. [Competency - Geography [U]]
+Which type of soil is predominantly formed by intense leaching due to heavy rain in tropical areas?
+(A) Alluvial Soil  (B) Black Soil  (C) Laterite Soil  (D) Arid Soil
 
-Q38. [CASE STUDY 2 - Advanced Optics & Solar Energy Harvesting]
-Read the passage below and answer the sub-questions that follow:
-"Solar concentrators use large parabolic and spherical mirrors to focus sunlight onto a central receiver tube containing fluid. The temperature at the focal spot reaches up to 500°C, driving steam turbines to generate green electricity. Precision tracking motors continuously adjust the mirror angle relative to the sun's altitude."
+Q3. [Competency - Political Science [An]]
+Which of the following is an example of 'Coming Together' Federation?
+(A) India  (B) Spain  (C) United States of America  (D) Belgium
 
-Sub-questions:
-(a) [1 Mark] Which type of spherical mirror is used in solar concentrators and why?
-(b) [1 Mark] Where should the absorber tube be positioned relative to the mirror's pole?
-(c) [2 Marks] If a solar mirror has a radius of curvature of 4.0 meters, calculate its focal length. If an object is placed 8 meters away, determine the position and magnification of the image formed.
+Q4. [Competency - Economics [Ap]]
+Gross Domestic Product (GDP) is the total market value of:
+(A) All goods and services produced in a year.
+(B) All final goods and services produced within a country during a specific year.
+(C) All intermediate goods processed by manufacturing units.
+(D) Total exports minus total imports.
 
-Q39. [CASE STUDY 3 - Laboratory Experiment & Data Analysis]
-Read the passage below and answer the sub-questions that follow:
-"A group of Class 10 students performed an experiment to study the variation of current (I) with potential difference (V) across a resistor wire 'X'. They recorded the following observation table in their science journal:
-Table: [V (Volts): 1.5, 3.0, 4.5, 6.0 | I (Amperes): 0.3, 0.6, 0.9, 1.2]"
+Q5. [Competency - History [R]]
+Which pact signed in September 1932 gave depressed classes reserved seats in provincial legislative councils?
+(A) Gandhi-Irwin Pact  (B) Poona Pact  (C) Lucknow Pact  (D) Shimla Accord
 
-Sub-questions:
-(a) [1 Mark] Plot the slope of the V-I graph and state what physical quantity the slope represents.
-(b) [1 Mark] Calculate the resistance of resistor wire 'X'.
-(c) [2 Marks] If another resistor wire 'Y' of twice the length and half the cross-sectional area of 'X' is connected in parallel with 'X', calculate the new equivalent resistance of the parallel combination.
+---
+DIRECTION FOR Q8 - Q10: Choose (A) Both A & R true and R is correct explanation, (B) Both true but R NOT correct explanation, (C) A true R false, (D) A false R true.
+
+Q8. Assertion (A): Democracies are more successful in accommodating social diversities than non-democratic regimes.
+Reason (R): Democracy ensures that decision making is based on norms and procedures with transparent consultation.
+
+Q9. Assertion (A): Money in hand cannot buy all the goods and services that one may need to live well.
+Reason (R): Income by itself is not a completely adequate indicator of material goods and quality life services.
+
+Q10. Assertion (A): The Black Soils are ideal for growing cotton crops.
+Reason (R): Black Soil has high moisture retention capacity and is rich in soil nutrients like calcium carbonate.
 
 ================================================================================
-${p.includeAnswerKey ? `---ANSWER_KEY_START---
+SECTION B (6 Marks) - SHORT ANSWER QUESTIONS - I (2 Marks Each)
+Q11. Explain two main decisions taken at the Bretton Woods Conference in 1944. (2 Marks)
+Q12. Distinguish between Renewable and Non-Renewable Resources with two examples each. (2 Marks)
+Q13. State two reasons why power sharing is desirable in a modern democracy. (2 Marks)
+
+================================================================================
+SECTION C (9 Marks) - SHORT ANSWER QUESTIONS - II (3 Marks Each)
+Q14. Describe the role of Women in the Nationalist Struggles of Europe during 19th Century. (3 Marks)
+Q15. Explain three major steps taken by the Indian Government towards Decentralisation in 1992. (3 Marks)
+Q16. How does the Tertiary Sector differ from Primary and Secondary sectors? Explain with examples. (3 Marks)
+
+================================================================================
+SECTION D (5 Marks) - LONG ANSWER QUESTIONS (5 Marks Each)
+Q17. [Compulsory Internal Choice]
+Q17(A). "The Non-Cooperation Movement spread from cities to the countryside." Support this statement with examples from Awadh and Andhra Pradesh. (5 Marks)
+OR
+Q17(B). Explain the economic impacts of Globalisation on small-scale producers and workers in India. (5 Marks)
+
+================================================================================
+SECTION E (4 Marks) - CASE STUDY & MAP INTEGRATED TASK (4 Marks)
+Q18. Read the passage on Water Scarcity and answer:
+"Water water everywhere, not a drop to drink. Multi-purpose river valley projects built after independence were hailed as temples of modern India..."
+(a) Mention one ecological problem caused by large dams. [1M]
+(b) Why is rainwater harvesting gaining preference over large dam projects? [1M]
+(c) On an outline map of India, locate and label: (i) Bhakra Nangal Dam (ii) Sardar Sarovar Dam. [2M]`;
+    } else if (subj.includes("English") || subj.includes("Hindi")) {
+        paper += `
+================================================================================
+SECTION A: READING COMPREHENSION & VOCABULARY (10 Marks)
+Passage: "Artificial Intelligence (AI) and Machine Learning have transformed contemporary educational paradigms. Far from replacing human educators, AI acts as an empowering co-pilot..."
+Q1. What is the central thesis of the passage regarding AI in education? [1M]
+Q2. According to the author, how does AI act as an empowering tool for teachers? [1M]
+Q3. Find a word in Paragraph 2 which means 'omnipresent / existing everywhere'. [1M]
+Q4-Q7. 4 Objective MCQs on factual comprehension and vocabulary inference. [4M]
+Q8-Q10. Assertion-Reason items on reading analysis. [3M]
+
+================================================================================
+SECTION B: WRITING SKILLS & GRAMMAR (11 Marks)
+Q11. You are Sunita/Sameer, Head Student of Kendriya Vidyalaya. Draft a Notice in about 50 words informing students of Classes 9-12 about an upcoming Inter-School AI & Robotics Competition. (4 Marks)
+Q12. Write a formal Letter to the Editor of a national daily expressing concern over rising digital addiction among school adolescents and proposing school-level digital wellness measures. (7 Marks)
+
+================================================================================
+SECTION C: LITERATURE & TEXTBOOK ANALYSIS (14 Marks)
+Q13. Read the extract and answer sub-questions: "The way a crow / Shook down on me / The dust of snow / From a hemlock tree..." (4 Marks)
+Q14. Short Answer Literature Questions (3 x 2 = 6 Marks):
+     (a) Why was Lencho angry when he counted the money received in the letter?
+     (b) How does Nelson Mandela define 'courage' in his autobiography?
+     (c) What message does the poet convey through the poem 'Keeping Quiet'?
+Q15. Long Answer Literature Essay (5 Marks - Internal Choice):
+     Discuss the theme of human resilience and faith in the face of natural adversity with reference to prescribed literature texts.`;
+    } else {
+        // Default Science / Physics / Chemistry / Biology / CS / Commerce Paper
+        paper += `
+Q1. [Competency - Application [Ap]]
+In ${p.chapter}, if the primary operating variable is doubled while keeping other parameters constant, the net response:
+(A) Doubles linearly    (B) Quadruples (Square relation)    (C) Remains unchanged    (D) Reduces to half
+
+Q2. [Competency - Conceptual Analysis [An]]
+Which fundamental conservation law governs the core process described in ${p.chapter}?
+(A) Conservation of Mass    (B) Conservation of Energy    (C) Conservation of Linear Momentum    (D) All of the above
+
+Q3. [NCERT Concept Check [U]]
+What is the standard SI unit of the primary variable measured in ${p.chapter}?
+(A) Standard SI Metric Unit    (B) Dimensionless Ratio    (C) Derived Joules/Second    (D) Pascal per meter
+
+Q4-Q7. 4 Subject-specific MCQs evaluating numerical, graphical, and observational competencies in ${p.chapter}.
+
+---
+DIRECTION FOR Q8 - Q10: Standard Assertion (A) & Reason (R) options (A, B, C, D).
+
+Q8. Assertion (A): High precision is essential when recording observational data in ${p.chapter}.
+Reason (R): Systematic errors can be minimized by taking mean readings across multiple experimental trials.
+
+Q9. Assertion (A): Equilibrium is achieved when net internal driving force equals external opposing force.
+Reason (R): Second law of thermodynamics governs spontaneous directional transformations.
+
+Q10. Assertion (A): Safe operating thresholds must be maintained during practical application of ${p.chapter}.
+Reason (R): Exceeding tolerance limits triggers non-linear system breakdown.
+
+================================================================================
+SECTION B (6 Marks) - SHORT ANSWER QUESTIONS - I (2 Marks Each)
+Q11. State the core law governing ${p.chapter}. Write its mathematical expression and define all symbols with SI units. (2 Marks)
+Q12. Explain two key differences between ideal theoretical conditions and practical real-world observations in ${p.chapter}. (2 Marks)
+Q13. Solve the standard quantitative numerical problem based on formula application in ${p.chapter}. (2 Marks)
+
+================================================================================
+SECTION C (9 Marks) - SHORT ANSWER QUESTIONS - II (3 Marks Each)
+Q14. Derive the complete mathematical relation connecting key variables in ${p.chapter}. Draw neat labeled diagram. (3 Marks)
+Q15. Explain 3 practical applications of ${p.chapter} in modern technological or daily life systems. (3 Marks)
+Q16. Analyze a multi-step problem scenario involving two interconnected components in ${p.chapter}. (3 Marks)
+
+================================================================================
+SECTION D (5 Marks) - LONG ANSWER QUESTIONS (5 Marks Each)
+Q17. [Compulsory Internal Choice]
+Q17(A). Explain the complete working mechanism of ${p.chapter} with a step-by-step mathematical proof and neat diagram. (5 Marks)
+OR
+Q17(B). Solve a multi-concept HOTS challenge numerical problem combining two fundamental laws in ${p.chapter}. (5 Marks)
+
+================================================================================
+SECTION E (4 Marks) - CASE STUDY INTEGRATED TASK (4 Marks)
+Q18. Read the case study scenario on real-world industrial implementation of ${p.chapter} and answer 3 sub-questions (1M + 1M + 2M).`;
+    }
+
+    // Answer Key
+    if (p.includeAnswerKey) {
+        paper += `\n\n---ANSWER_KEY_START---
 OFFICIAL MARKING SCHEME & STEP-BY-STEP ANSWER KEY
 ================================================================================
-SECTION A - ANSWER KEY:
-Q1: (C) | Q2: (B) | Q3: (B) | Q4: (A) | Q5: (A) | Q6: (B) | Q7: (A) | Q8: (B)
-Q9: (A) | Q10: (B) | Q11: (A) | Q12: (A) | Q13: (A) | Q14: (B) | Q15: (C) | Q16: (A)
-Q17: (A) Both A and R are true, R is correct explanation.
-Q18: (A) Both A and R are true, R is correct explanation.
-Q19: (A) Both A and R are true, R is correct explanation.
-Q20: (A) Both A and R are true, R is correct explanation.
+SECTION A - OBJECTIVE KEYS:
+Q1: (A) / (B) as derived | Q2: (B) | Q3: (B) | Q4: (C) | Q5: (A) | Q6: (B) | Q7: (A)
+Q8: (A) Both A & R true, R correct explanation.
+Q9: (A) Both A & R true, R correct explanation.
+Q10: (D) A false, R true.
 
-SECTION B - ANSWER KEY & VALUE POINTS:
-Q21: Law statement [1M], Formula V = IR or equivalent with SI units [1M].
-Q22: (a) Thermal kinetic energy increases mobility [1M], (b) Reversible state restoration [1M].
-Q23: Correct schematic diagram with arrows [1.5M], labeling [0.5M].
-Q24: (a) R = V/I = 220/2.5 = 88 Ω [1M], (b) E = P × t = 0.55 kW × 4 h = 2.2 kWh [1M].
-Q25: (A) High resistivity generates heat (I²R), low melting point breaks circuit during overload [2M].
-Q26: (a) P = P1 + P2 = +5 - 2 = +3 D [1M], (b) f = 1/P = 1/3 m = +33.33 cm [1M].
+SECTION B - VALUE POINTS & STEPS:
+Q11: Correct Law Statement [1M], Mathematical Formula with SI units [1M].
+Q12: Key point 1 [1M], Key point 2 [1M].
+Q13: Formula substitution [1M], Final calculation with unit [1M].
 
-SECTION C - ANSWER KEY & VALUE POINTS:
-Q27: Parallel circuit diagram [1M], I = I1 + I2 + I3 => V/Rp = V/R1 + V/R2 + V/R3 => 1/Rp = 1/R1 + 1/R2 + 1/R3 [2M].
-Q28: (a) 1/f = 1/v + 1/u => -1/15 = 1/v - 1/25 => v = -37.5 cm [1.5M], (b) m = -v/u = -(-37.5)/(-25) = -1.5 => h' = -6.0 cm (Real & Inverted) [1.5M].
-Q29: (a) Atmospheric refraction due to turbulent density layers [1M], (b) No atmosphere to scatter light in space [1M], (c) Red light has longest wavelength λ, least scattered by air molecules [1M].
-Q30: Iron filings concentric circles pattern [1M], Right-hand thumb rule statement [1M], Field strength is directly proportional to current (B ∝ I), doubles [1M].
-Q31: (A) (i) 1 Ohm = 1 Volt / 1 Ampere [1M], (ii) R_net = 10 Ω for balanced bridge [2M].
-Q32: (a) A = π d²/4 = 1.96 × 10⁻⁷ m² => L = R A / ρ = (10 × 1.96 × 10⁻⁷) / 1.6 × 10⁻⁸ = 122.7 m [2M], (b) R ∝ 1/d², doubling d reduces R to R/4 = 2.5 Ω [1M].
+SECTION C - DERIVATION & STEP MARKS:
+Q14: Neat labeled diagram [1M], Derivation steps [2M].
+Q15: 3 valid real-world application points with scientific reasoning [3M].
+Q16: Step 1 calculation [1.5M], Step 2 final answer [1.5M].
 
-SECTION D - ANSWER KEY & VALUE POINTS:
-Q34: (A) (i) Snell's law: sin(i)/sin(r) = μ [1M], (ii) Complete convex lens formula derivation with diagram [3M], (iii) m = -4 => v = 40 cm, f = +8.0 cm [1M].
-Q35: (A) (i) Fleming's Left Hand & Right Hand rules stated clearly [2M], (ii) Motor diagram and split ring commutator principle [2M], (iii) Increase turns N, increase magnetic field B [1M].
-Q36: (B) (i) Ohm's law statement & V-I straight line graph [2M], (ii) In series circuit, current is same through all resistors: R_total = 0.2 + 0.3 + 0.4 + 0.5 + 12 = 13.4 Ω => I = 9 / 13.4 = 0.67 A [2M], (iii) Free electrons collide with lattice ions converting electrical energy into heat [1M].
+SECTION D - LONG ANSWER MARKING SCHEME:
+Q17(A): Principle statement [1M], Labeled technical drawing [1M], Step-by-step derivation [3M].
+OR
+Q17(B): Given data & formula identification [1M], Step 1 solution [2M], Step 2 solution [2M].
 
-SECTION E - CASE STUDY ANSWER KEY:
-Q37: (a) Total Power = 4(20) + 2(80) + 300 = 80 + 160 + 300 = 540 W = 0.54 kW. Daily Energy = (80×8 + 160×10 + 300×5)/1000 = (640 + 1600 + 1500)/1000 = 3.74 kWh [1M].
-(b) Bill = 3.74 × 30 × 6.50 = ₹ 729.30 [1M].
-(c) Peak Power = 540 W => I = P/V = 540/220 = 2.45 A. Select 5 A fuse rating as 2.45 A < 5 A [2M].
+SECTION E - CASE STUDY MARKS DISTRIBUTION:
+Q18: (a) Correct sub-answer 1 [1M], (b) Sub-answer 2 [1M], (c) Analytical sub-answer 3 with working [2M].`;
+    }
 
-Q38: (a) Concave mirror because it converges parallel sun rays to a sharp focus [1M].
-(b) Positioned at the Principal Focus (F) [1M].
-(c) f = R/2 = 4.0/2 = 2.0 meters. 1/v = 1/f - 1/u = 1/(-2) - 1/(-8) => v = -2.67 meters, m = -v/u = -0.33 [2M].
+    return paper;
+}
 
-Q39: (a) Slope = ΔV / ΔI = Resistance R [1M].
-(b) R = 1.5 / 0.3 = 5.0 Ω [1M].
-(c) R_Y = R_X × (L_Y/L_X) × (A_X/A_Y) = 5 × 2 × 2 = 20 Ω. Parallel combination: 1/R_eq = 1/5 + 1/20 = 5/20 => R_eq = 4.0 Ω [2M].` : ''}`;
-        },
+// Helper: Universal Subject-Adaptive Worksheet Generator
+function buildSubjectWorksheet(p) {
+    const subj = p.subject;
+    return `CBSE SESSION 2026-27 | DIFFERENTIATED COMPETENCY WORKSHEET
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
+TOPIC / CHAPTER: ${p.chapter}
+Max Marks: 40 Marks | Targeted Learner Level: ${p.tier}
 
+================================================================================
+LEARNING OUTCOMES & COMPETENCIES (NEP-2020 / NCF-SE):
+1. [Recall & Understand] Explain foundational definitions and core concepts of ${p.chapter}.
+2. [Apply & Analyze] Solve quantitative numericals, grammatical tasks, or case problems using standard frameworks.
+3. [Evaluate & Create] Synthesize real-world applications and troubleshoot common misconceptions.
+
+================================================================================
+PART A: CONCEPT QUICK CHECK (5 Marks)
+1. Fill in the blank: The fundamental unit / term associated with ${p.chapter} is __________.
+2. True or False: Core principles of ${p.chapter} remain invariant across isolated closed systems. [_____]
+3. Fill in the blank: Increasing input parameter generally __________ the rate of systemic response.
+4. True or False: Standard SI metrics or formal structures must be maintained in formal evaluations. [_____]
+5. Fill in the blank: The primary tool / method used to evaluate ${p.chapter} is called __________.
+
+================================================================================
+PART B: COMPETENCY MCQs & ASSERTION-REASON (10 Marks)
+Q1. What happens when the primary parameter in ${p.chapter} is doubled?
+(A) Remains constant  (B) Doubles  (C) Quadruples  (D) Halves
+
+Q2. Which standard component / principle is universally applied for safety and precision in ${p.chapter}?
+(A) Primary Benchmark  (B) Control Fuse / Standard Key  (C) Variable Attenuator  (D) Null Indicator
+
+Q3. Assertion (A): Rigorous testing is essential when evaluating concepts in ${p.chapter}.
+Reason (R): Systematic errors are eliminated through empirical verification and peer review.
+(A) Both A and R are true, R is correct explanation.
+(B) Both A and R are true, R is NOT correct explanation.
+(C) A is true, R is false.
+(D) A is false, R is true.
+
+Q4. If two identical values of 10 units each act in parallel in ${p.chapter}, the net result is:
+(A) 20 units  (B) 10 units  (C) 5 units  (D) 2.5 units
+
+================================================================================
+PART C: DIFFERENTIATED LEARNING TASKS (15 Marks)
+
+[TIER 1 - REMEDIAL & FOUNDATIONAL LEVEL]
+Q5. Define the core principle of ${p.chapter}. Draw a simple labeled diagram / flowchart. (3 Marks)
+Q6. List 3 everyday real-life examples where ${p.chapter} is observed. (2 Marks)
+
+[TIER 2 - CORE STANDARD LEVEL]
+Q7. Solve the standard quantitative / analytical problem in ${p.chapter}:
+    (a) Calculate primary output given input = 50 units.
+    (b) Determine total efficiency / cost over 30 days. (5 Marks)
+
+[TIER 3 - ADVANCED HOTS & COMPETITIVE LEVEL]
+Q8. Derive the general formula governing ${p.chapter}. Explain why this principle is preferred over alternative models in modern practice. (5 Marks)
+
+================================================================================
+PART D: CASE STUDY & REAL-WORLD INQUIRY (10 Marks)
+Q9. Read the scenario: "During an official audit of a Kendriya Vidyalaya smart lab studying ${p.chapter}, researchers recorded peak efficiency under controlled environmental conditions."
+(a) State the primary hypothesis tested in this study. (2 Marks)
+(b) Calculate the net system output when load parameter = 3.6 units. (3 Marks)
+(c) State two safety / quality precautions to ensure accurate results. (5 Marks)
+
+${p.includeAnswerKey ? `
+---ANSWER_KEY_START---
+SOLUTIONS & ANSWER KEY:
+Part A: 1. Core Term | 2. True | 3. Increases | 4. True | 5. Evaluator Instrument
+Part B: Q1: (B) | Q2: (B) | Q3: (A) | Q4: (C)
+Part C: Q7: (a) Output = 50 x 2 = 100 units. (b) Total efficiency = 95%.
+Part D: Q9: (b) Calculated value = 1.8 units.` : ''}`;
+}
+
+// 2. Templates Library (15 Specialized Subject Generators)
+const templatesLibrary = [
+    {
+        id: "qp",
+        category: "assessment",
+        title: "📝 Blueprint Question Paper Setter",
+        subtitle: "Official CBSE Blueprint (Sections A to E)",
+        tags: ["Blueprint", "Question Paper", "All Subjects", "CBSE 2026-27"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>`,
+        description: "Generate complete ready-to-print CBSE Question Papers for ANY subject (Maths, Science, Social Science, English, Hindi, CS, Commerce) with Blueprint Matrix, Sections A-E, internal choices, and Answer Keys.",
+        directContentBuilder: buildSubjectQuestionPaper,
         builder: function(p) {
-            return `You are a Senior CBSE Board Question Paper Setter and Chief Examiner.
+            return `Act as a Senior CBSE Board Question Paper Setter for ${p.subject} (Class ${p.classLevel}).
+Prepare a complete board-standard QUESTION PAPER strictly adhering to CBSE Session 2026-27 specifications.
 
-Prepare a full-length, official QUESTION PAPER strictly adhering to the CBSE 2026-27 Pattern and NCF-SE Guidelines.
-
-EXAM PARAMETERS:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Chapter / Syllabus Covered: ${p.chapter}
-• Maximum Marks: ${p.marks} Marks
-• Duration: ${p.time} Minutes
-• Target Difficulty: ${p.tier}
+PARAMETERS:
+• Class: ${p.classLevel} | Subject: ${p.subject}
+• Syllabus / Chapter: ${p.chapter}
+• Total Marks: ${p.marks} Marks | Duration: ${p.time} Minutes
+• Tier: ${p.tier}
 
 ${p.chapterWeightageTable ? p.chapterWeightageTable + '\n\n' : ''}PART 1: BLUEPRINT MATRIX TABLE
-Generate a markdown table mapping:
-| Chapter / Unit | VSA / MCQ (1M) | SA-I (2M) | SA-II (3M) | LA (5M) | Case Study (4M) | Total Marks |
-Ensure questions are distributed strictly according to the configured chapter weightages above so that the blueprint total sums exactly to ${p.marks} Marks.
+Generate markdown table mapping Sections A-E across chapters summing exactly to ${p.marks} Marks.
 
-PART 2: QUESTION PAPER CONTENT (SECTIONS A - E)
-Follow standard CBSE question paper layout:
+PART 2: QUESTION PAPER CONTENT (SECTIONS A TO E)
+• SECTION A (1M): 10 MCQs & Assertion-Reason items.
+• SECTION B (2M): 3 Short Answer questions.
+• SECTION C (3M): 3 Analytical / Numerical / Proof questions.
+• SECTION D (5M): 1 Long Answer question with compulsory OR choice.
+• SECTION E (4M): 1 Case-Study / Source-Based passage with 3 sub-questions.
 
-• SECTION A (1 Mark Questions):
-  - MCQs and Assertion-Reasoning (Option A: Both A and R true & R correct explanation, B: Both true but R not correct explanation, C: A true R false, D: A false R true).
-  
-• SECTION B (2 Marks Short Answer Questions):
-  - 5 Conceptual questions requiring 30-50 words answers. Include internal choice in 2 questions.
-
-• SECTION C (3 Marks Short Answer Questions):
-  - 6 Analytical / Derivation / Numerical questions requiring 50-80 words. Include internal choice in 2 questions.
-
-• SECTION D (5 Marks Long Answer Questions):
-  - 3 Comprehensive questions with diagram / derivation requirements. Include compulsory internal choice (OR) for all 3 questions.
-
-• SECTION E (4 Marks Case-Based / Integrated Questions):
-  - 2 Passage/Diagram/Graph based scenarios with sub-questions (1M + 1M + 2M).
-
-${p.includeAnswerKey ? '---ANSWER_KEY_START---\nPART 3: OFFICIAL MARKING SCHEME & ANSWER KEY\nProvide value points, key step markings (0.5M distribution), and final answers for every single question.\n' : ''}
-
-RULES:
-- NO DIRECT REPETITION of basic textbook definitions; prioritize application and reasoning.
-- Language must be formal, unambiguous, and board-exam ready.`;
+${p.includeAnswerKey ? '---ANSWER_KEY_START---\nPART 3: OFFICIAL MARKING SCHEME & STEP-BY-STEP ANSWER KEY\nProvide value points, key step marks (0.5M breakdown), and final answers.\n' : ''}`;
         }
     },
 
@@ -695,111 +948,242 @@ RULES:
         id: "worksheet",
         category: "assessment",
         title: "📄 Competency Worksheet Generator",
-        subtitle: "NEP 2020 Aligned Differentiated Worksheet",
-        tags: ["Competency", "Worksheet", "NCERT 2026-27", "Bloom's"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 1-2 2v16a2 2 0 0 1 2 2h12a2 2 0 0 1 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
-        description: "Generate complete classroom-ready competency worksheets with MCQs, Assertion-Reason, Case Studies, and Differentiated Tiers.",
-        
-        directContentBuilder: function(p) {
-            return `CBSE SESSION 2026-27 | DIFFERENTIATED COMPETENCY WORKSHEET
-CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
-TOPIC / CHAPTER: ${p.chapter}
-Max Marks: 40 Marks | Targeted Learner Level: ${p.tier}
-
-================================================================================
-LEARNING OUTCOMES & COMPETENCIES (NEP-2020 / NCF-SE):
-1. [Understand] Explain core mechanisms and principles underlying ${p.chapter}.
-2. [Apply & Analyze] Solve quantitative numericals and graphical scenarios using SI units.
-3. [Evaluate & Create] Synthesize real-world applications and troubleshoot common misconceptions.
-
-================================================================================
-PART A: CONCEPT QUICK CHECK (5 Marks)
-1. Fill in the blank: The primary SI unit for measuring the core quantity in ${p.chapter} is __________.
-2. True or False: Energy in an isolated system during ${p.chapter} transformations is always conserved. [_____]
-3. Fill in the blank: Increasing system temperature generally __________ the rate of kinetic interaction.
-4. True or False: Parallel circuits have different voltages across each parallel branch. [_____]
-5. Fill in the blank: The instrument used to measure current / potential in ${p.chapter} is called __________.
-
-================================================================================
-PART B: COMPETENCY MCQs & ASSERTION-REASON (10 Marks)
-Q1. A student doubles the input variable in ${p.chapter}. The resulting effect on net output is:
-(A) Remains unchanged  (B) Doubles  (C) Quadruples  (D) Halves
-
-Q2. Which device is connected in series as a primary safety component in household applications?
-(A) Voltmeter  (B) Electric Fuse  (C) Galvanometer  (D) Parallel resistor
-
-Q3. Assertion (A): Pure water is a poor conductor of electricity, whereas acidulated water conducts readily.
-Reason (R): Acid provides free mobile H+ ions that facilitate electrical conduction.
-(A) Both A and R are true, R is correct explanation.
-(B) Both A and R are true, R is NOT correct explanation.
-(C) A is true, R is false.
-(D) A is false, R is true.
-
-Q4. If two identical resistors of 10 Ω each are connected in parallel, the total net resistance is:
-(A) 20 Ω  (B) 10 Ω  (C) 5 Ω  (D) 2.5 Ω
-
-================================================================================
-PART C: DIFFERENTIATED LEARNING TASKS (15 Marks)
-
-[TIER 1 - REMEDIAL & FOUNDATIONAL LEVEL]
-Q5. State Ohm's law / fundamental principle governing ${p.chapter}. Draw a simple labeled circuit/setup diagram. (3M)
-Q6. List 3 everyday real-world applications where principles of ${p.chapter} are utilized. (2M)
-
-[TIER 2 - CORE STANDARD LEVEL]
-Q7. A appliance rated 1000 W operates for 5 hours daily. Calculate:
-(a) Electrical energy consumed in kWh.
-(b) Total cost for 30 days at ₹ 6 per unit. (5M)
-
-[TIER 3 - ADVANCED HOTS & COMPETITIVE LEVEL]
-Q8. Derive the formula for effective parallel resistance 1/Rp = 1/R1 + 1/R2. Explain why parallel connection is preferred over series in domestic lighting. (5M)
-
-================================================================================
-PART D: CASE STUDY & REAL-WORLD INQUIRY (10 Marks)
-Q9. Read the scenario: "During an industrial audit of a solar power station based on ${p.chapter}, engineers recorded a peak efficiency when mirrors were positioned at a focal distance f = R/2."
-(a) Why are parabolic/concave surfaces preferred for solar concentrators? (2M)
-(b) Calculate the focal length of a solar mirror having a radius of curvature R = 3.6 meters. (3M)
-(c) State two safety precautions when working with concentrated thermal radiation. (5M)
-
-${p.includeAnswerKey ? `
----ANSWER_KEY_START---
-SOLUTIONS & ANSWER KEY:
-Part A: 1. Relevant SI unit | 2. True | 3. Increases | 4. False | 5. Ammeter/Voltmeter
-Part B: Q1: (B) | Q2: (B) | Q3: (A) | Q4: (C)
-Part C: Q7: (a) E = 1 kW × 5 h = 5 kWh/day. (b) 5 × 30 × 6 = ₹ 900.
-Part D: Q9: (b) f = R/2 = 3.6/2 = 1.8 meters.` : ''}`;
-        },
-
+        subtitle: "NEP 2020 Differentiated Subject Worksheet",
+        tags: ["Worksheet", "Competency", "All Subjects", "Differentiated"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 1-2 2v16a2 2 0 0 1 2 2h12a2 2 0 0 1 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+        description: "Generate differentiated classroom worksheets with concept checks, MCQs, Tier 1-3 tasks, case studies, and complete solution keys for any subject.",
+        directContentBuilder: buildSubjectWorksheet,
         builder: function(p) {
-            return `You are an expert CBSE Master Teacher, NCERT Author, Assessment Specialist, and NEP-2020 Curriculum Designer.
+            return `Generate a CLASSROOM-READY COMPETENCY WORKSHEET for ${p.classLevel} ${p.subject} on "${p.chapter}".
 
-Generate a COMPLETE, TEACHER-READY COMPETENCY WORKSHEET strictly aligned with CBSE Session 2026-27 guidelines.
+INPUTS: Class ${p.classLevel}, Subject ${p.subject}, Chapter ${p.chapter}, Target Marks ${p.marks}M.
 
-INPUT PARAMETERS:
-• Class Level: ${p.classLevel}
-• Subject: ${p.subject}
-• Target Chapter / Topic: ${p.chapter}
-• Learner Tier Focus: ${p.tier}
-• Targeted Total Marks: ${p.marks} Marks
+SECTIONS:
+1. Header & Learning Outcomes (NEP-2020 mapped to Bloom's Taxonomy).
+2. Concept Quick Check (5 Fill-in-blanks / True-False).
+3. Competency MCQs & Assertion-Reasoning (5 items).
+4. Differentiated Learning Tasks (Tier 1 Remedial, Tier 2 Core, Tier 3 HOTS).
+5. Real-World Case Study / Application Inquiry Scenario.
+${p.includeAnswerKey ? '---ANSWER_KEY_START---\n6. DETAILED ANSWER KEY & MARKING SCHEME.\n' : ''}`;
+        }
+    },
 
-STRUCTURE & CONTENT SECTIONS TO GENERATE:
-1. HEADER BLOCK: Worksheet Title, Class, Subject, Chapter, Time, Max Marks, General Instructions.
-2. LEARNING OUTCOMES & COMPETENCIES: State 3 clear NCF-SE / NEP 2020 Learning Outcomes mapped to Bloom's Taxonomy.
-3. CONCEPT QUICK-CHECK: 5 Crisp True/False or Fill-in-the-Blanks to test foundational memory.
-4. MULTIPLE CHOICE QUESTIONS (MCQs): 5 Conceptual MCQs with 4 options each (including 1 distractor based on common misconceptions).
-5. ASSERTION-REASON QUESTIONS: 3 Standard CBSE Assertion-Reason questions with options (A, B, C, D).
-6. CASE STUDY / SOURCE-BASED QUESTION: 1 Real-world case study scenario (150-200 words) with 4 sub-questions (1 mark each).
-7. COMPETENCY & HOTS QUESTIONS: 3 Higher Order Thinking Skill questions requiring analysis, synthesis, or evaluation.
-8. EXPERIMENTAL / ACTIVITY SKILLS: 2 Questions based on NCERT activity setup, observations, or laboratory safety.
-${p.subject.includes('Physics') || p.classLevel.includes('11') || p.classLevel.includes('12') ? '9. NUMERICAL & DERIVATION SECTION: 3 Step-by-step numerical problems (Basic, Standard, Challenge level) with proper SI units.\n' : ''}
-10. VALUES & LIFE SKILLS INTEGRATION: 1 Application question connecting science to daily life/environmental sustainability.
-${p.includeAnswerKey ? '---ANSWER_KEY_START---\n11. DETAILED ANSWER KEY & MARKING SCHEME: Provide full step-by-step solutions, key points, and marking distribution for every question.\n' : ''}
-${p.includeRubrics ? '12. ASSESSMENT RUBRIC: Analytic 4-level rubric grid (Needs Improvement, Developing, Proficient, Advanced).\n' : ''}
+    {
+        id: "curiosity_lab",
+        category: "curiosity",
+        title: "🔬 NCERT Curiosity Hands-On Activity Lab",
+        subtitle: "Low-Cost Experiential Toys & Discovery Lab (VI-X)",
+        tags: ["Curiosity", "Activity", "Experiential", "NCF-SE"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+        description: "Design low-cost hands-on science & math activities, toy-making projects, observation tables, and curiosity questions mandated by NCERT Curiosity series.",
+        directContentBuilder: function(p) {
+            return `NCERT CURIOSITY SERIES | HANDS-ON EXPERIENTIAL ACTIVITY MANUAL
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | MODULE: ${p.chapter}
 
-PEDAGOGICAL DIRECTIVES:
-${p.includeNEP ? '✔ Strictly integrate NEP-2020 Competency Based Education (CBE).\n' : ''}
-${p.includeBloom ? '✔ Tag every question with Bloom\'s Taxonomy Level [Remember/Understand/Apply/Analyze/Evaluate/Create].\n' : ''}
-${p.includeNCERT ? '✔ Map questions to exact NCERT 2026-27 textbook concepts.\n' : ''}
-✔ Ensure crisp formatting, ready for immediate printing or digital distribution.`;
+1. ACTIVITY TITLE & OBJECTIVE:
+   Hands-on Toy & Model: Exploring Core Principles of ${p.chapter} through low-cost household materials.
+
+2. MATERIALS REQUIRED:
+   Cardboard, plastic cups, rubber bands, magnets, measuring ruler, recycled items.
+
+3. STEP-BY-STEP PROCEDURE:
+   Step 1: Assemble base structure and align components.
+   Step 2: Attach movable or reactive elements.
+   Step 3: Apply stimulus and record physical/mathematical response.
+
+4. STUDENT OBSERVATION TABLE:
+   | Trial | Parameter Input | Observed Response | Scientific Inference |
+   | 1 | Baseline | Normal response | Standard benchmark |
+   | 2 | Parameter Doubled | Shift observed | Proportional effect |
+
+5. CURIOSITY INQUIRY QUESTIONS:
+   Q1. What surprised you when operating your handmade model?
+   Q2. How is this concept applied in modern industrial technology?
+
+---ANSWER_KEY_START---
+TEACHER FACILITATION GUIDE & ANSWERS:
+• Explains core concept of ${p.chapter} through tactile manipulation.
+• Answers to inquiry questions provided.`;
+        },
+        builder: function(p) {
+            return `Act as NCERT Curiosity Textbook Author. Design a Low-Cost Hands-On Activity Manual for ${p.classLevel} ${p.subject} - "${p.chapter}".`;
+        }
+    },
+
+    {
+        id: "curiosity_inquiry",
+        category: "curiosity",
+        title: "❓ NCERT Curiosity 5E Inquiry Explorer",
+        subtitle: "5E Framework & Everyday Phenomenon Analysis",
+        tags: ["Curiosity", "5E Model", "Inquiry", "Everyday Phenomena"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+        description: "Generate curiosity-driven inquiry sheets with real-world phenomenon analysis, 'What If?' speculative challenges, and self-reflections.",
+        directContentBuilder: function(p) {
+            return `NCERT CURIOSITY | 5E INQUIRY & EVERYDAY EXPLORER
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | TOPIC: ${p.chapter}
+
+1. REAL-WORLD PHENOMENON ("I Wonder Why..."):
+   Scenario examining everyday occurrences related to ${p.chapter}.
+
+2. 5E INQUIRY TASKS:
+   • ENGAGE: Formulate 2 "Why" and 2 "How" questions.
+   • EXPLORE: Design a 5-minute home test.
+   • EXPLAIN: Write scientific reasoning using standard terms.
+   • ELABORATE: "What If?" challenge - evaluate boundary changes.
+   • EVALUATION: Self-reflection rubric.
+
+---ANSWER_KEY_START---
+TEACHER INQUIRY FACILITATION GUIDE & MODEL ANSWERS.`;
+        },
+        builder: function(p) {
+            return `Create a 5E Curiosity Inquiry Explorer Worksheet for Class ${p.classLevel} ${p.subject} on ${p.chapter}.`;
+        }
+    },
+
+    {
+        id: "stem_math",
+        category: "stem",
+        title: "📐 Mathematics Proof & Numerical Suite",
+        subtitle: "Theorems, Step-by-Step Proofs & Problem Bank",
+        tags: ["Mathematics", "Proofs", "Numericals", "CBSE Board"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="14" y2="10"/></svg>`,
+        description: "Comprehensive Mathematics teaching suite featuring NCERT theorem proofs, step-by-step numerical problem banks, geometric constructions, and board exam tips.",
+        directContentBuilder: function(p) {
+            return `CBSE MATHEMATICS MASTER SUITE
+CLASS: ${p.classLevel} | SUBJECT: Mathematics | CHAPTER: ${p.chapter}
+
+1. THEOREM PROOF & CONCEPTUAL DERIVATION:
+   Theorem: State and prove fundamental theorem of ${p.chapter}.
+   Given: Triangle / Circle / Equation setup.
+   To Prove: LHS = RHS.
+   Proof: Step-by-step geometric/algebraic derivation.
+
+2. TIERED NUMERICAL PROBLEM BANK:
+   [Tier 1 - Standard Board (2M)]: Basic formula application problem.
+   [Tier 2 - Analytical (3M)]: Multi-step algebraic / geometric problem.
+   [Tier 3 - Exemplar HOTS (5M)]: Complex challenge problem with diagram.
+
+---ANSWER_KEY_START---
+MATHEMATICS STEP-BY-STEP SOLUTIONS & VALUE POINTS.`;
+        },
+        builder: function(p) {
+            return `Generate a Mathematics Theorem Proof & Problem Bank Pack for ${p.classLevel} on ${p.chapter}.`;
+        }
+    },
+
+    {
+        id: "stem_science",
+        category: "stem",
+        title: "⚛ Science XI-XII Master Suite (Phy/Chem/Bio)",
+        subtitle: "Derivations, Reactions, Genetics & JEE/NEET",
+        tags: ["Science", "Physics", "Chemistry", "Biology", "JEE/NEET"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/></svg>`,
+        description: "Master teaching pack for Senior Secondary Science (Physics, Chemistry, Biology): NCERT derivations, organic mechanisms, ray diagrams, genetics pedigree analysis, and JEE/NEET numericals.",
+        directContentBuilder: function(p) {
+            return `SENIOR SECONDARY SCIENCE MASTER SUITE
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | CHAPTER: ${p.chapter}
+
+1. CORE NCERT DERIVATION / MECHANISM / DIAGRAM:
+   Step-by-step mathematical proof / chemical reaction mechanism / labeled biological diagram.
+
+2. NUMERICAL & CONCEPTUAL PROBLEM BANK:
+   • Tier 1 (CBSE Board Standard - 3M)
+   • Tier 2 (NCERT Exemplar - 4M)
+   • Tier 3 (JEE / NEET Challenge - 5M)
+
+---ANSWER_KEY_START---
+STEP-BY-STEP SOLUTIONS, FORMULA STEPS & MARKING SCHEME.`;
+        },
+        builder: function(p) {
+            return `Generate a Senior Secondary Science Master Pack for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
+        }
+    },
+
+    {
+        id: "humanities_sst",
+        category: "humanities",
+        title: "🌍 Social Science Source & Map Explorer",
+        subtitle: "History, Geography, Civics & Economics Suite",
+        tags: ["Social Science", "History", "Geography", "Map Work"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+        description: "Generate Social Science source-based questions, historical timeline analysis, geographical map work identification tasks, and democratic policy evaluation items.",
+        directContentBuilder: function(p) {
+            return `CBSE SOCIAL SCIENCE SOURCE & MAP EXPLORER
+CLASS: ${p.classLevel} | SUBJECT: Social Science | CHAPTER: ${p.chapter}
+
+1. HISTORICAL / GEOGRAPHICAL SOURCE PASSAGE:
+   Read the excerpt from historical document / economic report and answer 3 analytical sub-questions.
+
+2. POLICY EVALUATION & ASSERTION-REASON SET:
+   Questions analyzing federalism, economic growth, and resource sustainability.
+
+3. MAP WORK IDENTIFICATION & LOCATION TASK:
+   Locate and label key historical sites / dams / ports on map outline.
+
+---ANSWER_KEY_START---
+SOCIAL SCIENCE MODEL ANSWERS, MAP POINTS & VALUE POINTS.`;
+        },
+        builder: function(p) {
+            return `Generate a Social Science Source Passage & Map Explorer Pack for Class ${p.classLevel} on ${p.chapter}.`;
+        }
+    },
+
+    {
+        id: "languages_eng_hin",
+        category: "humanities",
+        title: "✍ English & Hindi Language Studio",
+        subtitle: "Reading Passages, Grammar & Formal Writing",
+        tags: ["English", "Hindi", "Grammar", "Writing Skills"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
+        description: "Complete studio for English and Hindi: Unseen reading comprehension passages, grammar error correction, formal letter/notice drafting, and literary text analysis.",
+        directContentBuilder: function(p) {
+            return `CBSE LANGUAGE & LITERATURE STUDIO
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | UNIT: ${p.chapter}
+
+1. UNSEEN COMPREHENSION PASSAGE:
+   Read 250-word passage on modern socio-cultural themes + 5 factual & vocabulary MCQs.
+
+2. GRAMMAR & WRITING SKILLS TASK:
+   • Grammar: Error editing / sentence transformation.
+   • Formal Writing: Letter to Editor / Notice / Analytical Paragraph drafting prompt.
+
+3. LITERATURE TEXTBOOK EXTRACT & ANALYSIS:
+   Prescribed prose/poetry extract + 3 comprehension questions.
+
+---ANSWER_KEY_START---
+LANGUAGE MARKING SCHEME, SAMPLE LETTER FORMAT & EXTRACT ANSWERS.`;
+        },
+        builder: function(p) {
+            return `Generate an English/Hindi Reading, Writing & Literature Studio Pack for Class ${p.classLevel} ${p.subject} on ${p.chapter}.`;
+        }
+    },
+
+    {
+        id: "commerce_suite",
+        category: "commerce",
+        title: "📊 Commerce Master Suite (Acc/BStd/Eco)",
+        subtitle: "Ledgers, Case Studies & Macroeconomic Curves",
+        tags: ["Commerce", "Accountancy", "Business Studies", "Economics"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+        description: "Senior secondary Commerce pack: Journal entries, partnership admission ledgers, corporate Business Studies case studies, and National Income numericals.",
+        directContentBuilder: function(p) {
+            return `CBSE COMMERCE & ECONOMICS MASTER SUITE
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | CHAPTER: ${p.chapter}
+
+1. ACCOUNTANCY / NUMERICAL PROBLEM TASK:
+   Partnership admission ledger preparation / Share capital journal entries / National Income numerical calculation.
+
+2. BUSINESS STUDIES / ECONOMIC CASE STUDY:
+   Corporate management scenario analyze 3 strategic decision questions.
+
+3. GRAPHICAL & POLICY ANALYSIS:
+   Demand elasticity / Government budget deficit analysis.
+
+---ANSWER_KEY_START---
+STEP-BY-STEP LEDGER ACCOUNTS, JOURNAL NARRATIONS & ECONOMIC ANSWERS.`;
+        },
+        builder: function(p) {
+            return `Generate a Senior Commerce Pack for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
         }
     },
 
@@ -810,178 +1194,29 @@ ${p.includeNCERT ? '✔ Map questions to exact NCERT 2026-27 textbook concepts.\
         subtitle: "Auto-Graded Quiz with Answer Key & Explanations",
         tags: ["Google Form", "Auto-Grading", "MCQs", "Online Quiz"],
         icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,
-        description: "Generate auto-grading Google Form ready quizzes with descriptions, options, correct answer keys, and pedagogical feedback.",
-        
+        description: "Generate auto-grading Google Form ready quizzes for any subject with descriptions, options, correct answer keys, and pedagogical feedback.",
         directContentBuilder: function(p) {
             return `GOOGLE FORMS IMPORT-READY AUTO-GRADED QUIZ
 QUIZ TITLE: CBSE ${p.classLevel} ${p.subject} Mastery Quiz - ${p.chapter}
 DESCRIPTION: Competency-based self-assessment quiz for Session 2026-27. Attempt all questions.
 
 --------------------------------------------------
-Q1. What is the primary SI unit used to measure key quantities in ${p.chapter}?
+Q1. What is the core principle associated with ${p.chapter}?
 Question Type: Multiple Choice | Points: 1
-Option A: Joule (J) / Volt (V) / Newton (N)
-Option B: Watt per hour (W/h)
-Option C: Meter per second squared (m/s²)
-Option D: Calorie (cal)
+Option A: Standard Primary Option (Correct)
+Option B: Distractor based on common misconception
+Option C: Inverse parameter option
+Option D: Irrelevant boundary option
 
---------------------------------------------------
-Q2. In ${p.chapter}, if current/input is doubled in a constant resistance system, heat produced (H = I²Rt) increases by:
-Question Type: Multiple Choice | Points: 1
-Option A: 2 times
-Option B: 4 times
-Option C: 8 times
-Option D: Remains identical
-
---------------------------------------------------
-Q3. Which safety component automatically opens the circuit during a severe current overload?
-Question Type: Multiple Choice | Points: 1
-Option A: Ammeter
-Option B: Electric Fuse / MCB
-Option C: Rheostat
-Option D: Voltmeter
-
---------------------------------------------------
-Q4. Statement 1: Pure distilled water conducts electricity. Statement 2: Free mobile ions are required for conduction.
-Question Type: Multiple Choice | Points: 1
-Option A: Both statements are true
-Option B: Statement 1 is false, Statement 2 is true
-Option C: Statement 1 is true, Statement 2 is false
-Option D: Both statements are false
-
---------------------------------------------------
-Q5. Calculate equivalent resistance when two 12 Ω resistors are connected in parallel:
-Question Type: Multiple Choice | Points: 1
-Option A: 24 Ω
-Option B: 12 Ω
-Option C: 6 Ω
-Option D: 3 Ω
+Q2-Q5. 4 additional auto-graded MCQs with 1 point each.
 
 ---ANSWER_KEY_START---
 AUTO-GRADED ANSWER KEY & PEDAGOGICAL FEEDBACK GUIDE:
---------------------------------------------------
 Q1. ✔ Correct Answer: Option A
-💡 Feedback: Option A is the standard SI metric unit recognized under CBSE/NCERT guidelines.
-
-Q2. ✔ Correct Answer: Option B
-💡 Feedback: According to Joule's law of heating, heat is directly proportional to the square of current (H ∝ I²).
-
-Q3. ✔ Correct Answer: Option B
-💡 Feedback: Fuses and MCBs melt or trip to break the live circuit when current exceeds maximum safety ratings.
-
-Q4. ✔ Correct Answer: Option B
-💡 Feedback: Pure water lacks free ions and is an insulator; adding acid creates mobile ions for conduction.
-
-Q5. ✔ Correct Answer: Option C
-💡 Feedback: 1/Rp = 1/12 + 1/12 = 2/12 = 1/6 => Rp = 6 Ω.`;
+💡 Feedback: Option A directly reflects standard CBSE/NCERT guidelines.`;
         },
-
         builder: function(p) {
-            return `Act as a Google Forms AI Quiz Architect and E-Learning Content Designer.
-
-Create an AUTO-GRADED ONLINE QUIZ ready for instant import into Google Forms or Kahoot/Quizizz.
-
-TARGET INFORMATION:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Chapter / Topic: ${p.chapter}
-• Number of Questions: 15-20 Questions
-
-PART 1: QUESTION PAPER / STUDENT QUIZ ITEMS
-• Create 15-20 Multiple Choice Questions (Options A, B, C, D) with Points distribution.
-• Group into Recall, Application, Diagram reasoning, and HOTS.
-
----ANSWER_KEY_START---
-PART 2: ANSWER KEY & PEDAGOGICAL FEEDBACK
-• Provide correct answer choice (Option A/B/C/D) for each question.
-• Include detailed feedback explanation for each question explaining why distractor options are incorrect.`;
-        }
-    },
-
-    {
-        id: "physics",
-        category: "physics",
-        title: "⚛ Physics XI-XII Master Suite",
-        subtitle: "Derivations, HOTS, JEE/NEET & Lesson Plans",
-        tags: ["Physics", "Class 11-12", "Derivations", "JEE/NEET"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>`,
-        description: "Complete master teaching pack for Senior Secondary Physics: NCERT derivations, concept maps, JEE/NEET challenge numericals, real-world physics applications, and viva questions.",
-        
-        directContentBuilder: function(p) {
-            return `CLASSROOM MASTER TEACHING PACK | SENIOR SECONDARY PHYSICS
-CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
-CHAPTER / TOPIC: ${p.chapter}
-
-================================================================================
-1. CORE DERIVATION & MATHEMATICAL PROOF TASK
-Topic: Derivation of fundamental relation in ${p.chapter}
-
-Assumptions to state:
-- System is isolated from external non-conservative dissipative forces.
-- Media involved are homogeneous, isotropic, and linear.
-
-Mathematical proof steps to demonstrate:
-1. Consider differential element dx subjected to field E / potential V.
-2. Formulate work done expression dW = F · dx = (q E) dx.
-3. Integrate from initial state r1 to final state r2.
-
-================================================================================
-2. TIERED NUMERICAL PROBLEM BANK
-
-[TIER 1 - CBSE BOARD STANDARD (3 Marks)]
-Q1. A potential difference of 100 V is applied across a conductor of length 0.5 m. If drift velocity of free electrons is 2.5 × 10⁻⁴ m/s, calculate electron mobility.
-
-[TIER 2 - EXEMPLAR & CONCEPTUAL (4 Marks)]
-Q2. Two point charges q1 = +3 μC and q2 = -3 μC are located 20 cm apart in vacuum.
-(a) Find electric field at midpoint O.
-(b) If a test charge q_test = -1.5 × 10⁻⁹ C is placed at O, find net force experienced.
-
-[TIER 3 - JEE MAIN / NEET CHALLENGE (5 Marks)]
-Q3. In a Wheatstone bridge, three arms have resistances 10 Ω, 20 Ω, and 30 Ω. Calculate resistance to connect in parallel with 30 Ω resistor to balance bridge.
-
-================================================================================
-3. VIVA-VOCE QUESTION BANK FOR PRACTICALS
-Q1. What is the physical significance of drift velocity?
-Q2. Why is a potentiometer preferred over a voltmeter for measuring EMF?
-
----ANSWER_KEY_START---
-PHYSICS XI-XII STEP-BY-STEP SOLUTIONS & VIVA MODEL ANSWERS:
-================================================================================
-1. DERIVATION SOLUTION:
-Result: Output parameter = K (A / d) or V = I R as applicable. W = ∫ q E dx = q (V2 - V1) = q ΔV.
-
-2. NUMERICAL SOLUTIONS:
-Q1 Solution: Mobility μ = v_d / E = v_d / (V/L) = (2.5 × 10⁻⁴) / (100 / 0.5) = 1.25 × 10⁻⁶ m²/(V·s) [3M].
-Q2 Solution: (a) E_net = 2 × (k q / r²) = 2 × (9×10⁹ × 3×10⁻⁶ / (0.1)²) = 5.4 × 10⁶ N/C towards q2 [2M]. (b) Force F = q_test × E_net = (1.5×10⁻⁹) × (5.4×10⁶) = 8.1 × 10⁻³ N [2M].
-Q3 Solution: For balance, R1/R2 = R3_eff/30 => 10/20 = R3_eff / 30 => R3_eff = 15 Ω. 1/15 = 1/30 + 1/R_parallel => R_parallel = 30 Ω [5M].
-
-3. VIVA VOCE MODEL ANSWERS:
-Q1 Ans: Average velocity attained by free electrons in a conductor due to applied electric field.
-Q2 Ans: Potentiometer draws zero current at null deflection point, measuring true EMF without terminal voltage drop.`;
-        },
-
-        builder: function(p) {
-            return `You are India's Premier CBSE Physics Author & Senior Educator for Classes XI & XII.
-
-Generate a COMPREHENSIVE CLASSROOM MASTER TEACHING PACK for Class XI/XII Physics.
-
-TOPIC SPECIFICATION:
-• Target Class: ${p.classLevel}
-• Subject: ${p.subject} (Physics Focus)
-• Chapter / Module: ${p.chapter}
-• Level: ${p.tier}
-
-PART 1: LESSON PLAN, DERIVATIONS & QUESTION BANK
-1. Lesson Plan & Concept Map outline.
-2. NCERT Step-by-step Derivation tasks.
-3. Tiered Numerical Problem Bank (Tier 1 Board, Tier 2 Exemplar, Tier 3 JEE/NEET).
-4. Viva-Voce Questions for laboratory practice.
-
----ANSWER_KEY_START---
-PART 2: DETAILED SOLUTIONS & VIVA MODEL ANSWERS
-1. Step-by-step mathematical proofs and derivations.
-2. Complete numerical solutions with SI units and step marks.
-3. Viva-Voce model answers.`;
+            return `Create an Auto-Graded Google Forms Quiz for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
         }
     },
 
@@ -992,53 +1227,22 @@ PART 2: DETAILED SOLUTIONS & VIVA MODEL ANSWERS
         subtitle: "100% CBSE 2026-27 Competency Aligned",
         tags: ["Competency", "HOTS", "PYQ", "Case Study"],
         icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
-        description: "Generate a rich set of competency-focused questions (Assertion-Reason, Source-Based, Data Analysis) aligned with CBSE sample papers.",
-        
+        description: "Generate a rich set of high-yield competency-focused questions (Assertion-Reason, Source-Based, Data Analysis) aligned with CBSE sample papers.",
         directContentBuilder: function(p) {
             return `HIGH-YIELD COMPETENCY & HOTS QUESTION BANK
 CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | TOPIC: ${p.chapter}
 
-================================================================================
-1. DATA & GRAPHICAL ANALYSIS QUESTIONS
-Q1. A student plots V versus I graph for two metallic wires A and B made of same material and same length, but different thicknesses. Wire A has steeper slope than Wire B.
-(a) Which wire has higher resistance? Explain using slope definition.
-(b) Which wire is thicker? Justify using R = ρ L / A.
+1. DATA & GRAPHICAL ANALYSIS QUESTIONS:
+   Analyze the given chart / diagram / dataset related to ${p.chapter} and answer 2 analytical questions.
 
-================================================================================
-2. REAL-WORLD CASE-BASED SCENARIO
-Q2. Scenario: "An electric kettle rated 2.2 kW operates on 220 V mains supply. The user connects it using a thin two-core flex wire without earth connection."
-(a) Calculate current drawn by the kettle.
-(b) Explain two electrical hazards present in this setup and propose safety corrections.
+2. REAL-WORLD CASE-BASED SCENARIO:
+   Case study evaluating practical application and troubleshooting.
 
 ---ANSWER_KEY_START---
-COMPETENCY QUESTION BANK - STEP-BY-STEP SOLUTIONS & MARKING SCHEME:
-================================================================================
-Q1 Solution:
-(a) Slope = V/I = Resistance R. Wire A has steeper slope, so Wire A has higher resistance [1.5M].
-(b) Resistance is inversely proportional to cross-sectional area (R ∝ 1/A). Wire B has lower resistance, so Wire B is thicker [1.5M].
-
-Q2 Solution:
-(a) Current I = P / V = 2200 W / 220 V = 10 A [1.5M].
-(b) Hazards: 10 A current in thin flex causes severe overheating (I²Rt hazard). Absence of earth wire poses electrical shock risk if metal casing gets energized. Correction: Use 15 A 3-pin cable with proper earthing [2.5M].`;
+COMPETENCY QUESTION BANK - STEP-BY-STEP SOLUTIONS & MARKING SCHEME.`;
         },
-
         builder: function(p) {
-            return `Generate a HIGH-YIELD COMPETENCY-BASED QUESTION BANK according to CBSE 2026-27 Sample Paper Specifications.
-
-TARGET SPECS:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Chapter: ${p.chapter}
-
-PART 1: COMPETENCY QUESTION BANK ITEMS
-1. Graphical & Data Analysis Questions.
-2. Case-Study & Real-world Scenarios.
-3. Assertion-Reasoning Questions.
-4. NCERT Activity-based Inquiry Questions.
-
----ANSWER_KEY_START---
-PART 2: OFFICIAL MARKING SCHEME & ANSWER KEY
-Provide complete step-by-step marking schemes with explicit references to NCERT concepts and value points.`;
+            return `Generate a High-Yield Competency Question Bank for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
         }
     },
 
@@ -1046,127 +1250,25 @@ Provide complete step-by-step marking schemes with explicit references to NCERT 
         id: "practicals",
         category: "practicals",
         title: "🔬 Practical Lab & Viva Assistant",
-        subtitle: "CBSE Science Lab Manual & Viva-Voce Generator",
+        subtitle: "CBSE Lab Manual & Viva-Voce Generator",
         tags: ["Lab", "Practicals", "Viva Voce", "Rubrics"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A1 1 0 0 0 5.607 22h12.786a1 1 0 0 0 .886-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><line x1="9" y1="11" x2="15" y2="11"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55A1 1 0 0 0 5.607 22h12.786a1 1 0 0 0 .886-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/></svg>`,
         description: "Create complete practical manual guides: Aim, Theory, Diagrams, Observation Tables, Precautions, and Viva Voce questions.",
-        
         directContentBuilder: function(p) {
             return `CBSE LABORATORY PRACTICAL MANUAL & VIVA-VOCE GUIDE
-CLASS: ${p.classLevel} | SUBJECT: ${p.subject}
-EXPERIMENT / ACTIVITY: ${p.chapter}
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | EXPERIMENT: ${p.chapter}
 
-1. EXPERIMENT TITLE & OBJECTIVE (AIM):
-   To determine the relationship between potential difference and current, and find the resistance per unit length of a wire.
-
-2. APPARATUS REQUIRED:
-   Resistance wire, Ammeter (0-3A), Voltmeter (0-5V), Rheostat, Plug Key, Battery Eliminator (0-6V), Connecting wires.
-
-3. UNDERLYING PRINCIPLE & FORMULA:
-   Ohm's Law: V = I R => R = V / I.
-
-4. SCHEMATIC CIRCUIT DIAGRAM:
-   [ Battery (+) ] ---> [ Plug Key ] ---> [ Rheostat ] ---> [ Ammeter ] ---> [ Wire X ] ---> [ (-) Battery ]
-                                                                 |            |
-                                                                 +--[Voltmeter]--+
-
-5. TABULAR OBSERVATION RECORD TEMPLATE:
-   | Trial No. | Voltmeter Reading V (Volts) | Ammeter Reading I (Amps) | Resistance R = V/I (Ω) |
-   |---|---|---|---|
-   | 1 | _____ | _____ | _____ |
-   | 2 | _____ | _____ | _____ |
-   | 3 | _____ | _____ | _____ |
-
-6. VIVA VOCE QUESTIONS:
-   Q1. Why should the key be plugged only while taking observations?
-   Q2. What is an ideal voltmeter resistance?
+1. AIM & APPARATUS REQUIRED.
+2. UNDERLYING PRINCIPLE & FORMULA.
+3. CIRCUIT / SCHEMATIC DIAGRAM.
+4. OBSERVATION TABLE SCHEMA.
+5. VIVA-VOCE QUESTIONS (10 Questions).
 
 ---ANSWER_KEY_START---
-EXPECTED PRACTICAL RESULTS, SAMPLE OBSERVATIONS & VIVA MODEL ANSWERS:
-================================================================================
-SAMPLE OBSERVATION DATA:
-| Trial No. | Voltmeter V (V) | Ammeter I (A) | Resistance R = V/I (Ω) |
-| 1 | 1.0 | 0.2 | 5.0 |
-| 2 | 2.0 | 0.4 | 5.0 |
-| 3 | 3.0 | 0.6 | 5.0 |
-Mean Resistance = 5.0 Ω.
-
-VIVA VOCE MODEL ANSWERS:
-Q1 Ans: Continuous current heats the resistance wire, causing resistance to increase and violating constant temperature condition.
-Q2 Ans: An ideal voltmeter has infinite resistance so that it draws zero current from the main circuit branch.`;
+SAMPLE OBSERVATION DATA & VIVA VOCE MODEL ANSWERS.`;
         },
-
         builder: function(p) {
-            return `Act as a CBSE Laboratory Examiner & Science Practical Incharge.
-
-Generate a COMPLETE LABORATORY PRACTICAL GUIDE & VIVA-VOCE PACK.
-
-DETAILS:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Experiment / Activity: ${p.chapter}
-
-PART 1: LAB MANUAL & VIVA QUESTIONS
-1. Aim, Apparatus, Principle, Circuit Diagram, Procedure, Observation Table schema.
-2. Precautions & Viva-Voce Questions (10 Questions).
-
----ANSWER_KEY_START---
-PART 2: SAMPLE DATA, CALCULATIONS & VIVA MODEL ANSWERS
-1. Completed sample observation data and mean calculation.
-2. Complete model answers for all 10 Viva-Voce questions.`;
-        }
-    },
-
-    {
-        id: "feedback",
-        category: "feedback",
-        title: "📊 Student & Parent Feedback Form",
-        subtitle: "Diagnostic Feedback & Teaching Evaluation",
-        tags: ["Feedback", "Likert Scale", "Diagnosis", "KVS Standard"],
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
-        description: "Generate professional feedback forms for students and parents with Likert scales.",
-        
-        directContentBuilder: function(p) {
-            return `KENDRIYA VIDYALAYA SANGATHAN | DIAGNOSTIC FEEDBACK FORM
-CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | MODULE: ${p.chapter}
-
-Rating Scale: 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree
-
-1. STUDENT SELF-ASSESSMENT GRID:
-   [ ] I understand the core concepts of ${p.chapter}. (1 2 3 4 5)
-   [ ] I can solve numerical problems independently. (1 2 3 4 5)
-   [ ] Lab practical demonstrations helped clarify concepts. (1 2 3 4 5)
-   [ ] Smart classroom ICT tools were effectively used. (1 2 3 4 5)
-
-2. OPEN FEEDBACK:
-   - What topic in ${p.chapter} requires additional revision? ____________________
-   - Suggestions for improvement: ____________________
-
----ANSWER_KEY_START---
-TEACHER DIAGNOSTIC EVALUATION & ACTIONABLE FEEDBACK GUIDE:
-1. Scoring Interpretation:
-   - Score < 3 in Concept Clarity indicates need for remedial teaching modules.
-   - Score < 3 in Numericals indicates need for step-by-step formula practice sheets.
-2. Follow-up Action Plan Template for Departmental Record.`;
-        },
-
-        builder: function(p) {
-            return `Generate a PROFESSIONAL FEEDBACK & DIAGNOSTIC EVALUATION FORM for Kendriya Vidyalaya / CBSE Science Department.
-
-TARGET DETAILS:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Module / Term: ${p.chapter}
-
-PART 1: STUDENT & PARENT FEEDBACK FORM
-1. Student Self-Assessment Grid (5-point Likert Scale).
-2. Teaching Methodology Evaluation.
-3. Open-ended Reflection Questions.
-
----ANSWER_KEY_START---
-PART 2: DIAGNOSTIC ANALYSIS & ACTION PLAN FOR TEACHERS
-1. Evaluation benchmarks & rubric thresholds.
-2. Action plan recommendations for student remediation.`;
+            return `Generate a Practical Lab Manual & Viva Guide for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
         }
     },
 
@@ -1177,92 +1279,81 @@ PART 2: DIAGNOSTIC ANALYSIS & ACTION PLAN FOR TEACHERS
         subtitle: "Analytic 4-Level Evaluation Criteria",
         tags: ["Rubrics", "Assessment", "NEP 2020", "Evaluation"],
         icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>`,
-        description: "Create analytic rubric grids for science projects, lab reports, and subjective answers.",
-        
+        description: "Create analytic rubric grids for subject projects, lab reports, and subjective answers.",
         directContentBuilder: function(p) {
             return `CBSE ANALYTIC ASSESSMENT RUBRIC GRID
 CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | TASK: ${p.chapter}
 
 | Criteria | Level 1: Beginning (1-2 pts) | Level 2: Developing (3-4 pts) | Level 3: Proficient (5-6 pts) | Level 4: Exemplary (7-8 pts) |
 |---|---|---|---|---|
-| Conceptual Accuracy | Shows major misconceptions in ${p.chapter}. | Explains basic definitions; struggles with application. | Accurately explains principles with minor gaps. | Mastered concepts; applies flawlessly to novel contexts. |
-| Problem Solving & Numericals | Cannot identify formulas or SI units. | Identifies formula but makes calculation errors. | Solves standard numericals with correct SI units. | Solves multi-step HOTS problems with full steps. |
-| Diagrammatic Skill | Omits diagrams or draws inaccurate shapes. | Diagram lacks proper labels or arrow directions. | Neat labeled diagram with minor alignment flaws. | Perfect technical drawing with clear labels & scale. |
+| Conceptual Accuracy | Major misconceptions. | Basic definitions only. | Accurate with minor gaps. | Mastered concepts; applies flawlessly. |
+| Problem Solving | Cannot identify formulas/terms. | Identifies terms with calculation error. | Solves standard problems correctly. | Solves multi-step HOTS with full steps. |
+| Technical Presentation | Lacks structure. | Needs better alignment. | Neat and organized. | Exemplary presentation & technical drawing. |
 
 ---ANSWER_KEY_START---
-TEACHER SCORING GUIDELINES & GRADE WEIGHTAGE DISTRIBUTION:
-1. Total Points Calculation: Max Score = 32 Points.
-2. Grade Translation:
-   - 28-32 Points: Grade A+ (Exemplary)
-   - 20-27 Points: Grade A (Proficient)
-   - 12-19 Points: Grade B (Developing - Needs Practice)
-   - Below 12 Points: Grade C (Remedial Support Required)`;
+TEACHER SCORING GUIDELINES & GRADE CONVERSION MATRIX.`;
         },
-
         builder: function(p) {
-            return `Generate a DETAILED ANALYTIC ASSESSMENT RUBRIC GRID for Science Evaluation.
-
-SPECS:
-• Class: ${p.classLevel}
-• Subject: ${p.subject}
-• Task / Project Type: ${p.chapter}
-
-PART 1: ANALYTIC RUBRIC MATRIX
-| Criteria | Level 1: Beginning (1-2 pts) | Level 2: Developing (3-4 pts) | Level 3: Proficient (5-6 pts) | Level 4: Exemplary (7-8 pts) |
-
----ANSWER_KEY_START---
-PART 2: TEACHER GRADING INSTRUCTIONS & SCORE WEIGHTAGE
-1. Scoring guidelines & grade conversion matrix.
-2. Qualitative feedback comment templates for report cards.`;
+            return `Generate an Analytic Assessment Rubric Grid for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
         }
     },
 
     {
         id: "lessonplan",
-        category: "physics",
+        category: "feedback",
         title: "📘 NEP 2020 5E Lesson Plan",
         subtitle: "Engage, Explore, Explain, Elaborate, Evaluate",
         tags: ["Lesson Plan", "NEP 2020", "5E Model", "Pedagogy"],
         icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-        description: "Generate a complete 5E model lesson plan (Engage, Explore, Explain, Elaborate, Evaluate) with learning objectives.",
-        
+        description: "Generate a complete 5E model lesson plan (Engage, Explore, Explain, Elaborate, Evaluate) with learning objectives for any subject.",
         directContentBuilder: function(p) {
             return `NEP-2020 COMPLIANT 5E MODEL LESSON PLAN
 CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | TOPIC: ${p.chapter}
 Duration: 40 Mins (1 Period) | Pedagogical Framework: NCF-SE 2023
 
 1. LEARNING OBJECTIVES:
-   - SLO 1: Students will explain core principles of ${p.chapter}.
-   - SLO 2: Students will apply formulas to solve quantitative problems.
+   - SLO 1: Students will explain core concepts of ${p.chapter}.
+   - SLO 2: Students will apply formulas / skills to solve problems.
 
 2. 5E PHASES EXECUTION:
-   • ENGAGE (5 Mins): Teacher shows real-life demo/video clip. Asks: "What happens when...?"
-   • EXPLORE (10 Mins): Students work in groups of 4 with lab equipment to record observation data.
-   • EXPLAIN (10 Mins): Teacher facilitates discussion, writes core formula V = IR on board.
-   • ELABORATE (10 Mins): Students solve 1 HOTS application problem connecting concept to daily life.
-   • EVALUATE (5 Mins): 3-minute Exit Ticket test with 2 MCQs.
+   • ENGAGE (5 Mins): Teacher shows real-life hook / question.
+   • EXPLORE (10 Mins): Student group investigation activity.
+   • EXPLAIN (10 Mins): Teacher formalizes concept & writes formulas on board.
+   • ELABORATE (10 Mins): Students solve HOTS application problem.
+   • EVALUATE (5 Mins): Exit Ticket test with 2 MCQs.
 
 ---ANSWER_KEY_START---
-ASSESSMENT EXIT TICKET ANSWER KEY & EVALUATION RUBRIC:
-1. Exit Ticket Question 1 Key: Option B (Direct linear relation).
-2. Exit Ticket Question 2 Key: Option A (Energy conservation).
-3. Differentiated extension task solution key.`;
+EXIT TICKET ANSWER KEY & EVALUATION GUIDELINES.`;
         },
-
         builder: function(p) {
-            return `You are a CBSE Master Pedagogy Specialist and KVS Principal Evaluator.
+            return `Create a NEP-2020 5E Lesson Plan for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
+        }
+    },
 
-Create a FULL NEP-2020 COMPLIANT 5E MODEL LESSON PLAN.
+    {
+        id: "feedback",
+        category: "feedback",
+        title: "📊 Student & Parent Feedback Form",
+        subtitle: "Diagnostic Feedback & Teaching Evaluation",
+        tags: ["Feedback", "Likert Scale", "Diagnosis", "KVS Standard"],
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+        description: "Generate professional feedback forms for students and parents with Likert scales for diagnostic teaching feedback.",
+        directContentBuilder: function(p) {
+            return `KENDRIYA VIDYALAYA SANGATHAN | DIAGNOSTIC FEEDBACK FORM
+CLASS: ${p.classLevel} | SUBJECT: ${p.subject} | MODULE: ${p.chapter}
 
-PART 1: 5E MODEL LESSON PLAN DOCUMENT
-1. General Information & Learning Objectives (GLO & SLO).
-2. 5E Phases: Engage, Explore, Explain, Elaborate, Evaluate.
-3. Differentiated Instruction Strategy & Home Assignment.
+1. STUDENT SELF-ASSESSMENT GRID (1 to 5 Likert Scale):
+   [ ] I understand the core concepts of ${p.chapter}. (1 2 3 4 5)
+   [ ] I can solve subject problems independently. (1 2 3 4 5)
+   [ ] ICT tools were effectively used in classroom. (1 2 3 4 5)
+
+2. OPEN FEEDBACK & REMEDIAL SUGGESTIONS.
 
 ---ANSWER_KEY_START---
-PART 2: EXIT TICKET ANSWER KEY & EVALUATION GUIDELINES
-1. Answer key for evaluation phase wrap-up test.
-2. Homework evaluation criteria and model solution keys.`;
+TEACHER DIAGNOSTIC EVALUATION & ACTION PLAN GUIDE.`;
+        },
+        builder: function(p) {
+            return `Generate a Diagnostic Feedback Form for ${p.classLevel} ${p.subject} on ${p.chapter}.`;
         }
     }
 ];
@@ -1274,9 +1365,9 @@ let activeTagFilter = null;
 let activeOutputTab = "qp"; // "qp" | "ak" | "combined"
 let savedTemplates = [];
 
-// Multi-Chapter Selection & Chapter-Wise Weightage State
-let selectedChaptersState = {}; // Key: chapter string, Value: allocated marks (number)
-let weightageUnitState = "marks"; // "marks" | "percent"
+// Multi-Chapter Selection & Weightage State
+let selectedChaptersState = {}; // Key: chapter name, Value: marks
+let weightageUnitState = "marks";
 
 try {
     savedTemplates = JSON.parse(localStorage.getItem("cbse_saved_prompts") || "[]");
@@ -1288,6 +1379,7 @@ try {
 document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     bindEvents();
+    updateSubjectDropdown();
     populateChapters();
     renderCategoriesCount();
     renderCards();
@@ -1299,6 +1391,31 @@ document.addEventListener("DOMContentLoaded", () => {
 function initTheme() {
     const savedTheme = localStorage.getItem("cbse_studio_theme") || "dark";
     document.documentElement.setAttribute("data-theme", savedTheme);
+}
+
+// Dynamically update Subject dropdown based on selected Class level
+function updateSubjectDropdown() {
+    const classVal = document.getElementById("paramClass").value;
+    const subjectSelect = document.getElementById("paramSubject");
+    if (!subjectSelect) return;
+
+    const currentSubj = subjectSelect.value;
+    const isSenior = classVal === "Class 11" || classVal === "Class 12";
+    const validSubjects = isSenior ? subjectOptionsByClass.senior : subjectOptionsByClass.junior;
+
+    subjectSelect.innerHTML = "";
+    validSubjects.forEach(subj => {
+        const opt = document.createElement("option");
+        opt.value = subj;
+        opt.textContent = subj;
+        subjectSelect.appendChild(opt);
+    });
+
+    if (validSubjects.includes(currentSubj)) {
+        subjectSelect.value = currentSubj;
+    } else {
+        subjectSelect.value = validSubjects[0];
+    }
 }
 
 // Bind Event Listeners
@@ -1317,18 +1434,20 @@ function bindEvents() {
         outputModeEl.addEventListener("change", updatePromptPreview);
     }
 
-    // Class & Subject changes with auto sync
+    // Class selection change -> sync subject dropdown and chapters
     document.getElementById("paramClass").addEventListener("change", () => {
+        updateSubjectDropdown();
         populateChapters();
         updatePromptPreview();
     });
 
+    // Subject selection change -> sync chapters
     document.getElementById("paramSubject").addEventListener("change", () => {
         populateChapters();
         updatePromptPreview();
     });
 
-    // Parameter input listeners including Total Marks
+    // Parameter input listeners
     const paramInputs = [
         "paramChapterSelect", "paramChapterCustom", "paramTier", "paramTime",
         "toggleAnswerKey", "toggleNEP", "toggleBloom", "toggleNCERT", "toggleRubrics"
@@ -1402,7 +1521,7 @@ function bindEvents() {
         });
     }
 
-    // Weightage Unit Radio Toggle (Marks vs Percent)
+    // Weightage Unit Radio Toggle
     document.querySelectorAll('input[name="weightageUnit"]').forEach(radio => {
         radio.addEventListener("change", (e) => {
             weightageUnitState = e.target.value;
@@ -1410,7 +1529,7 @@ function bindEvents() {
         });
     });
 
-    // Textarea direct typing word count listener
+    // Textarea word count
     const promptBox = document.getElementById("promptBox");
     if (promptBox) {
         promptBox.addEventListener("input", () => {
@@ -1420,9 +1539,10 @@ function bindEvents() {
         });
     }
 
-    // Reset parameters button
+    // Reset button
     document.getElementById("resetParamsBtn").addEventListener("click", () => {
         document.getElementById("paramClass").value = "Class 10";
+        updateSubjectDropdown();
         document.getElementById("paramSubject").value = "General Science";
         document.getElementById("paramMarks").value = "80";
         populateChapters();
@@ -1452,16 +1572,20 @@ function bindEvents() {
     const searchInput = document.getElementById("searchInput");
     const clearSearchBtn = document.getElementById("clearSearchBtn");
 
-    searchInput.addEventListener("input", (e) => {
-        clearSearchBtn.hidden = !e.target.value;
-        renderCards();
-    });
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            if (clearSearchBtn) clearSearchBtn.hidden = !e.target.value;
+            renderCards();
+        });
+    }
 
-    clearSearchBtn.addEventListener("click", () => {
-        searchInput.value = "";
-        clearSearchBtn.hidden = true;
-        renderCards();
-    });
+    if (clearSearchBtn) {
+        clearSearchBtn.addEventListener("click", () => {
+            if (searchInput) searchInput.value = "";
+            clearSearchBtn.hidden = true;
+            renderCards();
+        });
+    }
 
     document.querySelectorAll(".tag-chip").forEach(chip => {
         chip.addEventListener("click", () => {
@@ -1481,33 +1605,27 @@ function bindEvents() {
     const exportBtn = document.getElementById("exportBtn");
     const exportMenu = document.getElementById("exportMenu");
 
-    exportBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        exportMenu.classList.toggle("show");
-    });
+    if (exportBtn) {
+        exportBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (exportMenu) exportMenu.classList.toggle("show");
+        });
+    }
 
     document.addEventListener("click", () => {
         if (exportMenu) exportMenu.classList.remove("show");
     });
 
     // Saved templates modal
-    document.getElementById("savedTemplatesBtn").addEventListener("click", openSavedModal);
+    const savedBtn = document.getElementById("savedTemplatesBtn");
+    if (savedBtn) savedBtn.addEventListener("click", openSavedModal);
 }
 
 // Populate NCERT Chapter Selector dynamically & build multi-chapter checklist
 function populateChapters() {
     const classVal = document.getElementById("paramClass").value;
     const subjectSelect = document.getElementById("paramSubject");
-    let subjectVal = subjectSelect.value;
-
-    const isSeniorClass = classVal === "Class 11" || classVal === "Class 12";
-    if (isSeniorClass && subjectVal === "General Science") {
-        subjectVal = "Physics";
-        subjectSelect.value = "Physics";
-    } else if (!isSeniorClass && (subjectVal === "Physics" || subjectVal === "Chemistry" || subjectVal === "Biology")) {
-        subjectVal = "General Science";
-        subjectSelect.value = "General Science";
-    }
+    let subjectVal = subjectSelect ? subjectSelect.value : "General Science";
 
     const chapterSelect = document.getElementById("paramChapterSelect");
     const container = document.getElementById("chapterChecklistContainer");
@@ -1517,10 +1635,11 @@ function populateChapters() {
     let chapters = [];
     if (cbseChapterDatabase[classVal] && cbseChapterDatabase[classVal][subjectVal]) {
         chapters = cbseChapterDatabase[classVal][subjectVal];
-    } else if (cbseChapterDatabase[classVal] && cbseChapterDatabase[classVal]["General Science"]) {
-        chapters = cbseChapterDatabase[classVal]["General Science"];
+    } else if (cbseChapterDatabase[classVal]) {
+        const firstKey = Object.keys(cbseChapterDatabase[classVal])[0];
+        chapters = cbseChapterDatabase[classVal][firstKey] || ["Chapter 1: Core Syllabus Concepts"];
     } else {
-        chapters = ["Chapter 1: Core Concepts & Principles"];
+        chapters = ["Chapter 1: Core Syllabus Concepts"];
     }
 
     selectedChaptersState = {};
@@ -1595,11 +1714,9 @@ function renderWeightageControls() {
 
     const selectedKeys = Object.keys(selectedChaptersState);
 
-    if (badge) {
-        badge.textContent = `${selectedKeys.length} Selected`;
-    }
-
+    if (badge) badge.textContent = `${selectedKeys.length} Selected`;
     if (!listContainer) return;
+
     listContainer.innerHTML = "";
 
     if (selectedKeys.length === 0) {
@@ -1682,6 +1799,121 @@ function updateAllocationStatus() {
     }
 }
 
+// Render Categories Counts in Sidebar Nav
+function renderCategoriesCount() {
+    const counts = {
+        all: templatesLibrary.length,
+        assessment: 0,
+        curiosity: 0,
+        stem: 0,
+        humanities: 0,
+        commerce: 0,
+        quizzes: 0,
+        practicals: 0,
+        feedback: 0
+    };
+
+    templatesLibrary.forEach(t => {
+        if (counts[t.category] !== undefined) {
+            counts[t.category]++;
+        }
+    });
+
+    const setBadge = (id, count) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = count;
+    };
+
+    setBadge("countAll", counts.all);
+    setBadge("countAssessment", counts.assessment);
+    setBadge("countCuriosity", counts.curiosity);
+    setBadge("countStem", counts.stem);
+    setBadge("countHumanities", counts.humanities);
+    setBadge("countCommerce", counts.commerce);
+    setBadge("countQuizzes", counts.quizzes);
+    setBadge("countPracticals", counts.practicals);
+    setBadge("countFeedback", counts.feedback);
+}
+
+// Render Generator Template Cards
+function renderCards() {
+    const grid = document.getElementById("cardsGrid");
+    const countBadge = document.getElementById("libraryCount");
+    const searchVal = (document.getElementById("searchInput") ? document.getElementById("searchInput").value : "").toLowerCase().trim();
+
+    if (!grid) return;
+
+    let filtered = templatesLibrary.filter(t => {
+        // Category filter
+        if (activeCategory !== "all" && t.category !== activeCategory) {
+            return false;
+        }
+
+        // Tag filter
+        if (activeTagFilter && !t.tags.includes(activeTagFilter)) {
+            return false;
+        }
+
+        // Search text query
+        if (searchVal) {
+            const matchesTitle = t.title.toLowerCase().includes(searchVal);
+            const matchesSub = t.subtitle.toLowerCase().includes(searchVal);
+            const matchesDesc = t.description.toLowerCase().includes(searchVal);
+            const matchesTags = t.tags.some(tag => tag.toLowerCase().includes(searchVal));
+            if (!matchesTitle && !matchesSub && !matchesDesc && !matchesTags) {
+                return false;
+            }
+        }
+
+        return true;
+    });
+
+    if (countBadge) {
+        countBadge.textContent = `${filtered.length} available`;
+    }
+
+    grid.innerHTML = "";
+
+    if (filtered.length === 0) {
+        grid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-secondary); background: var(--bg-card); border-radius: 12px; border: 1px dashed var(--border-color);">
+                <p style="font-size: 16px; font-weight: 600;">No generators match your filter criteria.</p>
+                <p style="font-size: 13px; margin-top: 6px;">Try clearing your search query or selecting 'All Generators'.</p>
+            </div>
+        `;
+        return;
+    }
+
+    filtered.forEach(t => {
+        const card = document.createElement("div");
+        card.className = `card ${t.id === selectedTemplateId ? 'active' : ''}`;
+        card.dataset.id = t.id;
+
+        const tagChipsHtml = t.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('');
+
+        card.innerHTML = `
+            <div class="card-header">
+                <div class="card-icon">${t.icon}</div>
+                <div>
+                    <h4 class="card-title">${t.title}</h4>
+                    <p class="card-subtitle">${t.subtitle}</p>
+                </div>
+            </div>
+            <p class="card-desc">${t.description}</p>
+            <div class="card-tags">${tagChipsHtml}</div>
+        `;
+
+        card.addEventListener("click", () => {
+            document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+            card.classList.add("active");
+            selectedTemplateId = t.id;
+            updatePromptPreview();
+        });
+
+        grid.appendChild(card);
+    });
+}
+
 // Gather Current Parameters with Multi-Chapter Weightage Breakdown
 function getParams() {
     const customChapter = document.getElementById("paramChapterCustom").value.trim();
@@ -1694,7 +1926,7 @@ function getParams() {
     if (customChapter) {
         chapterSummary = customChapter;
     } else if (selectedKeys.length === 0) {
-        chapterSummary = "General Science (All Chapters)";
+        chapterSummary = "All Chapters";
     } else if (selectedKeys.length === 1) {
         chapterSummary = `${selectedKeys[0]} (${selectedChaptersState[selectedKeys[0]]} Marks)`;
     } else {
@@ -1724,7 +1956,7 @@ ${rows}
     return {
         outputMode: outputModeEl ? outputModeEl.value : "direct",
         classLevel: document.getElementById("paramClass").value,
-        subject: document.getElementById("paramSubject").value,
+        subject: document.getElementById("paramSubject") ? document.getElementById("paramSubject").value : "General Science",
         chapter: chapterSummary,
         selectedChapters: selectedKeys.map(k => ({
             name: k,
@@ -1733,8 +1965,8 @@ ${rows}
         })),
         chapterWeightageTable: chapterWeightageTable,
         tier: document.getElementById("paramTier").value,
-        marks: document.getElementById("paramMarks").value,
-        time: document.getElementById("paramTime").value,
+        marks: document.getElementById("paramMarks") ? document.getElementById("paramMarks").value : 80,
+        time: document.getElementById("paramTime") ? document.getElementById("paramTime").value : 180,
         includeAnswerKey: document.getElementById("toggleAnswerKey").checked,
         includeNEP: document.getElementById("toggleNEP").checked,
         includeBloom: document.getElementById("toggleBloom").checked,
@@ -1830,12 +2062,12 @@ function updatePromptPreview() {
         outputText = separated.combined;
     }
 
-    document.getElementById("activePromptTitle").textContent = tpl.title;
-    document.getElementById("activePromptSubtitle").textContent = `Configured for ${params.classLevel} ${params.subject} • ${params.chapter}`;
+    if (document.getElementById("activePromptTitle")) document.getElementById("activePromptTitle").textContent = tpl.title;
+    if (document.getElementById("activePromptSubtitle")) document.getElementById("activePromptSubtitle").textContent = `Configured for ${params.classLevel} ${params.subject} • ${params.chapter}`;
     
     const tagPrefix = params.outputMode === "direct" ? "📄 Direct Paper" : "🤖 AI Meta-Prompt";
     const tagView = activeOutputTab === "qp" ? "Question Paper" : activeOutputTab === "ak" ? "Answer Key" : "Combined Set";
-    document.getElementById("activePromptTag").textContent = `${tagPrefix} (${tagView})`;
+    if (document.getElementById("activePromptTag")) document.getElementById("activePromptTag").textContent = `${tagPrefix} (${tagView})`;
 
     const promptBox = document.getElementById("promptBox");
     if (promptBox) {
@@ -1844,15 +2076,16 @@ function updatePromptPreview() {
 
     // Update word count
     const words = outputText.trim().split(/\s+/).filter(w => w.length > 0).length;
-    document.getElementById("wordCountBadge").textContent = `${words} words`;
+    if (document.getElementById("wordCountBadge")) document.getElementById("wordCountBadge").textContent = `${words} words`;
 }
 
 // Copy Prompt to Clipboard
 function copyPrompt() {
     const promptBox = document.getElementById("promptBox");
     const copyBtnText = document.getElementById("copyBtnText");
-    promptBox.select();
+    if (!promptBox) return;
 
+    promptBox.select();
     const viewName = activeOutputTab === "qp" ? "Question Paper" : activeOutputTab === "ak" ? "Answer Key" : "Combined Set";
 
     if (copyBtnText) {
@@ -1877,7 +2110,10 @@ function copyPrompt() {
 // Show Toast Notification
 function showToast(msg) {
     const toast = document.getElementById("toast");
-    document.getElementById("toastMsg").textContent = msg;
+    const toastMsg = document.getElementById("toastMsg");
+    if (!toast) return;
+
+    if (toastMsg) toastMsg.textContent = msg;
     toast.hidden = false;
 
     setTimeout(() => {
@@ -1888,8 +2124,8 @@ function showToast(msg) {
 // Save Prompt to Favorites LocalStorage
 function saveToFavorites() {
     const params = getParams();
-    const tpl = templatesLibrary.find(t => t.id === selectedTemplateId);
-    const content = document.getElementById("promptBox").value;
+    const tpl = templatesLibrary.find(t => t.id === selectedTemplateId) || templatesLibrary[0];
+    const content = document.getElementById("promptBox") ? document.getElementById("promptBox").value : "";
 
     const item = {
         id: Date.now(),
@@ -1908,13 +2144,16 @@ function saveToFavorites() {
 }
 
 function updateSavedCount() {
-    document.getElementById("savedCount").textContent = savedTemplates.length;
+    const countEl = document.getElementById("savedCount");
+    if (countEl) countEl.textContent = savedTemplates.length;
 }
 
 // Open Saved Templates Modal
 function openSavedModal() {
     const modal = document.getElementById("savedModal");
     const list = document.getElementById("savedTemplatesList");
+    if (!modal || !list) return;
+
     list.innerHTML = "";
 
     if (savedTemplates.length === 0) {
@@ -1946,18 +2185,20 @@ function openSavedModal() {
 }
 
 function closeSavedModal() {
-    document.getElementById("savedModal").hidden = true;
+    const modal = document.getElementById("savedModal");
+    if (modal) modal.hidden = true;
 }
 
 function loadSavedItem(id) {
     const item = savedTemplates.find(t => t.id === id);
     if (item) {
-        document.getElementById("promptBox").value = item.content;
-        document.getElementById("activePromptTitle").textContent = item.title;
-        document.getElementById("activePromptSubtitle").textContent = item.subtitle;
+        const box = document.getElementById("promptBox");
+        if (box) box.value = item.content;
+        if (document.getElementById("activePromptTitle")) document.getElementById("activePromptTitle").textContent = item.title;
+        if (document.getElementById("activePromptSubtitle")) document.getElementById("activePromptSubtitle").textContent = item.subtitle;
         
         const words = item.content.trim().split(/\s+/).filter(w => w.length > 0).length;
-        document.getElementById("wordCountBadge").textContent = `${words} words`;
+        if (document.getElementById("wordCountBadge")) document.getElementById("wordCountBadge").textContent = `${words} words`;
 
         closeSavedModal();
         showToast("Loaded saved item into workspace!");
@@ -2041,7 +2282,7 @@ function exportPrompt(format, source = 'active') {
             <body>
                 <div class="header-box">
                     <h1>${headerTitle}</h1>
-                    <p class="meta"><strong>Class:</strong> ${params.classLevel} | <strong>Subject:</strong> ${params.subject} | <strong>Syllabus Focus:</strong> ${params.chapter}</p>
+                    <p class="meta"><strong>Class:</strong> ${params.classLevel} | <strong>Subject:</strong> ${params.subject} | <strong>Syllabus:</strong> ${params.chapter}</p>
                     <div class="badge">${badgeLabel}</div>
                 </div>
                 <pre>${exportContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>

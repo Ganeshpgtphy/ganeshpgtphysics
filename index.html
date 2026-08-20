@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBSE Science Teacher AI Studio 2026-27 | KVS Science & Physics Prompt Generator</title>
-    <meta name="description" content="AI Prompt Engineering Studio for Kendriya Vidyalaya and CBSE Science & Physics Teachers (Classes VI-XII) - Session 2026-27. Generate NEP 2020 aligned worksheets, question papers, Google Forms, and lesson plans.">
+    <title>CBSE Question Paper Setter & Worksheets Generator 2026-27 | All Subjects (Classes VI-XII)</title>
+    <meta name="description" content="Official CBSE Question Paper Setter and Worksheets Generator Studio for Classes VI to XII - Session 2026-27. Generate NEP 2020 & NCF-SE aligned question papers, competency worksheets, blueprint matrices, and answer keys for Mathematics, Science, Physics, Chemistry, Biology, Social Science, English, Hindi, Computer Science, and Commerce.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +27,8 @@
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5M6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5v-15"/><path d="M6 6h10"/><path d="M6 10h10"/><path d="M6 14h6"/></svg>
             </div>
             <div class="logo-text">
-                <h1>CBSE AI Teacher Studio <span>2026-27</span></h1>
-                <p>Kendriya Vidyalaya Science & Physics AI Prompt Engineering Suite</p>
+                <h1>CBSE Question Paper & Worksheet Studio <span>2026-27</span></h1>
+                <p>Universal CBSE & KVS Question Paper Setter & Competency Worksheets Engine (All Subjects)</p>
             </div>
         </div>
 
@@ -39,7 +39,7 @@
             
             <button id="themeToggleBtn" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
                 <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
             </button>
 
             <button id="savedTemplatesBtn" class="btn btn-secondary btn-sm">
@@ -66,17 +66,25 @@
                         <span>All Generators</span>
                         <span class="cat-count" id="countAll">0</span>
                     </button>
+                    <button class="cat-btn" data-category="assessment">
+                        <span>Question Papers & Worksheets</span>
+                        <span class="cat-count" id="countAssessment">0</span>
+                    </button>
                     <button class="cat-btn" data-category="curiosity">
                         <span>NCERT Curiosity (VI-X)</span>
                         <span class="cat-count" id="countCuriosity">0</span>
                     </button>
-                    <button class="cat-btn" data-category="assessment">
-                        <span>Worksheets & QPs</span>
-                        <span class="cat-count" id="countAssessment">0</span>
+                    <button class="cat-btn" data-category="stem">
+                        <span>Science & Math Suite</span>
+                        <span class="cat-count" id="countStem">0</span>
                     </button>
-                    <button class="cat-btn" data-category="physics">
-                        <span>Physics XI-XII</span>
-                        <span class="cat-count" id="countPhysics">0</span>
+                    <button class="cat-btn" data-category="humanities">
+                        <span>Social Science & Languages</span>
+                        <span class="cat-count" id="countHumanities">0</span>
+                    </button>
+                    <button class="cat-btn" data-category="commerce">
+                        <span>Commerce & Economics</span>
+                        <span class="cat-count" id="countCommerce">0</span>
                     </button>
                     <button class="cat-btn" data-category="quizzes">
                         <span>Google Forms & Quizzes</span>
@@ -87,7 +95,7 @@
                         <span class="cat-count" id="countPracticals">0</span>
                     </button>
                     <button class="cat-btn" data-category="feedback">
-                        <span>Feedback & Diagnostic</span>
+                        <span>Feedback & Lesson Plans</span>
                         <span class="cat-count" id="countFeedback">0</span>
                     </button>
                 </nav>
@@ -108,13 +116,13 @@
                     <div class="form-group">
                         <label for="paramClass">Target Class</label>
                         <select id="paramClass" class="form-control">
-                            <option value="Class 6">Class VI (Science)</option>
-                            <option value="Class 7">Class VII (Science)</option>
-                            <option value="Class 8">Class VIII (Science)</option>
-                            <option value="Class 9">Class IX (Science)</option>
-                            <option value="Class 10" selected>Class X (Science)</option>
-                            <option value="Class 11">Class XI (Physics / Science)</option>
-                            <option value="Class 12">Class XII (Physics / Science)</option>
+                            <option value="Class 6">Class VI</option>
+                            <option value="Class 7">Class VII</option>
+                            <option value="Class 8">Class VIII</option>
+                            <option value="Class 9">Class IX</option>
+                            <option value="Class 10" selected>Class X</option>
+                            <option value="Class 11">Class XI</option>
+                            <option value="Class 12">Class XII</option>
                         </select>
                     </div>
 
@@ -131,12 +139,22 @@
                     <div class="form-group">
                         <label for="paramSubject">Subject Focus</label>
                         <select id="paramSubject" class="form-control">
-                            <option value="General Science" selected>General Science (VI-X)</option>
-                            <option value="Physics">Physics (XI-XII)</option>
-                            <option value="Chemistry">Chemistry (XI-XII)</option>
-                            <option value="Biology">Biology (XI-XII)</option>
+                            <option value="General Science" selected>General Science</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Social Science">Social Science</option>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Computer Science / IT / AI">Computer Science / IT / AI</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Computer Science / IP">Computer Science / IP</option>
+                            <option value="English Core">English Core</option>
+                            <option value="Accountancy">Accountancy</option>
+                            <option value="Business Studies">Business Studies</option>
+                            <option value="Economics">Economics</option>
                         </select>
-                    </div>
+                    </div></div>
 
                     <!-- Multi-Chapter Database Selector & Weightage Control Panel -->
                     <div class="form-group">
@@ -384,7 +402,7 @@
 
     <!-- Application Footer -->
     <footer class="app-footer">
-        <p>Developed for Kendriya Vidyalaya & CBSE Science & Physics Teachers | Academic Session 2026-27</p>
+        <p>Developed for Kendriya Vidyalaya & CBSE Teachers (All Subjects, Classes VI-XII) | Academic Session 2026-27</p>
         <p class="footer-sub">Aligned with NCERT 2026-27, NEP 2020 Competencies & NCF-SE Guidelines</p>
     </footer>
 
